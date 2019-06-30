@@ -1,0 +1,52 @@
+.product-type-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  div{
+    height: 300px;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+    transition: height 1s ease-in-out;
+    &.fade{
+          height: 50px;
+          .type{
+            background: lightblue;
+          }
+    }
+    .type{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      color: white;
+      font-size: 2rem;
+      background: #0000008c;
+      height: 30px;
+      padding: 10px;
+
+    }
+    &:hover{
+      .type{
+            background: #000000c4;
+        text-shadow: white 0px 0px 10px;
+
+      }
+    }
+  }
+  .gas{
+    background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Foundation%20Pier%20Series%20Gas%20Fireplace/Slides/Slide%201-1/-/media/images/fpl/product-images/fireplaces/hng/foundation/fdn-pier_960x456.jpg');
+
+  }
+  .wood{
+    background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Royal%20Hearth%20Wood%20Fireplace/Slides/Royal%20Hearth/-/media/images/fpl/product-images/fireplaces/hng/royal-hearth/hng_woodfp_royal-hearth-36_960x456.jpg');
+
+  }
+  .electric{
+      background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Simplifire/Simplifire%20Wall-Mount%20Electric%20Fireplace/Slides/Slide%201/-/media/images/product-images/simplifire-product-images/wall-mount/simplifire_wall-mount58_black_blue_blue_960x456.jpg');
+  }
+  .outdoors{
+      background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Outdoor/Plaza%20Gas%20Fire%20Pit/Slides/Plaza%20Slide%201/-/media/images/product-images/outdoor-products-images/fire-pit/plaza/plaza_4ft_poolside_high-960x456.jpg');
+  }
+}
