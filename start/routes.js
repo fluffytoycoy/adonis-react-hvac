@@ -19,8 +19,11 @@ const Route = use('Route');
 const Helpers = use('Helpers');
 
 Route.group(() => {
-  Route.get('/', 'ApiController.getCities');
-}).prefix('api/v1');
+  Route.get('/wood', 'ApiController.getWood');
+  Route.get('/gas', 'ApiController.getGas');
+  Route.get('/electric', 'ApiController.getElectric');
+  Route.get('/outdoors', 'ApiController.getOutdoors');
+}).prefix('api/v1/');
 
 Route.any('*', ({ response }) => {
   response.download(Helpers.publicPath('react/app.html'));

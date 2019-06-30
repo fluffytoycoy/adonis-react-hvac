@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import axios from 'axios';
 import './Products.scss';
 import ProductTypes from './ProductTypes/ProductTypes';
+import ProductsDisplayGrid from './ProductsDisplayGrid/ProductsDisplayGrid';
 ///import NotFound from './components/NotFound/NotFound';
 
 class Products extends Component {
@@ -75,20 +76,21 @@ function ProductSection(props) {
   const currentSelection = props.type;
   switch(currentSelection){
     case 'electric':
-    return <h1>electric</h1>
+    return <ProductsDisplayGrid selectedType={currentSelection}/>
     break;
     case 'gas':
-    return <h1>gas</h1>
+    return <ProductsDisplayGrid selectedType={currentSelection}/>
     break;
     case 'outdoors':
-    return <h1>outdoors</h1>
+    return <ProductsDisplayGrid selectedType={currentSelection}/>
     break;
     case 'wood':
-    return <h1>wood</h1>
+    return <ProductsDisplayGrid selectedType={currentSelection}/>
     break;
     default:
     return  <></>
   }
+
   function loadWoodProducts(){
     let data = {};
     //calls api on load for product list

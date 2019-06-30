@@ -24,6 +24,7 @@ class App extends Component {
     return (
       <Router>
 				<Header/>
+        <div>
 					<Switch>
 						<Route exact  path="/" component={Home} />
             <Route exact  path="/products" component={Products} />
@@ -34,6 +35,7 @@ class App extends Component {
             />
             <Route component={NotFound}/>
 				</Switch>
+        </div>
       </Router>
     );
   }
