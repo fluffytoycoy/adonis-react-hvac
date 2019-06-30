@@ -1,4 +1,4 @@
-import React, {Component, } from 'react';
+import React, {Component } from 'react';
 import axios from 'axios';
 import './Products.scss';
 import ProductTypes from './ProductTypes/ProductTypes';
@@ -15,12 +15,12 @@ class Products extends Component {
 
 
   componentWillMount(){
-    const type = this.props.match.params;
+    const type = this.props.match.params.type;
+    console.log(type)
     if(type){
         this.setState({
           selectedType: type
-        }, ()=> console.log(this.state.selectedType))
-
+        })
     }
     // const self = this;
     // //calls api on load for product list
@@ -38,10 +38,10 @@ class Products extends Component {
     componentWillReceiveProps(nextProps){
       const currentSelection = this.props.match.params.type
       const nextSelection = nextProps.match.params.type
-      if(currentSelection != nextSelection){
+      if(currentSelection !== nextSelection){
         this.setState({
           selectedType: nextSelection
-        }, ()=> console.log(this.state.selectedType))
+        })
       }
     }
 
@@ -61,7 +61,10 @@ class Products extends Component {
           <h1>Products</h1>
         </div>
         <div className="product-grid-wrapper">
-            <ProductSection type={this.state.selectedType} history={this.props.history} />
+            <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
+        </div>
+        <div>
+          <ProductSection type={this.state.selectedType} history={this.props.history}/>
         </div>
       </div>
     );
@@ -71,20 +74,20 @@ class Products extends Component {
 function ProductSection(props) {
   const currentSelection = props.type;
   switch(currentSelection){
-    // // case 'electric':
-    // // return <h1>electric</h1>
-    // // break;
-    // // case 'gas':
-    // // return <h1>gas</h1>
-    // // break;
-    // // case 'outdoors':
-    // // return <h1>outdoors</h1>
-    // // break;
-    // // case 'wood':
-    // // return <h1>wood</h1>
-    // break;
+    case 'electric':
+    return <h1>electric</h1>
+    break;
+    case 'gas':
+    return <h1>gas</h1>
+    break;
+    case 'outdoors':
+    return <h1>outdoors</h1>
+    break;
+    case 'wood':
+    return <h1>wood</h1>
+    break;
     default:
-    return   <ProductTypes history={props.history} selectedType={props.type}/>
+    return  <></>
   }
   function loadWoodProducts(){
     let data = {};
@@ -94,7 +97,6 @@ function ProductSection(props) {
       .then(response =>
           data = (response.data[0].name)
       )
-      console.log(data)
       return data;
   }
 }

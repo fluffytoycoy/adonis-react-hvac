@@ -2,20 +2,29 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  div{
+  .bg-img{
     height: 300px;
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     cursor: pointer;
-    transition: background .2s ease-in-out;
     transition: height 1s ease-in-out;
+    margin-top: 20px;
     &.fade{
           height: 50px;
+          margin: 0;
           .type{
             background: lightblue;
           }
     }
+    &.selected{
+      .type{
+          background: #0000008c;
+              margin: 0;
+      }
+
+    }
+
     .type{
       display: flex;
       justify-content: center;

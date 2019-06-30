@@ -1,8 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.scss';
-import axios from 'axios';
 import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
