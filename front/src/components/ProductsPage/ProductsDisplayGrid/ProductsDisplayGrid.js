@@ -10,37 +10,32 @@ class ProductsDisplayGrid extends Component {
     this.state = {
       loaded: '',
       currentSelection: '',
-      products: []
+      products: [],
+      loadingGrid: '',
     };
   };
 
-  getAllProducts(self) {
-    axios.get(`/api/v1/${self.state.currentSelection}`)
-      .catch(error => console.log(error))
-      .then(response =>
-        response.data.forEach((item, index) => {
-          setTimeout(() => {
-            console.log(item)
-            self.setState({
-              products: [...self.state.products, item],
-              loaded: 'loaded'
-            }, () => {
-              console.log(self.state.products)
-            })
-          }, index * 200)
-        })
-      )
+  getAllProducts() {
+    var self = this;
+    setTimeout(function() {
+      axios.get(`/api/v1/${self.state.currentSelection}`)
+        .catch(error => console.log(error))
+        .then(response => self.setState({
+          products: response.data,
+          loadingGrid: true,
+          loaded: 'loaded'
+        }))
+    }, 0)
   }
 
   componentWillMount(){
     //on mount if exact route wasn't /products render with
     //minimized pictures
-    console.log('mount ' + this.props.selectedType)
-    const self = this;
     this.setState({
-      currentSelection: this.props.selectedType
+      currentSelection: this.props.selectedType,
+      loadingGrid: true
     }, ()=> {
-      this.getAllProducts(this)
+      this.getAllProducts();
     })
     //calls api on load for product list
 
@@ -49,13 +44,15 @@ class ProductsDisplayGrid extends Component {
   componentWillReceiveProps(newprops){
     //depending on the selected category props changing set fadeClass
     //this handles forward and backwards movement routing browser
-    const currentSelection = this.state.currentSelection;
-    if(currentSelection !== newprops.selectedType){
+
+    if(this.state.currentSelection !== newprops.selectedType){
+
       this.setState({
         currentSelection: newprops.selectedType,
+        loadingGrid: false,
         products: []
       },()=> {
-        this.getAllProducts(this)
+        this.getAllProducts()
       })
     }
 
@@ -72,13 +69,6 @@ class ProductsDisplayGrid extends Component {
     }
   }
 
-  selection(value){
-    //when a selection is made set fadeClass and push new location in history
-    this.setState({
-      fadeClass: 'fade'
-    })
-    // this.props.history.push(`/products/${value}`)
-  }
 
   handleFilter = async (submitEvent) =>{
     submitEvent.preventDefault();
@@ -87,14 +77,12 @@ class ProductsDisplayGrid extends Component {
 
 render(){
   return (
-    <div id="product-section">
-      <div className="filters">
-        <form onSubmit={this.handleFilter}>
-          <button type="submit"></button>
-        </form>
-      </div>
-      <div id="product-grid" className={`${this.state.loaded}`}>
-        <GridItem products={this.state.products} history={this.props.history}/>
+    <div className="product-grid-wrapper">
+      <div id="product-section">
+        <div id="product-grid" className={`${this.state.loaded}`}>
+
+          <GridItem products={this.state.products} history={this.props.history}/>
+        </div>
       </div>
     </div>
   );

@@ -41,10 +41,8 @@ class Products extends Component {
         <div className="product-header">
           <h1>Products</h1>
         </div>
-        <div className="product-grid-wrapper">
-            <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
-            <ProductSection selectedType={this.state.selectedType} history={this.props.history}/>
-        </div>
+        <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
+        <ProductSection selectedType={this.state.selectedType} history={this.props.history}/>
       </div>
     );
   }

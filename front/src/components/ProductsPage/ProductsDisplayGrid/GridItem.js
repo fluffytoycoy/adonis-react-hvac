@@ -2,24 +2,67 @@ import React, {Component} from 'react';
 
 
 
-function GridItem(props){
+class GridItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+    };
+  };
 
-  return (props.products === undefined) ? 'undefined': renderItem(props.products)
-
-
-  function linkToProduct(){
-    //push history
-    props.history.push(props.history.location.pathname + '/1')
+  componentWillMount(){
+    console.log('fuck')
+    //this.loadGridItems(this.props.products);
   }
 
-  function renderItem(products){
+  componentWillReceiveProps(newprops){
+    clearInterval(this.state.interval);
+    this.setState({
+      products: [],
+      load: false
+    }, () => this.loadGridItems(newprops.products))
+
+
+  }
+
+  loadGridItems(items) {
+    const self = this;
+    var i = 0;
+    self.setState({
+      interval: intervalId
+    })
+    var intervalId = setInterval(function() {
+      if (!self.state.load && i >= items.length) {
+        console.log('clicked end loop')
+        clearInterval(intervalId);
+      } else {
+        self.setState({
+          products: [...self.state.products, items[i]],
+          loaded: 'loaded'
+        })
+        i++
+      }
+    }, 100);
+
+  }
+
+  linkToProduct(){
+    //push history
+    this.props.history.push(this.props.history.location.pathname + '/1')
+  }
+
+  renderItem(products){
     return products.map((product, index)=>{
         return (
-          <div onClick={linkToProduct}key={index} className="bg-img" style={{background: `url(${product.imgSrc})`}}>
+          <div onClick={this.linkToProduct}key={index} className="bg-img" style={{background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
       )
     })
+  }
+
+  render(){
+      return this.renderItem(this.state.products)
   }
 }
 

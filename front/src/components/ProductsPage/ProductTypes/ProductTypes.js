@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 ///import NotFound from './components/NotFound/NotFound';
 import './ProductTypes.scss';
+
+
 class ProductTypes extends Component {
   constructor(props) {
     super(props);
