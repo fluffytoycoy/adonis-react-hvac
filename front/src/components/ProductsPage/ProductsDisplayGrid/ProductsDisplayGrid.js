@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 ///import NotFound from './components/NotFound/NotFound';
+import GridItem from './GridItem';
 import './ProductsDisplayGrid.scss';
 import axios from 'axios';
 
@@ -26,7 +27,7 @@ class ProductsDisplayGrid extends Component {
             }, () => {
               console.log(self.state.products)
             })
-          }, index * 1000)
+          }, index * 200)
         })
       )
   }
@@ -48,7 +49,6 @@ class ProductsDisplayGrid extends Component {
   componentWillReceiveProps(newprops){
     //depending on the selected category props changing set fadeClass
     //this handles forward and backwards movement routing browser
-    const self = this;
     const currentSelection = this.state.currentSelection;
     if(currentSelection !== newprops.selectedType){
       this.setState({
@@ -80,12 +80,22 @@ class ProductsDisplayGrid extends Component {
     // this.props.history.push(`/products/${value}`)
   }
 
+  handleFilter = async (submitEvent) =>{
+    submitEvent.preventDefault();
+    console.log('yes')
+  }
+
 render(){
   return (
-    <div>
-    <div id="product-grid" className={`${this.state.loaded}`}>
-      <Products products={this.state.products}/>
-    </div>
+    <div id="product-section">
+      <div className="filters">
+        <form onSubmit={this.handleFilter}>
+          <button type="submit"></button>
+        </form>
+      </div>
+      <div id="product-grid" className={`${this.state.loaded}`}>
+        <GridItem products={this.state.products} history={this.props.history}/>
+      </div>
     </div>
   );
 }
@@ -93,19 +103,6 @@ render(){
 }
 
 
-function Products(props){
-  return props.products === undefined ? 'undefined': delayRender(props.products)
 
-  function delayRender(products){
-    return products.map((product, index)=>{
-        return (
-          <div key={index} className=" bg-img">
-            <h1>{product.name}</h1>
-          </div>
-      )
-    })
-  }
-
-}
 
 export default ProductsDisplayGrid;

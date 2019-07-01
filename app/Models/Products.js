@@ -30,7 +30,7 @@ const Products = [
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
     sides: 'single',
-    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Rutherford%20Wood%20Fireplace/Slides/Rutherford%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/rutherford/hng_woodfp_rutherford-36_960x456.jpg',
     details: {
       info: 'The Rutherford Series offers robust performance and the appearance of a custom-built masonry fireplace—all at a fraction of the cost. Whether a crackle or a blaze, the Rutherford delivers a bold statement in your favorite room.',
       bulletPoints: [
@@ -72,7 +72,7 @@ const Products = [
     category: 'Wood Fireplace',
     HeatingPower: 'Large',
     sides: 'single',
-    imgSrc: 'https://www.fireplaces.com:443/en/Product%20Catalog/Fireplaces/Heatilator/Multi-sided%20Wood%20Fireplace/Slides/Multi-sided%20Slide%201/-/media/images/product-images/heatilator-product-images/fireplaces/st36d-st42a/htl_woodfp_st36d_960x456.jpg',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Northstar%20Wood%20Fireplace/Slides/North%20Star%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/north-star/hng_woodfp_north-star_960x456.jpg',
     details: {
       info: 'The Northstar exceeds the strictest environmental standards in the nation—so you can enjoy roaring fires even in areas where conventional wood-burning fireplaces are banned.',
       bulletPoints: [
@@ -119,6 +119,188 @@ const Products = [
         height: '58-7/8\"',
         depth:	'28\"',
         viewingArea:	'42 x 23\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    name: 'Quadra-Fire Pioneer II Wood Fireplace',
+    category: 'Wood Fireplace',
+    HeatingPower: 'Medium',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    },
+    models: [
+      {
+        name: '',
+        manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
       }
     ]
   }

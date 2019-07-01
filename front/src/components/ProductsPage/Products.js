@@ -22,21 +22,10 @@ class Products extends Component {
         this.setState({
           selectedType: type
         })
-    }
-    // const self = this;
-    // //calls api on load for product list
-    // axios.get('/api/v1/')
-    //   .catch(error => console.log(error))
-    //   .then(response =>
-    //     setTimeout(() => {
-    //       self.setState({
-    //         products: response.data
-    //       })
-    //     }, 3000)
-    //   )
+      }
     }
 
-    componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps){
       const currentSelection = this.props.match.params.type
       const nextSelection = nextProps.match.params.type
       if(currentSelection !== nextSelection){
@@ -46,15 +35,6 @@ class Products extends Component {
       }
     }
 
-  loadProducts = () => {
-    if(this.state.products){
-      return 'Loading...'
-    }else{
-      return this.state.products.toString()
-    }
-  }
-
-
   render() {
     return (
       <div className="container product">
@@ -63,9 +43,7 @@ class Products extends Component {
         </div>
         <div className="product-grid-wrapper">
             <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
-        </div>
-        <div>
-          <ProductSection type={this.state.selectedType} history={this.props.history}/>
+            <ProductSection selectedType={this.state.selectedType} history={this.props.history}/>
         </div>
       </div>
     );
@@ -73,33 +51,23 @@ class Products extends Component {
 }
 
 function ProductSection(props) {
-  const currentSelection = props.type;
-  switch(currentSelection){
+  switch(props.selectedType){
     case 'electric':
-    return <ProductsDisplayGrid selectedType={currentSelection}/>
+    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
     break;
     case 'gas':
-    return <ProductsDisplayGrid selectedType={currentSelection}/>
+    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
     break;
     case 'outdoors':
-    return <ProductsDisplayGrid selectedType={currentSelection}/>
+    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
     break;
     case 'wood':
-    return <ProductsDisplayGrid selectedType={currentSelection}/>
+    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
     break;
     default:
     return  <></>
   }
 
-  function loadWoodProducts(){
-    let data = {};
-    //calls api on load for product list
-    axios.get('/api/v1/')
-      .catch(error => console.log(error))
-      .then(response =>
-          data = (response.data[0].name)
-      )
-      return data;
-  }
+
 }
 export default Products;

@@ -1,9 +1,12 @@
+#product-section{
+  margin-top: 100px;
 #product-grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   opacity: 0;
   transition: opacity 2s ease-in-out;
+
   &.loaded{
     opacity: 1;
   }
@@ -13,9 +16,10 @@
     background-repeat: no-repeat !important;
     background-size: cover !important;
     cursor: pointer;
-    transition: height 1s ease-in-out;
-    margin-top: 20px;
-
+    background: gainsboro;
+    animation: fade-in .5s linear 0s forwards;
+    display: flex;
+    align-items: flex-end;
     &.fade{
           height: 50px;
           margin: 0;
@@ -52,6 +56,10 @@
     }
     h1{
           text-align: center;
+          font-size: 1.5rem;
+          color: white;
+          background: #0000008c;
+          padding: 5px;
     }
   }
   .gas{
@@ -68,4 +76,16 @@
   .outdoors{
       background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Outdoor/Plaza%20Gas%20Fire%20Pit/Slides/Plaza%20Slide%201/-/media/images/product-images/outdoor-products-images/fire-pit/plaza/plaza_4ft_poolside_high-960x456.jpg');
   }
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0;
+    transform: scale(.8);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 }
