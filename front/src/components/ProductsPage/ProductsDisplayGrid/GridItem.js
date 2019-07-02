@@ -9,11 +9,8 @@ class GridItem extends Component {
       products: [],
       visable: []
     };
+    this.linkToProduct = this.linkToProduct.bind(this)
   };
-
-  componentWillMount(){
-    //this.loadGridItems(this.props.products);
-  }
 
   componentWillReceiveProps(newprops){
     clearInterval(this.state.interval);
@@ -31,23 +28,21 @@ class GridItem extends Component {
     var i = 0;
     var intervalId = setInterval(function() {
       if (i >= items.length) {
-        console.log('in here')
         clearInterval(intervalId);
       } else {
         self.setState({
           visable: [...self.state.visable, 'test'],
-        }, ()=> console.log(self.state.visable))
+        })
         i++;
       }
-      console.log('test')
     }, 100);
 
   }
 
-  linkToProduct(){
+  linkToProduct(e){
     //push history
-
-    this.props.history.push(this.props.history.location.pathname + '/1')
+    const productId = e.target.getAttribute('data-key')
+    this.props.history.push(this.props.history.location.pathname + '/' + productId)
   }
 
   displayTimeout(time){
@@ -56,7 +51,6 @@ class GridItem extends Component {
     self.setState({
       visable: {...self.state.visable, [time]: 'yes' }
     })
-    console.log('this')
   }, time * 100000)
   }
 
@@ -65,9 +59,10 @@ class GridItem extends Component {
   }
 
   render(){
+    const self = this;
     const products = this.state.products.map((product, index)=>(
      //this.displayTimeout(index)
-          <div onClick={this.linkToProduct}key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+          <div onClick={self.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
 

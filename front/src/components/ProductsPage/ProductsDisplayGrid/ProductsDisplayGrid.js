@@ -8,10 +8,8 @@ class ProductsDisplayGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loaded: '',
       currentSelection: '',
       products: [],
-      loadingGrid: '',
     };
   };
 
@@ -22,8 +20,6 @@ class ProductsDisplayGrid extends Component {
         .catch(error => console.log(error))
         .then(response => self.setState({
           products: response.data,
-          loadingGrid: true,
-          loaded: 'loaded'
         }))
     }, 0)
   }
@@ -33,38 +29,20 @@ class ProductsDisplayGrid extends Component {
     //minimized pictures
     this.setState({
       currentSelection: this.props.selectedType,
-      loadingGrid: true
     }, ()=> {
       this.getAllProducts();
     })
-    //calls api on load for product list
-
   }
 
   componentWillReceiveProps(newprops){
-    //depending on the selected category props changing set fadeClass
     //this handles forward and backwards movement routing browser
-
     if(this.state.currentSelection !== newprops.selectedType){
 
       this.setState({
         currentSelection: newprops.selectedType,
-        loadingGrid: false,
         products: []
       },()=> {
         this.getAllProducts()
-      })
-    }
-
-    if(!newprops.selectedType){
-      this.setState({
-        fadeClass: '',
-        loaded: 'loaded'
-      })
-    }else{
-      this.setState({
-        fadeClass: 'fade',
-        loaded: 'loaded'
       })
     }
   }
@@ -79,7 +57,7 @@ render(){
   return (
     <div className="product-grid-wrapper">
       <div id="product-section">
-        <div id="product-grid" className={`${this.state.loaded}`}>
+        <div id="product-grid" >
           <GridItem products={this.state.products} history={this.props.history}/>
         </div>
       </div>
