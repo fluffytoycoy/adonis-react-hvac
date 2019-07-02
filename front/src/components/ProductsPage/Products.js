@@ -48,6 +48,7 @@ class Products extends Component {
 }
 
 function ProductSection(props) {
+  return props.selectedType ? <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/> : <></>
   switch(props.selectedType){
     case 'electric':
     return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>

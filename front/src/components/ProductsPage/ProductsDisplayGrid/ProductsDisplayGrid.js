@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 ///import NotFound from './components/NotFound/NotFound';
 import GridItem from './GridItem';
 import './ProductsDisplayGrid.scss';
+import Filters from './Filters/Filters';
 import axios from 'axios';
 
 class ProductsDisplayGrid extends Component {
@@ -56,6 +57,9 @@ class ProductsDisplayGrid extends Component {
   render(){
     return (
       <div className="product-grid-wrapper">
+        <div className="filters">
+          <Filters />
+        </div>
         <div id="product-section">
           <div id="product-grid" >
             <GridItem products={this.state.products} history={this.props.history}/>
