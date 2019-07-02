@@ -80,7 +80,6 @@ render(){
     <div className="product-grid-wrapper">
       <div id="product-section">
         <div id="product-grid" className={`${this.state.loaded}`}>
-
           <GridItem products={this.state.products} history={this.props.history}/>
         </div>
       </div>

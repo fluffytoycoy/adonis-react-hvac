@@ -4,12 +4,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
-  opacity: 0;
   transition: opacity 2s ease-in-out;
 
-  &.loaded{
-    opacity: 1;
-  }
   .bg-img{
     height: 300px;
     background-position: center !important;
@@ -17,9 +13,18 @@
     background-size: cover !important;
     cursor: pointer;
     background: gainsboro;
-    animation: fade-in .5s linear 0s forwards;
+    // animation: fade-in .5s linear 0s forwards;
+    transition: all .5s ease-in;
+    //transition: transform .5s ease-in;
+    transform: scale(.8);
     display: flex;
     align-items: flex-end;
+    opacity: 0;
+
+    &.test{
+      opacity: 1;
+      transform: scale(1);
+    }
     &.fade{
           height: 50px;
           margin: 0;

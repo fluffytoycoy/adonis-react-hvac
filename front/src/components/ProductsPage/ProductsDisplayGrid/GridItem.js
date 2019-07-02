@@ -7,62 +7,72 @@ class GridItem extends Component {
     super(props);
     this.state = {
       products: [],
+      visable: []
     };
   };
 
   componentWillMount(){
-    console.log('fuck')
     //this.loadGridItems(this.props.products);
   }
 
   componentWillReceiveProps(newprops){
     clearInterval(this.state.interval);
     this.setState({
-      products: [],
-      load: false
+      products: newprops.products,
+      loading: true,
+      visable: []
     }, () => this.loadGridItems(newprops.products))
-
-
   }
+
+
 
   loadGridItems(items) {
     const self = this;
     var i = 0;
-    self.setState({
-      interval: intervalId
-    })
     var intervalId = setInterval(function() {
-      if (!self.state.load && i >= items.length) {
-        console.log('clicked end loop')
+      if (i >= items.length) {
+        console.log('in here')
         clearInterval(intervalId);
       } else {
         self.setState({
-          products: [...self.state.products, items[i]],
-          loaded: 'loaded'
-        })
-        i++
+          visable: [...self.state.visable, 'test'],
+        }, ()=> console.log(self.state.visable))
+        i++;
       }
+      console.log('test')
     }, 100);
 
   }
 
   linkToProduct(){
     //push history
+
     this.props.history.push(this.props.history.location.pathname + '/1')
   }
 
-  renderItem(products){
-    return products.map((product, index)=>{
-        return (
-          <div onClick={this.linkToProduct}key={index} className="bg-img" style={{background: `url(${product.imgSrc})`}}>
-            <h1>{product.name}</h1>
-          </div>
-      )
+  displayTimeout(time){
+    const self = this;
+      const interval = setTimeout(function() {
+    self.setState({
+      visable: {...self.state.visable, [time]: 'yes' }
     })
+    console.log('this')
+  }, time * 100000)
+  }
+
+  renderItem(){
+
   }
 
   render(){
-      return this.renderItem(this.state.products)
+    const products = this.state.products.map((product, index)=>(
+     //this.displayTimeout(index)
+          <div onClick={this.linkToProduct}key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+            <h1>{product.name}</h1>
+          </div>
+
+  ));
+      return <>{products}</>
   }
 }
 
