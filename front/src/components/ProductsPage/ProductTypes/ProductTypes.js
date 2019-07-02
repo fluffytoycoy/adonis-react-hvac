@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 ///import NotFound from './components/NotFound/NotFound';
 import './ProductTypes.scss';
 
-
+//This class handles the product type links at the top of the products page
 class ProductTypes extends Component {
   constructor(props) {
     super(props);
@@ -36,10 +36,7 @@ class ProductTypes extends Component {
   }
 
   selection(value){
-    //when a selection is made set fadeClass and push new location in history
-    this.setState({
-      fadeClass: 'fade'
-    })
+    //when a selection is made push new location in history
     this.props.history.push(`/products/${value}`)
   }
 

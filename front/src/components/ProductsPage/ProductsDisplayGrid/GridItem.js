@@ -18,12 +18,12 @@ class GridItem extends Component {
       products: newprops.products,
       loading: true,
       visable: []
-    }, () => this.loadGridItems(newprops.products))
+    }, () => this.addAnimationToGridItems(newprops.products))
   }
 
 
 
-  loadGridItems(items) {
+  addAnimationToGridItems(items) {
     const self = this;
     var i = 0;
     var intervalId = setInterval(function() {
