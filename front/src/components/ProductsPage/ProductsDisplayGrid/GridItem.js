@@ -13,10 +13,10 @@ class GridItem extends Component {
   };
 
   componentWillReceiveProps(newprops){
-    clearInterval(this.state.interval);
+    //everytime new selection is made load new products and set visablity to none
+    //then add visablity
     this.setState({
       products: newprops.products,
-      loading: true,
       visable: []
     }, () => this.addAnimationToGridItems(newprops.products))
   }
@@ -24,6 +24,7 @@ class GridItem extends Component {
 
 
   addAnimationToGridItems(items) {
+    //Interval for adding the visable class to each product on page
     const self = this;
     var i = 0;
     var intervalId = setInterval(function() {
@@ -40,29 +41,14 @@ class GridItem extends Component {
   }
 
   linkToProduct(e){
-    //push history
+    //push history the selected product page
     const productId = e.target.getAttribute('data-key')
     this.props.history.push(this.props.history.location.pathname + '/' + productId)
   }
 
-  displayTimeout(time){
-    const self = this;
-      const interval = setTimeout(function() {
-    self.setState({
-      visable: {...self.state.visable, [time]: 'yes' }
-    })
-  }, time * 100000)
-  }
-
-  renderItem(){
-
-  }
-
   render(){
-    const self = this;
     const products = this.state.products.map((product, index)=>(
-     //this.displayTimeout(index)
-          <div onClick={self.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+          <div onClick={this.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
 

@@ -53,17 +53,17 @@ class ProductsDisplayGrid extends Component {
     console.log('yes')
   }
 
-render(){
-  return (
-    <div className="product-grid-wrapper">
-      <div id="product-section">
-        <div id="product-grid" >
-          <GridItem products={this.state.products} history={this.props.history}/>
+  render(){
+    return (
+      <div className="product-grid-wrapper">
+        <div id="product-section">
+          <div id="product-grid" >
+            <GridItem products={this.state.products} history={this.props.history}/>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
 
 }
 
