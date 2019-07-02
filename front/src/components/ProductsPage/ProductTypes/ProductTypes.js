@@ -43,16 +43,16 @@ class ProductTypes extends Component {
 render(){
   return (
     <div className="product-type-grid">
-      <div className={`gas bg-img ${this.state.fadeClass} ${(this.props.selectedType === 'gas' )? 'selected': ''}`} onClick={()=> this.selection('gas')}>
+      <div className={`gas product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'gas' )? 'selected': ''}`} onClick={()=> this.selection('gas')}>
         <div className="type">Gas Fireplaces</div>
       </div>
-      <div className={`wood bg-img ${this.state.fadeClass} ${(this.props.selectedType === 'wood' )? 'selected': ''}` }onClick={()=> this.selection('wood')}>
+      <div className={`wood product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'wood' )? 'selected': ''}` }onClick={()=> this.selection('wood')}>
         <div className="type">Wood Fireplaces</div>
       </div>
-      <div className={`electric bg-img ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection('electric')}>
+      <div className={`electric product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection('electric')}>
         <div className="type">Electric Fireplaces</div>
       </div>
-      <div className={`outdoors bg-img ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoors' )? 'selected': ''}`} onClick={()=> this.selection('outdoors')}>
+      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoors' )? 'selected': ''}`} onClick={()=> this.selection('outdoors')}>
         <div className="type">Outdoor Fireplaces</div>
       </div>
     </div>

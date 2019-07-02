@@ -57,9 +57,7 @@ class ProductsDisplayGrid extends Component {
   render(){
     return (
       <div className="product-grid-wrapper">
-        <div className="filters">
-          <Filters />
-        </div>
+        <Filters currentSelection={this.state.currentSelection}/>
         <div id="product-section">
           <div id="product-grid" >
             <GridItem products={this.state.products} history={this.props.history}/>

@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
-
-
+import Select from 'react-select';
+import './Filters.scss';
 
 class GridItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
+      powerOptions: [
+        {label: "Low", value: 1},
+        {label: "High", value: 2}
+      ],
+      sideOptions: [
+        {label: 'Front Facing', value: 1},
+        {label: 'Double Sided', value: 2}
+      ],
       visable: []
     };
   };
@@ -17,6 +24,9 @@ class GridItem extends Component {
 
   }
 
+  componentWillUnmount(){
+    console.log('test')
+  }
 
 
   addAnimationToGridItems(items) {
@@ -28,8 +38,22 @@ class GridItem extends Component {
   }
 
   render(){
+    console.log(this.props.currentSelection)
+      return (
+        <div>
+            <form className="filters">
+              <div>
+                <label>Power Options</label>
+                <Select options={this.state.powerOptions} className='select'/>
+              </div>
+              <div>
+                <label>Side Options</label>
+                <Select options={this.state.sideOptions} className='select'/>
+              </div>
+          </form>
+        </div>
+      )
 
-      return <>Filters</>
   }
 }
 

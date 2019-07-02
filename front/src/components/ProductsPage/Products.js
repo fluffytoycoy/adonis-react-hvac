@@ -16,7 +16,6 @@ class Products extends Component {
 
   componentWillMount(){
     const type = this.props.match.params.type;
-    console.log(type)
     if(type){
         this.setState({
           selectedType: type
@@ -49,23 +48,8 @@ class Products extends Component {
 
 function ProductSection(props) {
   return props.selectedType ? <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/> : <></>
-  switch(props.selectedType){
-    case 'electric':
-    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
-    break;
-    case 'gas':
-    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
-    break;
-    case 'outdoors':
-    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
-    break;
-    case 'wood':
-    return <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/>
-    break;
-    default:
-    return  <></>
   }
 
 
-}
+
 export default Products;
