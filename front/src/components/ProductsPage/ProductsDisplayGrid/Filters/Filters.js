@@ -40,13 +40,16 @@ class GridItem extends Component {
 
 
   render(){
-    console.log(this.props.currentSelection)
       return (
         <div>
             <form className="filters">
               <div>
-                <label className="label">Power Options</label>
-                <Select isClearable={true} onChange={()=>console.log()}className='select' styles={colourStyles} options={this.state.powerOptions} label='select'/>
+                <label>Power Options</label>
+                <Select styles={colourStyles} onChange={(select)=>console.log(select ? select.value : '', )}  isClearable={true} className='select'  options={this.state.powerOptions}/>
+              </div>
+              <div>
+                <label>Side Options</label>
+                <Select onChange={(select)=>console.log(select ? select.value : '', )} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
               <div>
                 <label>Side Options</label>
@@ -76,9 +79,7 @@ const dot = (color = '#ccc') => ({
 });
 
 const valuetest = (value, data) =>{
-  console.log(value)
   return  value === 0 ? {} : {...dot(data.color)}
-
 }
 
 const fontWeight = {

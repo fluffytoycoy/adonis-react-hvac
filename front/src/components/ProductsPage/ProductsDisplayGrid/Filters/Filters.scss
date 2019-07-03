@@ -7,10 +7,10 @@
   display: flex;
   justify-content: flex-start;
   padding: 20px 0;
-  input[type=submit]{
-    color: red;
-    height: 20px;
-    width: 80px;
+  div {
+    &:nth-last-child(2){
+          margin-right: auto;
+  }
   }
   .submit-wrapper{
     display: flex;
