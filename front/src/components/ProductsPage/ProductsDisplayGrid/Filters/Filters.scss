@@ -1,9 +1,37 @@
 .select{
-  line-height: 2rem;
   width: 200px;
+  margin-top: 10px;
+  margin-right: 40px;
 }
 .filters{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 20px 0;
+  input[type=submit]{
+    color: red;
+    height: 20px;
+    width: 80px;
+  }
+  .submit-wrapper{
+    display: flex;
+    align-items: flex-end;
+    .submit-btn{
+      background: lightblue;
+      height: 38px;
+      width: 100px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2rem;
+      color: white;
+      font-weight: 700;
+      border: 1px solid lightgrey;
+      cursor: pointer;
+      &:active{
+        background: blue;
+      }
+    }
+  }
+
 }
