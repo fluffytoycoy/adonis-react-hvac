@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
+import SingleProduct from './components/SingleProduct/SingleProduct';
 
 class App extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class App extends Component {
               path="/products/:type"
               component={Products}
             />
+            <Route exact path="/products/:type/:item" component={SingleProduct}/>
             <Route component={NotFound}/>
 				</Switch>
         </div>
