@@ -8,21 +8,7 @@ class ApiController {
     console.log(productType)
     return await Products.filter(product=> product.productType === productType)
   }
-  async getWood() {
-    return await Products.filter(product=> product.sides === 'single')
-  }
 
-  getGas(){
-    return Products;
-  }
-
-  getElectric(){
-    return Products.filter(product=> product.sides === 'double')
-  }
-
-  getOutdoors(){
-    return Products.filter(product=> product.sides === 'single')
-  }
 }
 
 module.exports = ApiController;

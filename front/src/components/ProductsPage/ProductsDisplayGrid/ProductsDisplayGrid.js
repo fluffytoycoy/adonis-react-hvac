@@ -14,10 +14,10 @@ class ProductsDisplayGrid extends Component {
     };
   };
 
-  getAllProducts() {
+  getAllProducts () {
     var self = this;
     setTimeout(function() {
-      axios.get(`/api/v1/${self.state.currentSelection}`)
+    axios.get(`/api/v1/${self.state.currentSelection}`)
         .catch(error => console.log(error))
         .then(response => self.setState({
           products: response.data,
@@ -38,7 +38,6 @@ class ProductsDisplayGrid extends Component {
   componentWillReceiveProps(newprops){
     //this handles forward and backwards movement routing browser
     if(this.state.currentSelection !== newprops.selectedType){
-
       this.setState({
         currentSelection: newprops.selectedType,
         products: []
