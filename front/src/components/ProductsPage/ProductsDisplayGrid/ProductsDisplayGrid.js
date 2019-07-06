@@ -10,7 +10,7 @@ class ProductsDisplayGrid extends Component {
     super(props);
     this.state = {
       currentSelection: '',
-      products: [],
+      products: undefined,
     };
   };
 
@@ -40,7 +40,7 @@ class ProductsDisplayGrid extends Component {
     if(this.state.currentSelection !== newprops.selectedType){
       this.setState({
         currentSelection: newprops.selectedType,
-        products: []
+        products: undefined
       },()=> {
         this.getAllProducts()
       })
@@ -68,11 +68,11 @@ class ProductsDisplayGrid extends Component {
 }
 
 function DisplayGrid(props) {
-  return props.products.length ?   <div id="product-section">
+  return props.products ?   <div id="product-section">
       <div id="product-grid" >
         <GridItem products={props.products} />
       </div>
-    </div> : <>no</>
+    </div> : <>loading</>
 
   }
 
