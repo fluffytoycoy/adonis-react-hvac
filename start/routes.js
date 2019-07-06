@@ -19,11 +19,9 @@ const Route = use('Route');
 const Helpers = use('Helpers');
 
 Route.group(() => {
-  Route.get('/:productType', 'ApiController.getProductByType');
-  Route.get('/wood', 'ApiController.getWood');
-  Route.get('/gas', 'ApiController.getGas');
-  Route.get('/electric', 'ApiController.getElectric');
-  Route.get('/outdoors', 'ApiController.getOutdoors');
+  Route.get('/:productType/', 'ApiController.getProductByType');
+  Route.get('/:productType/:pageNum/', 'ApiController.getProductByType');
+  Route.get('/:productType/:pageNum/:itemsPerPage', 'ApiController.getProductByType');
 }).prefix('api/v1/');
 
 Route.any('*', ({ response }) => {

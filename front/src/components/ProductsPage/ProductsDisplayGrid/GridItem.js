@@ -54,10 +54,9 @@ class GridItem extends Component {
 
 
   render(){
-    //console.log(this.state.products + ' what?')
-    console.log(this.state.products)
+    //console.log(this.state.products)
     const products = this.state.products.map((product, index)=>(
-          <div onClick={this.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+          <div onClick={this.linkToProduct} key={product.id} data-key={product.id} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
 

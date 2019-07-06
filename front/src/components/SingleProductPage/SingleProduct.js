@@ -13,8 +13,9 @@ class SingleProductPage extends Component {
 
 
   componentWillMount(){
+    axios.get()
     console.log(this.props.match.params.type + ' ' + this.props.match.params.item)
-    }
+  }
 
   componentWillReceiveProps(nextProps){
       const currentSelection = this.props.match.params.type

@@ -1,5 +1,6 @@
 const Products = [
   {
+    id: 1,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
@@ -27,6 +28,7 @@ const Products = [
     ]
   },
   {
+    id: 2,
     name: 'Heat & Glo Rutherford Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
@@ -70,6 +72,7 @@ const Products = [
     ]
   },
   {
+    id: 3,
     name: 'Heat & Glo Northstar Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
@@ -97,6 +100,7 @@ const Products = [
     ]
   },
   {
+    id: 4,
     name: 'Heatilator Multi-sided Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
@@ -127,6 +131,7 @@ const Products = [
     ]
   },
   {
+    id: 5,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
@@ -154,6 +159,7 @@ const Products = [
     ]
   },
   {
+    id: 6,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
@@ -180,6 +186,7 @@ const Products = [
     ]
   },
   {
+    id: 7,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
@@ -206,6 +213,7 @@ const Products = [
     ]
   },
   {
+    id: 8,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
@@ -232,6 +240,7 @@ const Products = [
     ]
   },
   {
+    id: 9,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
@@ -258,6 +267,7 @@ const Products = [
     ]
   },
   {
+    id: 10,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',
@@ -284,6 +294,7 @@ const Products = [
     ]
   },
   {
+    id: 11,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     HeatingPower: 'Medium',

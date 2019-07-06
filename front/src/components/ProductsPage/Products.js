@@ -9,12 +9,24 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedType: ''
+      selectedType: '',
+      page: 1,
+      limit: 4,
+      error: false
     };
   };
 
 
   componentWillMount(){
+    this.checkPageParams(this.props.match.params)
+    ? this.setState({
+      page: this.props.match.params.pageNum,
+      limit: this.props.match.params.itemsPerPage,
+    })
+    : this.setState({
+      error: true
+    });
+
     const type = this.props.match.params.type;
     if(type){
         this.setState({
@@ -22,6 +34,20 @@ class Products extends Component {
         })
       }
     }
+
+  checkPageParams (params){
+    if (isValidNumParam(params.pageNum) &&
+      isValidNumParam(params.itemsPerPage)) {
+      return true;
+    } else {
+      return false;
+    }
+
+    function isValidNumParam(param){
+
+      return Number.isInteger(parseInt(param));
+    }
+  }
 
   componentWillReceiveProps(nextProps){
       const currentSelection = this.props.match.params.type
@@ -40,14 +66,16 @@ class Products extends Component {
           <h1>Products</h1>
         </div>
         <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
-        <ProductSection selectedType={this.state.selectedType} history={this.props.history}/>
+        <ProductSection page={this.state.page} limit={this.state.limit} selectedType={this.state.selectedType} history={this.props.history}/>
       </div>
     );
   }
 }
 
 function ProductSection(props) {
-  return props.selectedType ? <ProductsDisplayGrid selectedType={props.selectedType} history={props.history}/> : <></>
+  return props.selectedType ?
+  <ProductsDisplayGrid page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/> 
+  : <></>
   }
 
 

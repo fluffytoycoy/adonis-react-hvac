@@ -14,12 +14,8 @@ class App extends Component {
     };
   };
 
-
   componentWillMount(){
-    }
-
-
-
+  }
 
   render() {
     return (
@@ -31,10 +27,20 @@ class App extends Component {
             <Route exact  path="/products" component={Products} />
             <Route
               exact
-              path="/products/:type"
+              path="/products/:type/"
               component={Products}
             />
-            <Route exact path="/products/:type/:item" component={SingleProduct}/>
+            <Route
+              exact
+              path="/products/:type/:pageNum/"
+              component={Products}
+            />
+            <Route
+              exact
+              path="/products/:type/:pageNum/:itemsPerPage"
+              component={Products}
+            />
+            <Route exact path="/product/:type/:item" component={SingleProduct}/>
             <Route component={NotFound}/>
 				</Switch>
         </div>
