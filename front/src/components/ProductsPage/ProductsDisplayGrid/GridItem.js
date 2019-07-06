@@ -46,7 +46,10 @@ class GridItem extends Component {
     this.props.history.push(this.props.history.location.pathname + '/' + productId)
   }
 
+
+
   render(){
+    console.log(this.state.products + ' what?')
     const products = this.state.products.map((product, index)=>(
           <div onClick={this.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>

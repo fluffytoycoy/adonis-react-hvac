@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
-import SingleProduct from './components/SingleProduct/SingleProduct';
+import SingleProduct from './components/SingleProductPage/SingleProduct';
 
 class App extends Component {
   constructor() {

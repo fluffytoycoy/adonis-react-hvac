@@ -3,7 +3,7 @@ import axios from 'axios';
 
 ///import NotFound from './components/NotFound/NotFound';
 
-class Products extends Component {
+class SingleProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,4 +42,4 @@ function ProductSection(props) {
 
 
 
-export default Products;
+export default SingleProductPage;

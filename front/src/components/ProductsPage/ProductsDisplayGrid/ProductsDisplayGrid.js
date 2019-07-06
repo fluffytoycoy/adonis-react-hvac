@@ -22,7 +22,7 @@ class ProductsDisplayGrid extends Component {
         .then(response => self.setState({
           products: response.data,
         }))
-    }, 0)
+    }, 1000)
   }
 
   componentWillMount(){

@@ -3,15 +3,17 @@
   margin-top: 10px;
   margin-right: 40px;
 }
-.filters{
+.filters {
   display: flex;
   justify-content: flex-start;
   padding: 20px 0;
+
   div {
-    &:nth-last-child(2){
-          margin-right: auto;
+    &:nth-last-child(2) {
+      margin-right: auto;
+    }
   }
-  }
+  
   .submit-wrapper{
     display: flex;
     align-items: flex-end;

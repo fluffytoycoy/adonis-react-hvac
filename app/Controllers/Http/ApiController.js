@@ -3,8 +3,13 @@
 const Products = use('App/Models/Products');
 
 class ApiController {
-  getWood() {
-    return Products.filter(product=> product.sides === 'single')
+  async getProductByType({request}) {
+    const productType = request.params.productType;
+    console.log(productType)
+    return await Products.filter(product=> product.productType === productType)
+  }
+  async getWood() {
+    return await Products.filter(product=> product.sides === 'single')
   }
 
   getGas(){

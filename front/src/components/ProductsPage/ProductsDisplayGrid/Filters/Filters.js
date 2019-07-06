@@ -14,7 +14,9 @@ class GridItem extends Component {
       sideOptions: [
         {label: 'Front Facing', value: 1},
         {label: 'Double Sided', value: 2}
-      ]
+      ],
+      powerFilter: '',
+      sideFilter: '',
     };
   };
 
@@ -37,7 +39,29 @@ class GridItem extends Component {
     //push history the selected product page
   }
 
+  setPowerFilter =(e) =>{
+    if(!e){
+      this.setState({
+        powerFilter: ''
+      })
+    }else{
+      this.setState({
+        powerFilter: e.value
+      })
+    }
+  }
 
+  setSideFilter = (e) =>{
+    if(!e){
+      this.setState({
+        sideFilter: ''
+      })
+    }else{
+      this.setState({
+        sideFilter: e.value
+      })
+    }
+  }
 
   render(){
       return (
@@ -45,15 +69,15 @@ class GridItem extends Component {
             <form className="filters">
               <div>
                 <label>Power Options</label>
-                <Select styles={colourStyles} onChange={(select)=>console.log(select ? select.value : '', )}  isClearable={true} className='select'  options={this.state.powerOptions}/>
+                <Select styles={dotStyles} onChange={this.setPowerFilter}  isClearable={true} className='select'  options={this.state.powerOptions}/>
               </div>
               <div>
                 <label>Side Options</label>
-                <Select onChange={(select)=>console.log(select ? select.value : '', )} isClearable={true} options={this.state.sideOptions} className='select'/>
+                <Select styles={normalStyles} onChange={(select)=>console.log(select ? select.value : '', )} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
               <div>
                 <label>Side Options</label>
-                <Select isClearable={true} options={this.state.sideOptions} className='select'/>
+                <Select styles={normalStyles} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
               <div className="submit-wrapper"><div className='submit-btn' onClick={()=>console.log('test')}>Search</div></div>
           </form>
@@ -78,20 +102,24 @@ const dot = (color = '#ccc') => ({
   },
 });
 
-const valuetest = (value, data) =>{
-  return  value === 0 ? {} : {...dot(data.color)}
-}
-
 const fontWeight = {
   fontWeight: 700
 }
 
-const placeholder= () =>({
+const normalStyles={
+option: (styles)=>{
+  return {...styles, ...fontWeight}
+},
+singleValue: (styles) => ({ ...styles, ...fontWeight, height: 18 }),
+}
 
-})
-
-const colourStyles = {
-control: styles => ({ ...styles, backgroundColor: 'white' }),
+const dotStyles = {
+control: (styles, {isFocused, isSelected, isActive, isHover}) => ({ ...styles,
+  backgroundColor: 'white',
+  ':hover': {
+    borderColor: 'lightblue'
+  }
+}),
 option: (styles, { data, value, isDisabled, isFocused, isSelected }) => {
   const color = chroma(data.color);
   return {
@@ -111,17 +139,18 @@ option: (styles, { data, value, isDisabled, isFocused, isSelected }) => {
         : 'black'
       : data.color,
     cursor: isDisabled ? 'not-allowed' : 'default',
-    fontWeight: 700,
-
+    ...fontWeight,
     ':active': {
       ...styles[':active'],
       backgroundColor: !isDisabled && (isSelected ? data.color : color.alpha(0.3).css()),
+
     },
   };
 },
-input: styles => ({ ...styles, ...dot()}),
-placeholder: styles => ({ ...styles, ...fontWeight  }),
-singleValue: (styles, { data, value }) => ({ ...styles, ...valuetest(value, data), ...fontWeight }),
+input: styles => ({ ...styles}),
+placeholder: styles => ({ ...styles }),
+singleValue: (styles, { data, value }) => ({ ...styles, ...dot(data.color), ...fontWeight, height: 18}),
+
 };
 
 

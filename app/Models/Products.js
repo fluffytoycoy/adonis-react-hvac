@@ -2,6 +2,7 @@ const Products = [
   {
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
+    productType: 'wood',
     HeatingPower: 'Medium',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
@@ -28,6 +29,7 @@ const Products = [
   {
     name: 'Heat & Glo Rutherford Wood Fireplace',
     category: 'Wood Fireplace',
+    productType: 'wood',
     HeatingPower: 'Medium',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Rutherford%20Wood%20Fireplace/Slides/Rutherford%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/rutherford/hng_woodfp_rutherford-36_960x456.jpg',
@@ -70,6 +72,7 @@ const Products = [
   {
     name: 'Heat & Glo Northstar Wood Fireplace',
     category: 'Wood Fireplace',
+    productType: 'wood',
     HeatingPower: 'Large',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Northstar%20Wood%20Fireplace/Slides/North%20Star%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/north-star/hng_woodfp_north-star_960x456.jpg',
@@ -96,6 +99,7 @@ const Products = [
   {
     name: 'Heatilator Multi-sided Wood Fireplace',
     category: 'Wood Fireplace',
+    productType: 'wood',
     HeatingPower: 'Large',
     sides: 'double',
     imgSrc: 'https://www.fireplaces.com:443/en/Product%20Catalog/Fireplaces/Heatilator/Multi-sided%20Wood%20Fireplace/Slides/Multi-sided%20Slide%201/-/media/images/product-images/heatilator-product-images/fireplaces/st36d-st42a/htl_woodfp_st36d_960x456.jpg',
@@ -125,6 +129,7 @@ const Products = [
   {
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
+    productType: 'wood',
     HeatingPower: 'Medium',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
