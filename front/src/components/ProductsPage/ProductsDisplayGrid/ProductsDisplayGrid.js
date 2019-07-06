@@ -47,6 +47,9 @@ class ProductsDisplayGrid extends Component {
     }
   }
 
+  isLoading(){
+    return this.state.products.length
+  }
 
   handleFilter = async (submitEvent) =>{
     submitEvent.preventDefault();
@@ -57,17 +60,21 @@ class ProductsDisplayGrid extends Component {
     return (
       <div className="product-grid-wrapper">
         <Filters currentSelection={this.state.currentSelection}/>
-        <div id="product-section">
-          <div id="product-grid" >
-            <GridItem products={this.state.products} history={this.props.history}/>
-          </div>
-        </div>
+        <DisplayGrid products={this.state.products}/>
       </div>
     );
   }
 
 }
 
+function DisplayGrid(props) {
+  return props.products.length ?   <div id="product-section">
+      <div id="product-grid" >
+        <GridItem products={props.products} />
+      </div>
+    </div> : <>no</>
+
+  }
 
 
 

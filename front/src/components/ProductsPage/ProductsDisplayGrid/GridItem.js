@@ -11,6 +11,13 @@ class GridItem extends Component {
     this.linkToProduct = this.linkToProduct.bind(this)
   };
 
+  componentWillMount(){
+    this.setState({
+      products: this.props.products,
+      visable: []
+    }, () => this.addAnimationToGridItems(this.props.products))
+  }
+
   componentWillReceiveProps(newprops){
     //everytime new selection is made load new products and set visablity to none
     //then add visablity
@@ -48,6 +55,7 @@ class GridItem extends Component {
 
   render(){
     //console.log(this.state.products + ' what?')
+    console.log(this.state.products)
     const products = this.state.products.map((product, index)=>(
           <div onClick={this.linkToProduct} key={index} data-key={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
