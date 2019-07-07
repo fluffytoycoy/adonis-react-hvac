@@ -13,24 +13,26 @@ class SingleProductPage extends Component {
 
 
   componentWillMount(){
-    axios.get()
-    console.log(this.props.match.params.type + ' ' + this.props.match.params.item)
+    if(!this.props.selectedProduct){
+      const self = this;
+      setTimeout(function() {
+      axios.get(`/api/v1/getProductById/${self.props.match.params.item}`)
+          .catch(error => console.log(error))
+          .then(response =>
+            self.props.productSelected(response.data)).then(console.log('test'))
+      }, 1000)
+    }
+    console.log(this.props.selectedProduct)
   }
 
   componentWillReceiveProps(nextProps){
-      const currentSelection = this.props.match.params.type
-      const nextSelection = nextProps.match.params.type
-      if(currentSelection !== nextSelection){
-        this.setState({
-          selectedType: nextSelection
-        })
-      }
+
     }
 
   render() {
     return (
       <div className="container product">
-        <h1>Single Product</h1>
+        <h1>{this.props.selectedProduct ? this.props.selectedProduct.name : 'none'}</h1>
 
       </div>
     );

@@ -18,7 +18,7 @@ class ProductsDisplayGrid extends Component {
     var self = this;
 
     setTimeout(function() {
-    axios.get(`/api/v1/${self.state.currentSelection}/${self.props.page}/${self.props.limit}`)
+    axios.get(`/api/v1/getProductsByType/${self.state.currentSelection}/${self.props.page}/${self.props.limit}`)
         .catch(error => console.log(error))
         .then(response =>
           self.setState({
@@ -28,8 +28,6 @@ class ProductsDisplayGrid extends Component {
   }
 
   componentWillMount(){
-    console.log(this.props.page)
-        console.log(this.props.limit)
     //on mount if exact route wasn't /products render with
     //minimized pictures
     this.setState({
@@ -61,10 +59,11 @@ class ProductsDisplayGrid extends Component {
   }
 
   render(){
+    console.log(this.props)
     return (
       <div className="product-grid-wrapper">
         <Filters currentSelection={this.state.currentSelection}/>
-        <DisplayGrid products={this.state.products} history={this.props.history}/>
+        <DisplayGrid productSelected={this.props.productSelected} products={this.state.products} history={this.props.history}/>
       </div>
     );
   }
@@ -74,7 +73,7 @@ class ProductsDisplayGrid extends Component {
 function DisplayGrid(props) {
   return props.products ?   <div id="product-section">
       <div id="product-grid" >
-        <GridItem products={props.products} history={props.history} />
+        <GridItem productSelected={props.productSelected} products={props.products} history={props.history} />
       </div>
     </div> : <>loading</>
 

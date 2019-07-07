@@ -12,7 +12,8 @@ class Products extends Component {
       selectedType: '',
       page: 1,
       limit: 4,
-      error: false
+      error: false,
+      selectedProduct: undefined
     };
   };
 
@@ -65,16 +66,25 @@ class Products extends Component {
         <div className="product-header">
           <h1>Products</h1>
         </div>
-        <ProductTypes selectedType={this.state.selectedType} history={this.props.history} />
-        <ProductSection page={this.state.page} limit={this.state.limit} selectedType={this.state.selectedType} history={this.props.history}/>
+        <ProductTypes
+          selectedType={this.state.selectedType}
+          history={this.props.history}
+        />
+        <ProductsSection
+            productSelected={this.props.productSelected}
+            page={this.state.page}
+            limit={this.state.limit}
+            selectedType={this.state.selectedType}
+            history={this.props.history}
+        />
       </div>
     );
   }
 }
 
-function ProductSection(props) {
+function ProductsSection(props) {
   return props.selectedType ?
-  <ProductsDisplayGrid page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/> 
+  <ProductsDisplayGrid productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
   : <></>
   }
 

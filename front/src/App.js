@@ -11,10 +11,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      selectedProduct: undefined
     };
+     this.productSelected = this.productSelected.bind(this);
   };
 
   componentWillMount(){
+  }
+
+  productSelected(product){
+    this.setState({
+      selectedProduct: product
+    })
   }
 
   render() {
@@ -24,23 +32,34 @@ class App extends Component {
         <div className="body">
 					<Switch>
 						<Route exact  path="/" component={Home} />
-            <Route exact  path="/products" component={Products} />
+            <Route
+              exact
+              path="/products"
+              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
+            />
             <Route
               exact
               path="/products/:type/"
-              component={Products}
+              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
             />
             <Route
               exact
               path="/products/:type/:pageNum/"
-              component={Products}
+              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
             />
             <Route
               exact
               path="/products/:type/:pageNum/:itemsPerPage"
-              component={Products}
+              render={(props) => <Products {...props} productSelected={this.productSelected} />} />
             />
-            <Route exact path="/product/:type/:item" component={SingleProduct}/>
+            <Route
+              exact
+              path="/product/:item"
+              render={(props) => <SingleProduct {...props}
+                productSelected={this.productSelected}
+                selectedProduct={this.state.selectedProduct} />}
+                />
+              />
             <Route component={NotFound}/>
 				</Switch>
         </div>

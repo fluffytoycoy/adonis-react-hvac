@@ -48,15 +48,18 @@ class GridItem extends Component {
 
   linkToProduct(e){
     //push history the selected product page
-    const productId = e.target.getAttribute('data-key')
-    this.props.history.push(this.props.history.location.pathname + '/' + productId)
+    const productId = e.target.getAttribute('data-id');
+    const index = e.target.getAttribute('data-index');
+    console.log(productId)
+    this.props.productSelected(this.state.products[index])
+    this.props.history.push('/product/' + productId)
   }
 
 
   render(){
     //console.log(this.state.products)
     const products = this.state.products.map((product, index)=>(
-          <div onClick={this.linkToProduct} key={product.id} data-key={product.id} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+          <div onClick={this.linkToProduct} key={product.id} data-id={product.id} data-index={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
 
