@@ -8,10 +8,9 @@ class ApiController {
     const offset = (request.params.pageNum - 1) * numOfItems;
     const productType = request.params.productType;
     let productPayload = {};
-
     productPayload.result = await Products
       .filter(product=> product.productType === productType)
-    productPayload.count = productPayload.test.length;
+    productPayload.count = productPayload.result.length;
     productPayload.result= productPayload.result.slice(offset, (numOfItems + offset));
     return productPayload;
   }
