@@ -19,9 +19,7 @@ const Route = use('Route');
 const Helpers = use('Helpers');
 
 Route.group(() => {
-  Route.get('/GetProductsByType/:productType/', 'ApiController.getProductsByType');
-  Route.get('/GetProductsByType/:productType/:pageNum/', 'ApiController.getProductsByType');
-  Route.get('/GetProductsByType/:productType/:pageNum/:itemsPerPage', 'ApiController.getProductsByType');
+  Route.get('/GetProductsByType', 'ApiController.getProductsByType');
   Route.get('/getProductById/:id', 'ApiController.getProductById');
 }).prefix('api/v1/');
 

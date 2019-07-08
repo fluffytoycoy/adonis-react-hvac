@@ -18,7 +18,7 @@ class ProductsDisplayGrid extends Component {
     var self = this;
 
     setTimeout(function() {
-    axios.get(`/api/v1/getProductsByType/${self.state.currentSelection}/${self.props.page}/${self.props.limit}`)
+    axios.get(`/api/v1/getProductsByType?type=${self.state.currentSelection}&pageNum=${self.props.page}&limit=${self.props.limit}`)
         .catch(error => console.log(error))
         .then(response =>
           self.setState({

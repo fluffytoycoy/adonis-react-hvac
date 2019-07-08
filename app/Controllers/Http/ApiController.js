@@ -4,9 +4,10 @@ const Products = use('App/Models/Products');
 
 class ApiController {
   async getProductsByType({request}) {
-    const numOfItems = parseInt(request.params.itemsPerPage);
-    const offset = (request.params.pageNum - 1) * numOfItems;
-    const productType = request.params.productType;
+    console.log(request._qs)
+    const numOfItems = parseInt(request._qs.limit);
+    const offset = (request._qs.pageNum - 1) * numOfItems;
+    const productType = request._qs.type;
     let productPayload = {};
     productPayload.result = await Products
       .filter(product=> product.productType === productType)
