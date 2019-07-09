@@ -39,10 +39,6 @@ class SingleProductPage extends Component {
   }
 }
 
-function ProductSection(props) {
-
-  }
-
 
 
 export default SingleProductPage;

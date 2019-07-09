@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Products.scss';
 import ProductTypes from './ProductTypes/ProductTypes';
 import ProductsDisplayGrid from './ProductsDisplayGrid/ProductsDisplayGrid';
+
 ///import NotFound from './components/NotFound/NotFound';
 
 class Products extends Component {
@@ -12,22 +13,16 @@ class Products extends Component {
       selectedType: '',
       page: 1,
       limit: 4,
-      error: false,
+      error: {
+        pageNum: false,
+        limit: false
+      },
       selectedProduct: undefined
     };
   };
 
-
   componentWillMount(){
-    this.checkPageParams(this.props.match.params)
-    ? this.setState({
-      page: this.props.match.params.pageNum,
-      limit: this.props.match.params.itemsPerPage,
-    })
-    : this.setState({
-      error: true
-    });
-
+    this.setPagingParams(this.props.match.params)
     const type = this.props.match.params.type;
     if(type){
         this.setState({
@@ -36,27 +31,47 @@ class Products extends Component {
       }
     }
 
-  checkPageParams (params){
-    if (isValidNumParam(params.pageNum) &&
-      isValidNumParam(params.itemsPerPage)) {
-      return true;
-    } else {
-      return false;
-    }
-
-    function isValidNumParam(param){
-
-      return Number.isInteger(parseInt(param));
-    }
-  }
-
   componentWillReceiveProps(nextProps){
-      const currentSelection = this.props.match.params.type
-      const nextSelection = nextProps.match.params.type
-      if(currentSelection !== nextSelection){
+      //Handle new PagingInfo
+      this.setPagingParams(nextProps.match.params)
+      //If selected Type is different setState to new type prop
+      if(this.props.match.params.type !== nextProps.match.params.type){
         this.setState({
-          selectedType: nextSelection
+          selectedType: nextProps.match.params.type
         })
+      }
+
+    }
+
+  setPagingParams(params) {
+
+      if (isValidNumParam(params.pageNum)) {
+        this.setState({
+          page: params.pageNum
+        })
+      } else {
+        this.setState(prevState => ({
+          error: {
+            ...this.state.error,
+            pageNum: true
+          }
+        }))
+      }
+      if (isValidNumParam(params.itemsPerPage)) {
+        this.setState({
+          limit: parseInt(params.itemsPerPage)
+        })
+      } else {
+        this.setState(prevState => ({
+          error: {
+            ...this.state.error,
+            limit: true
+          }
+        }))
+      }
+
+      function isValidNumParam(param) {
+        return Number.isInteger(parseInt(param));
       }
     }
 
