@@ -12,18 +12,20 @@ class ProductsDisplayGrid extends Component {
     this.state = {
       currentSelection: '',
       products: undefined,
+      call: '',
+      productCount: ''
     };
   };
 
   getAllProducts () {
     var self = this;
-
     setTimeout(function() {
     axios.get(`/api/v1/getProductsByType?type=${self.state.currentSelection}&pageNum=${self.props.page}&limit=${self.props.limit}`)
         .catch(error => console.log(error))
         .then(response =>
           self.setState({
           products: response.data.result,
+          productCount: response.data.count
         }, console.log(response)))
     }, 1000)
   }
@@ -39,7 +41,6 @@ class ProductsDisplayGrid extends Component {
   }
 
   componentWillReceiveProps(newprops){
-    console.log('gets props')
     //this handles forward and backwards movement routing browser
     if(this.state.currentSelection !== newprops.selectedType || true){
       this.setState({
@@ -52,8 +53,8 @@ class ProductsDisplayGrid extends Component {
     }
   }
 
-  isLoading(){
-    return this.state.products.length
+  isLoaded(){
+    return this.state.products
   }
 
   getPageInfo(){
@@ -65,18 +66,25 @@ class ProductsDisplayGrid extends Component {
     console.log('yes')
   }
 
+  getTotalPages(){
+    return Math.ceil(this.state.productCount/this.props.limit)
+  }
+
   render(){
+
     return (
+      <>
       <div className="product-grid-wrapper">
         <Filters currentSelection={this.state.currentSelection}/>
         <DisplayGrid productSelected={this.props.productSelected} products={this.state.products} history={this.props.history}/>
-        <Pagination match={this.getPageInfo()} totalPages={2} pageNumber={this.props.page} spread={12/2} />
+
       </div>
+      {this.isLoaded() ? <Pagination match={this.getPageInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
+      </>
     );
   }
 
 }
-
 
 
 function DisplayGrid(props) {
@@ -87,7 +95,5 @@ function DisplayGrid(props) {
     </div> : <>loading</>
 
   }
-
-
 
 export default ProductsDisplayGrid;

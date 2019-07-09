@@ -12,12 +12,11 @@ class Products extends Component {
     this.state = {
       selectedType: '',
       page: 1,
-      limit: 4,
+      limit: 8,
       error: {
         pageNum: false,
         limit: false
       },
-      selectedProduct: undefined
     };
   };
 

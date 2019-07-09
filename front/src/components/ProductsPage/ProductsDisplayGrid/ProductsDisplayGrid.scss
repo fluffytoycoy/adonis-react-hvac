@@ -85,6 +85,19 @@
   }
 }
 
+}
+
+.pagination{
+  display: flex;
+  justify-content: flex-end;
+  li{
+    margin: 10px;
+    a{
+        text-decoration: none;
+    }
+
+  }
+}
 
 @keyframes fade-in{
   0%{
@@ -95,5 +108,4 @@
     opacity: 1;
     transform: scale(1);
   }
-}
 }
