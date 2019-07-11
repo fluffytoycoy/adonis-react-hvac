@@ -53,10 +53,15 @@ class SingleProductPage extends Component {
 }
 
 function ProductBulletPoints(props){
-  return props.bulletPoints.map((bulletPoint, index)=>{
-    console.log(bulletPoint)
-    return <li key={index}>{bulletPoint}</li>
-  })
+  return <ul>
+    <ListItem bulletPoints={props.bulletPoints}/>
+  </ul>
+
+  function ListItem(){
+    return props.bulletPoints.map((bulletPoint, index)=>{
+      return <li key={index}>{bulletPoint}</li>
+    })
+  }
 }
 
 
