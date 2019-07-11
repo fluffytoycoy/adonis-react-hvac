@@ -1,5 +1,6 @@
 import React, {Component } from 'react';
 import axios from 'axios';
+import './SingleProduct.scss';
 
 ///import NotFound from './components/NotFound/NotFound';
 
@@ -30,13 +31,32 @@ class SingleProductPage extends Component {
     }
 
   render() {
+    const product = this.props.selectedProduct
+    console.log(product)
     return (
-      <div className="container product">
-        <h1>{this.props.selectedProduct ? this.props.selectedProduct.name : 'none'}</h1>
-
+      this.props.selectedProduct ?
+      <div className="single-product-wrapper">
+        <div className="container single-product">
+          <div className="product-images">
+            <img src={`${product.imgSrc}`}/>
+          </div>
+          <div className="product-info">
+            <h1>{product.name}</h1>
+            <h2>{product.details.info}</h2>
+            <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
+          </div>
+        </div>
       </div>
+      : 'loading'
     );
   }
+}
+
+function ProductBulletPoints(props){
+  return props.bulletPoints.map((bulletPoint, index)=>{
+    console.log(bulletPoint)
+    return <li key={index}>{bulletPoint}</li>
+  })
 }
 
 

@@ -26,7 +26,7 @@ class ProductsDisplayGrid extends Component {
           self.setState({
           products: response.data.result,
           productCount: response.data.count
-        }, console.log(response)))
+        }))
     }, 1000)
   }
 
@@ -47,7 +47,6 @@ class ProductsDisplayGrid extends Component {
         currentSelection: newprops.selectedType,
         products: undefined
       }, ()=> {
-        console.log('test')
         this.getAllProducts()
       })
     }
@@ -70,6 +69,10 @@ class ProductsDisplayGrid extends Component {
     return Math.ceil(this.state.productCount/this.props.limit)
   }
 
+  test(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   render(){
 
     return (
@@ -79,7 +82,7 @@ class ProductsDisplayGrid extends Component {
         <DisplayGrid productSelected={this.props.productSelected} products={this.state.products} history={this.props.history}/>
 
       </div>
-      {this.isLoaded() ? <Pagination match={this.getPageInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
+      {this.isLoaded() ? <Pagination match={this.getPageInfo()} onClick={this.test}totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
       </>
     );
   }

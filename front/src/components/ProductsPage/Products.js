@@ -43,13 +43,14 @@ class Products extends Component {
     }
 
   setPagingParams(params) {
-
+    console.log(params)
       if (isValidNumParam(params.pageNum)) {
         this.setState({
           page: params.pageNum
         })
       } else {
         this.setState(prevState => ({
+          page: 1,
           error: {
             ...this.state.error,
             pageNum: true
@@ -62,6 +63,7 @@ class Products extends Component {
         })
       } else {
         this.setState(prevState => ({
+          limit: 8,
           error: {
             ...this.state.error,
             limit: true

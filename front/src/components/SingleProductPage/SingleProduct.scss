@@ -1,0 +1,25 @@
+.single-product-wrapper{
+  display: flex;
+  align-items: center;
+  min-height: inherit;
+  .single-product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    .product-images{
+      width: 100%;
+      img{
+        width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
+      }
+    }
+    .product-info{
+      width: 100%;
+      h1{
+        font-size: 2rem;
+      }
+    }
+  }
+}
