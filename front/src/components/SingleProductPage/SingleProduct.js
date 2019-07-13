@@ -1,7 +1,7 @@
 import React, {Component } from 'react';
 import axios from 'axios';
 import './SingleProduct.scss';
-
+import ModelSelection from './ModelSelection';
 import ModelDetails from './ModelDetails';
 
 ///import NotFound from './components/NotFound/NotFound';
@@ -76,32 +76,12 @@ class SingleProductPage extends Component {
           </div>
         </div>
         <div className="extra-info-columns">
-          <div className="bullet-points card">
+          <div>
             <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
         </div>
-        <div className="product-specs">
-            <ModelDetails handleModelChange={this.handleModelChange} modelOptions={this.state.modelOptions}/>
-            <div className="card">
-              <h2>MODEL NUMBER: {this.state.selectedModel.name}</h2>
-              <div className="table">
-                <div>
-                  <h3>width</h3>
-                  <h3>{this.state.selectedModel.width}</h3>
-                </div>
-                <div>
-                  <h3>height</h3>
-                  <h3>{this.state.selectedModel.height}</h3>
-                </div>
-                <div>
-                  <h3>depth</h3>
-                  <h3>{this.state.selectedModel.depth}</h3>
-                </div>
-                <div>
-                  <h3>viewingArea</h3>
-                  <h3>{this.state.selectedModel.viewingArea}</h3>
-                </div>
-            </div>
-          </div>
+          <div className="product-specs">
+              <ModelSelection handleModelChange={this.handleModelChange} modelOptions={this.state.modelOptions}/>
+
 
           </div>
         </div>
@@ -112,14 +92,17 @@ class SingleProductPage extends Component {
 }
 
 function ProductBulletPoints(props){
-  return <ul>
+  return (<div  className="bullet-points card">
+  <ul>
     <ListItem bulletPoints={props.bulletPoints}/>
   </ul>
+  </div>)
 
   function ListItem(){
-    return props.bulletPoints.map((bulletPoint, index)=>{
+    return (
+    props.bulletPoints.map((bulletPoint, index)=>{
       return <li key={index}>{bulletPoint}</li>
-    })
+    }))
   }
 }
 
