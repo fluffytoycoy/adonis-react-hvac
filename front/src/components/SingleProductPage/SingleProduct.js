@@ -1,8 +1,7 @@
 import React, {Component } from 'react';
 import axios from 'axios';
 import './SingleProduct.scss';
-import ModelSelection from './ModelSelection';
-import ModelDetails from './ModelDetails';
+import ModelDetails from './ModelDetails/ModelDetails';
 
 ///import NotFound from './components/NotFound/NotFound';
 
@@ -76,14 +75,7 @@ class SingleProductPage extends Component {
         </div>
         <div className="extra-info-columns">
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
-          <div className="product-specs float">
-              <ModelSelection
-                handleModelChange={this.handleModelChange}
-                modelOptions={this.state.modelOptions}
-                selectedModel={this.state.selectedModel}
-              />
-              <ModelDetails selectedModel={this.state.selectedModel}/>
-          </div>
+          <ModelDetails handleModelChange={this.handleModelChange}  modelOptions={this.state.modelOptions} selectedModel={this.state.selectedModel}/>
           <div className="downloads float card">downloads</div>
         </div>
       </div>
