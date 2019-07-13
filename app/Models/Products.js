@@ -18,7 +18,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -90,7 +90,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'HG-40',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/PremierWood.pdf',
         width: '40\"',
         height: '40-1/4\"',
@@ -149,7 +149,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -176,7 +176,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -203,7 +203,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -230,7 +230,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -257,7 +257,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -284,7 +284,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -311,7 +311,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -339,7 +339,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',
@@ -411,7 +411,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'HG-40',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/PremierWood.pdf',
         width: '40\"',
         height: '40-1/4\"',
@@ -470,7 +470,7 @@ const Products = [
     },
     models: [
       {
-        name: '',
+        name: 'QFP-42',
         manualSrc: 'http://downloads.hearthnhome.com/brochures/EPAWoodFireplaces_QDF-1067U.pdf',
         width: '42\"',
         height: '43-3/4\"',

@@ -1,32 +1,119 @@
-.single-product-wrapper{
+.single-product-wrapper {
   display: flex;
-  align-items: center;
-  min-height: inherit;
-  .single-product{
+  flex-direction: column;
+  color: #404040;
+
+  .single-product {
     display: grid;
-    grid-gap: 100px;
-    .product-images{
+    grid-template-rows: auto 1fr;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    img {
       width: 100%;
-      img{
-        width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 5px;
-      }
+      max-height: 400px;
+      min-height: 250px;
+      object-fit: cover;
+      box-shadow: #d2d2d2 0 0 9px;
     }
-    .product-info{
+
+    .product-info {
       width: 100%;
-      h1{
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      align-items: center;
+      box-shadow: black 0 0 8px;
+
+      h1 {
         font-size: 2rem;
-    text-align: center;
-    padding: 20px;
+
+            text-align: center;
+            padding: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #000000;
+            clip-path: unset;
+            background: linear-gradient(red, orange);
+            -webkit-text-fill-color: #00000000;
+            -webkit-background-clip: text;
+            -webkit-text-stroke: #000000d6 1px;
       }
-      h2{
+
+      h2 {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+        text-indent: 20px;
+        line-height: 1.6rem;
         padding: 20px;
-font-size: 1.1rem;
-letter-spacing: 1px;
-text-indent: 20px;
+      }
+
+      ul {
+        margin-bottom: 20px;
       }
     }
+  }
+
+  .extra-info-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    margin-bottom: 30px;
+
+    .bullet-points {
+      background: gainsboro;
+      padding: 20px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        li {
+          margin: 10px 0;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .product-specs {
+    > div {
+      background: gainsboro;
+      padding: 20px;
+
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .table {
+        > div {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid orange;
+          margin: 10px 0;
+          padding-bottom: 5px;
+
+          h3 {
+            font-size: 1.1rem;
+            text-transform: capitalize;
+
+            &:first-child {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .card{
+    background: gainsboro;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: #8e8e8e 0 0 5px 0;
   }
 }

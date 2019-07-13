@@ -35,15 +35,41 @@ class SingleProductPage extends Component {
     console.log(product)
     return (
       this.props.selectedProduct ?
-      <div className="single-product-wrapper">
-        <div className="container single-product">
-          <div className="product-images">
-            <img src={`${product.imgSrc}`}/>
-          </div>
+      <div className="container single-product-wrapper">
+        <div className="single-product card">
+            <img src={`${product.imgSrc}`} alt={product.name}/>
           <div className="product-info">
             <h1>{product.name}</h1>
             <h2>{product.details.info}</h2>
+          </div>
+        </div>
+        <div className="extra-info-columns">
+          <div className="bullet-points card">
             <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
+          </div>
+          <div className="product-specs">
+            <div className="card">
+              <h2>{product.models[0].name}</h2>
+              <div className="table">
+                <div>
+                  <h3>width</h3>
+                  <h3>{product.models[0].width}</h3>
+                </div>
+                <div>
+                  <h3>height</h3>
+                  <h3>{product.models[0].height}</h3>
+                </div>
+                <div>
+                  <h3>depth</h3>
+                  <h3>{product.models[0].depth}</h3>
+                </div>
+                <div>
+                  <h3>viewingArea</h3>
+                  <h3>{product.models[0].viewingArea}</h3>
+                </div>
+              </div>
+            </div>
+                                  <div className="models card"> </div>
           </div>
         </div>
       </div>
