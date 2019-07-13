@@ -46,10 +46,16 @@ class SingleProductPage extends Component {
         <div className="extra-info-columns">
           <div className="bullet-points card">
             <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
-          </div>
-          <div className="product-specs">
+        </div>
+        <div className="product-specs">
+          <div className="models card">
+            <h2>Change Model:</h2>
+            <select>
+              <option>RUTH-36</option>
+              </select>
+              </div>
             <div className="card">
-              <h2>{product.models[0].name}</h2>
+              <h2>MODEL NUMBER: {product.models[0].name}</h2>
               <div className="table">
                 <div>
                   <h3>width</h3>
@@ -67,9 +73,9 @@ class SingleProductPage extends Component {
                   <h3>viewingArea</h3>
                   <h3>{product.models[0].viewingArea}</h3>
                 </div>
-              </div>
             </div>
-                                  <div className="models card"> </div>
+          </div>
+
           </div>
         </div>
       </div>
