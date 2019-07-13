@@ -2,33 +2,65 @@ import React, {Component } from 'react';
 import axios from 'axios';
 import './SingleProduct.scss';
 
+import ModelDetails from './ModelDetails';
+
 ///import NotFound from './components/NotFound/NotFound';
 
 class SingleProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedType: ''
+      selectedModel: '',
+      modelOptions: [],
     };
+    this.handleModelChange = this.handleModelChange.bind(this);
   };
 
-
-  componentWillMount(){
-    if(!this.props.selectedProduct){
-      const self = this;
-      setTimeout(function() {
+  componentWillMount() {
+  if (!this.props.selectedProduct) {
+    const self = this;
+    setTimeout(function() {
       axios.get(`/api/v1/getProductById/${self.props.match.params.item}`)
-          .catch(error => console.log(error))
-          .then(response =>
-            self.props.productSelected(response.data)).then(console.log('test'))
-      }, 1000)
+        .then(response =>
+          self.props.productSelected(response.data)
+        )
+        .then(selectedProduct=>
+          self.setState({
+            selectedModel: selectedProduct.models[0].name
+          }, self.getModelOptions())
+        )
+        .catch(error =>
+          console.log(error)
+        )
+    }, 1000)
+  } else{
+    this.setState({
+      selectedModel: this.props.selectedProduct.models[0].name
+    }, this.getModelOptions())
+  }
+}
+
+  getModelOptions(){
+    const modelOptions = this.props.selectedProduct.models.map(model =>
+      {return {label: model.name, value: model.name }}
+    )
+    this.setState({
+      modelOptions: modelOptions
+    })
+  }
+
+  handleModelChange(e){
+    console.log(e.value)
+    if(this.state.selectedModel  !== e.value){
+      this.setState({
+        selectedModel: e.value
+      })
     }
-    console.log(this.props.selectedProduct)
   }
 
   componentWillReceiveProps(nextProps){
 
-    }
+  }
 
   render() {
     const product = this.props.selectedProduct
@@ -48,30 +80,25 @@ class SingleProductPage extends Component {
             <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
         </div>
         <div className="product-specs">
-          <div className="models card">
-            <h2>Change Model:</h2>
-            <select>
-              <option>RUTH-36</option>
-              </select>
-              </div>
+            <ModelDetails handleModelChange={this.handleModelChange} modelOptions={this.state.modelOptions}/>
             <div className="card">
-              <h2>MODEL NUMBER: {product.models[0].name}</h2>
+              <h2>MODEL NUMBER: {this.state.selectedModel.name}</h2>
               <div className="table">
                 <div>
                   <h3>width</h3>
-                  <h3>{product.models[0].width}</h3>
+                  <h3>{this.state.selectedModel.width}</h3>
                 </div>
                 <div>
                   <h3>height</h3>
-                  <h3>{product.models[0].height}</h3>
+                  <h3>{this.state.selectedModel.height}</h3>
                 </div>
                 <div>
                   <h3>depth</h3>
-                  <h3>{product.models[0].depth}</h3>
+                  <h3>{this.state.selectedModel.depth}</h3>
                 </div>
                 <div>
                   <h3>viewingArea</h3>
-                  <h3>{product.models[0].viewingArea}</h3>
+                  <h3>{this.state.selectedModel.viewingArea}</h3>
                 </div>
             </div>
           </div>

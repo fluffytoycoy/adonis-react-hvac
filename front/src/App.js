@@ -20,8 +20,14 @@ class App extends Component {
   }
 
   productSelected(product){
-    this.setState({
-      selectedProduct: product
+    return new Promise((resolve, reject)=>{
+      this.setState({
+        selectedProduct: product
+      }, ()=>{
+        this.state.selectedProduct
+        ? resolve(this.state.selectedProduct)
+        : reject('selectedProduct state was not set')
+      })
     })
   }
 
