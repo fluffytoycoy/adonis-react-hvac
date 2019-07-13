@@ -76,14 +76,14 @@ class SingleProductPage extends Component {
         </div>
         <div className="extra-info-columns">
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
-          <div className="product-specs">
+          <div className="downloads">downloads</div>
+          <div className="product-specs float">
               <ModelSelection
                 handleModelChange={this.handleModelChange}
                 modelOptions={this.state.modelOptions}
                 selectedModel={this.state.selectedModel}
               />
               <ModelDetails selectedModel={this.state.selectedModel}/>
-
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@ class SingleProductPage extends Component {
 
 function ProductBulletPoints(props){
   return (
-    <div  className="bullet-points card">
+    <div  className="bullet-points card float">
       <ul>
         <ListItem bulletPoints={props.bulletPoints}/>
       </ul>
