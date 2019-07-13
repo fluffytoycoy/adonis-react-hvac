@@ -3,13 +3,15 @@ import Select from 'react-select';
 import chroma from 'chroma-js';
 
 function ModelSelection(props){
+  //selected value formated to select-react requirements
+  const selectedValue = {label: props.selectedModel.name, value: props.selectedModel.name}
 
     return (
       <div className="models card">
         <h2>Change Model:</h2>
         <Select
           className="model-select"
-          value={props.modelOptions[0]}
+          value={selectedValue}
           onChange={props.handleModelChange}
           options={props.modelOptions}/>
       </div>

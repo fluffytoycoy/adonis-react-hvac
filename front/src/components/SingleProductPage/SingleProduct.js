@@ -10,7 +10,7 @@ class SingleProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedModel: '',
+      selectedModel: {},
       modelOptions: [],
     };
     this.handleModelChange = this.handleModelChange.bind(this);
@@ -26,7 +26,7 @@ class SingleProductPage extends Component {
         )
         .then(selectedProduct=>
           self.setState({
-            selectedModel: selectedProduct.models[0].name
+            selectedModel: selectedProduct.models[0]
           }, self.getModelOptions())
         )
         .catch(error =>
@@ -35,7 +35,7 @@ class SingleProductPage extends Component {
     }, 1000)
   } else{
     this.setState({
-      selectedModel: this.props.selectedProduct.models[0].name
+      selectedModel: this.props.selectedProduct.models[0]
     }, this.getModelOptions())
   }
 }
@@ -50,10 +50,10 @@ class SingleProductPage extends Component {
   }
 
   handleModelChange(e){
-    console.log(e.value)
     if(this.state.selectedModel  !== e.value){
+      const selectedModel = this.props.selectedProduct.models.find(model=> model.name === e.value)
       this.setState({
-        selectedModel: e.value
+        selectedModel: selectedModel
       })
     }
   }
@@ -64,7 +64,6 @@ class SingleProductPage extends Component {
 
   render() {
     const product = this.props.selectedProduct
-    console.log(product)
     return (
       this.props.selectedProduct ?
       <div className="container single-product-wrapper">
@@ -76,12 +75,14 @@ class SingleProductPage extends Component {
           </div>
         </div>
         <div className="extra-info-columns">
-          <div>
-            <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
-        </div>
+          <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
           <div className="product-specs">
-              <ModelSelection handleModelChange={this.handleModelChange} modelOptions={this.state.modelOptions}/>
-
+              <ModelSelection
+                handleModelChange={this.handleModelChange}
+                modelOptions={this.state.modelOptions}
+                selectedModel={this.state.selectedModel}
+              />
+              <ModelDetails selectedModel={this.state.selectedModel}/>
 
           </div>
         </div>
@@ -92,11 +93,13 @@ class SingleProductPage extends Component {
 }
 
 function ProductBulletPoints(props){
-  return (<div  className="bullet-points card">
-  <ul>
-    <ListItem bulletPoints={props.bulletPoints}/>
-  </ul>
-  </div>)
+  return (
+    <div  className="bullet-points card">
+      <ul>
+        <ListItem bulletPoints={props.bulletPoints}/>
+      </ul>
+    </div>
+  )
 
   function ListItem(){
     return (
