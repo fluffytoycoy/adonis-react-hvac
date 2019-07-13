@@ -76,7 +76,6 @@ class SingleProductPage extends Component {
         </div>
         <div className="extra-info-columns">
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
-          <div className="downloads">downloads</div>
           <div className="product-specs float">
               <ModelSelection
                 handleModelChange={this.handleModelChange}
@@ -85,6 +84,7 @@ class SingleProductPage extends Component {
               />
               <ModelDetails selectedModel={this.state.selectedModel}/>
           </div>
+          <div className="downloads float card">downloads</div>
         </div>
       </div>
       : 'loading'
