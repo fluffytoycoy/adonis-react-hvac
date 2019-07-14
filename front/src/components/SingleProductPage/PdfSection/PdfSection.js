@@ -23,15 +23,18 @@ function PdfButtons(props){
 
 function ActivePdfButtons(props){
   return(
-  <div className="open-buttons">
-    <a onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">close</a>
+  <div className="buttons">
+  <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
+    <a className="close-btn" onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">close</a>
+
   </div>)
 }
 
 function ClosedPdfButtons(props){
   return(
-  <div className="closed-buttons">
-    <a onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">open</a>
+  <div className="buttons">
+              <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
+    <a className="open-btn" onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">View Manual</a>
   </div>)
 }
 
