@@ -2,16 +2,16 @@ import React from 'react';
 
 
 function PdfSection(props){
+  console.log('test')
   return (
     <div className="downloads float card">
       <PdfButtons iframeOpen={props.iframeOpen} toggleiframe={props.toggleiframe} manualSrc={props.manualSrc} />
-      <iframe title="product-pdf" className={`${props.iframeOpen ? 'open' : ''}`}src="" name="myFrame" ></iframe>
+      <iframe title="product-pdf" className={`${props.iframeOpen ? 'open' : ''}`} src={`${props.iframeOpen ? props.manualSrc : ''}`} name="myFrame" ></iframe>
     </div>
   )
 }
 
 function PdfButtons(props){
-  console.log(props)
   return (
     <>
       {props.iframeOpen
