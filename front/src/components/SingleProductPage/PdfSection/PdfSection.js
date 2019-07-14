@@ -24,7 +24,7 @@ function PdfButtons(props){
 function ActivePdfButtons(props){
   return(
   <div className="buttons">
-  <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
+    <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
     <a className="close-btn" onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">close</a>
 
   </div>)
