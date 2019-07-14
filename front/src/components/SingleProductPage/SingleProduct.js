@@ -3,16 +3,16 @@ import axios from 'axios';
 import './SingleProduct.scss';
 import ModelDetails from './ModelDetails/ModelDetails';
 
-///import NotFound from './components/NotFound/NotFound';
-
 class SingleProductPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedModel: {},
       modelOptions: [],
+      iframeOpen: false,
     };
     this.handleModelChange = this.handleModelChange.bind(this);
+    this.toggleiframe = this.toggleiframe.bind(this);
   };
 
   componentWillMount() {
@@ -57,6 +57,12 @@ class SingleProductPage extends Component {
     }
   }
 
+  toggleiframe(){
+    this.setState({
+      iframeOpen: !this.state.iframeOpen
+    })
+  }
+
   componentWillReceiveProps(nextProps){
 
   }
@@ -76,7 +82,10 @@ class SingleProductPage extends Component {
         <div className="extra-info-columns">
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
           <ModelDetails handleModelChange={this.handleModelChange}  modelOptions={this.state.modelOptions} selectedModel={this.state.selectedModel}/>
-          <div className="downloads float card">downloads</div>
+          <div className="downloads float card">
+            <a onClick={this.toggleiframe} href={this.state.selectedModel.manualSrc} target="myFrame">click me</a>
+            <iframe title="product-pdf" className={`${this.state.iframeOpen ? 'open' : ''}`}src="" name="myFrame" ></iframe>
+          </div>
         </div>
       </div>
       : 'loading'

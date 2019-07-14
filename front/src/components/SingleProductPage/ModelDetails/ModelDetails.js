@@ -2,7 +2,6 @@ import React from 'react';
 import ModelSelection from './ModelSelection';
 
 function ModelDetails(props){
-  console.log(props.selectedModel)
   return (
     <div className="product-specs float">
       <ModelSelection
