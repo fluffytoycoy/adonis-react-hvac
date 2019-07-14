@@ -2,6 +2,7 @@ import React, {Component } from 'react';
 import axios from 'axios';
 import './SingleProduct.scss';
 import ModelDetails from './ModelDetails/ModelDetails';
+import PdfSection from './PdfSection/PdfSection';
 
 class SingleProductPage extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class SingleProductPage extends Component {
     this.state = {
       selectedModel: {},
       modelOptions: [],
-      iframeOpen: false,
+      iframeOpen: '',
     };
     this.handleModelChange = this.handleModelChange.bind(this);
     this.toggleiframe = this.toggleiframe.bind(this);
@@ -82,10 +83,11 @@ class SingleProductPage extends Component {
         <div className="extra-info-columns">
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
           <ModelDetails handleModelChange={this.handleModelChange}  modelOptions={this.state.modelOptions} selectedModel={this.state.selectedModel}/>
-          <div className="downloads float card">
-            <a onClick={this.toggleiframe} href={this.state.selectedModel.manualSrc} target="myFrame">click me</a>
-            <iframe title="product-pdf" className={`${this.state.iframeOpen ? 'open' : ''}`}src="" name="myFrame" ></iframe>
-          </div>
+          <PdfSection
+          manualSrc={this.state.selectedModel.manualSrc}
+          toggleiframe={this.toggleiframe}
+          iframeOpen={this.state.iframeOpen}
+          bsProp={'bsProp'}/>
         </div>
       </div>
       : 'loading'
