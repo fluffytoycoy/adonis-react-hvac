@@ -69,7 +69,7 @@ class App extends Component {
             <Route component={NotFound}/>
 				</Switch>
         </div>
-        <section style={{background: 'orange', width: '100%', height: '100px'}}>
+        <section style={{background: 'orange', width: '100%', height: '100px', position: 'relative', bottom: '0'}}>
 
         </section>
       </Router>

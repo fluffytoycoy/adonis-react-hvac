@@ -1,12 +1,11 @@
 .product-grid-wrapper{
-  margin-bottom: 20px;
+  margin: 0 20px 20px;
   #product-section{
   #product-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
     grid-gap: 10px;
     transition: opacity 2s ease-in-out;
-
     .bg-img{
       height: 300px;
       background-position: center !important;
