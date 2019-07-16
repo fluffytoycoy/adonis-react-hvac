@@ -17,10 +17,15 @@ class Products extends Component {
         pageNum: false,
         limit: false
       },
+      queries: {
+        powerOptions: 'high',
+        sideOptions: '',
+      }
     };
   };
 
   componentWillMount(){
+    console.log(this.props.match.params)
     this.setPagingParams(this.props.match.params)
     const type = this.props.match.params.type;
     if(type){
@@ -43,7 +48,6 @@ class Products extends Component {
     }
 
   setPagingParams(params) {
-    console.log(params)
       if (isValidNumParam(params.pageNum)) {
         this.setState({
           page: params.pageNum
@@ -90,6 +94,7 @@ class Products extends Component {
             productSelected={this.props.productSelected}
             page={this.state.page}
             limit={this.state.limit}
+            queries={this.state.queries}
             selectedType={this.state.selectedType}
             history={this.props.history}
         />
@@ -100,7 +105,7 @@ class Products extends Component {
 
 function ProductsSection(props) {
   return props.selectedType ?
-  <ProductsDisplayGrid productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
+  <ProductsDisplayGrid queries={props.queries} productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
   : <></>
   }
 

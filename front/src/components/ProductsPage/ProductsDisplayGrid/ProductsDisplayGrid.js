@@ -20,8 +20,9 @@ class ProductsDisplayGrid extends Component {
 
   getAllProducts () {
     var self = this;
+    const queryString = this.getFilterQueries(this.props.queries)
     setTimeout(function() {
-    axios.get(`/api/v1/getProductsByType?type=${self.state.currentSelection}&pageNum=${self.props.page}&limit=${self.props.limit}`)
+    axios.get(`/api/v1/getProductsByType${queryString}`)
         .catch(error => console.log(error))
         .then(response =>
           self.setState({
@@ -29,6 +30,16 @@ class ProductsDisplayGrid extends Component {
           productCount: response.data.count
         }))
     }, 1000)
+  }
+
+  getFilterQueries(queries){
+    let queryString = `?type=${this.state.currentSelection}&pageNum=${this.props.page}&limit=${this.props.limit}`;
+    Object.keys(queries).map(key=>{
+      if(queries[key]){
+        queryString += `&${key}=${queries[key]}`
+      }
+    })
+    return queryString;
   }
 
   componentWillMount(){

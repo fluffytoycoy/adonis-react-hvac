@@ -76,7 +76,7 @@ const Products = [
     name: 'Heat & Glo Northstar Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'Large',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Northstar%20Wood%20Fireplace/Slides/North%20Star%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/north-star/hng_woodfp_north-star_960x456.jpg',
     details: {
