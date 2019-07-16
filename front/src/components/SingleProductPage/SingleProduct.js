@@ -3,6 +3,7 @@ import axios from 'axios';
 import './SingleProduct.scss';
 import ModelDetails from './ModelDetails/ModelDetails';
 import PdfSection from './PdfSection/PdfSection';
+import Loading from '../Utils/Loading/Loading';
 
 class SingleProductPage extends Component {
   constructor(props) {
@@ -71,9 +72,12 @@ class SingleProductPage extends Component {
   render() {
     const product = this.props.selectedProduct
     return (
-      this.props.selectedProduct ?
       <div className="container single-product-wrapper">
-        <div className="single-product card">
+
+
+        {this.props.selectedProduct ?
+          <>
+          <div className="single-product card">
             <img src={`${product.imgSrc}`} alt={product.name}/>
           <div className="product-info">
             <h1>{product.name}</h1>
@@ -84,13 +88,14 @@ class SingleProductPage extends Component {
           <ProductBulletPoints bulletPoints={product.details.bulletPoints}/>
           <ModelDetails handleModelChange={this.handleModelChange}  modelOptions={this.state.modelOptions} selectedModel={this.state.selectedModel}/>
           <PdfSection
-          manualSrc={this.state.selectedModel.manualSrc}
-          toggleiframe={this.toggleiframe}
-          iframeOpen={this.state.iframeOpen}
-          bsProp={'bsProp'}/>
+            manualSrc={this.state.selectedModel.manualSrc}
+            toggleiframe={this.toggleiframe}
+            iframeOpen={this.state.iframeOpen}
+            bsProp={'bsProp'}/>
         </div>
+        </>
+        : <Loading/>}
       </div>
-      : 'loading'
     );
   }
 }
