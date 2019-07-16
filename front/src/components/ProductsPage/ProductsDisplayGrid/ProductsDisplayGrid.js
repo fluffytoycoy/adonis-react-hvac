@@ -4,6 +4,7 @@ import GridItem from './GridItem';
 import './ProductsDisplayGrid.scss';
 import Filters from './Filters/Filters';
 import Pagination from 'react-router-pagination';
+import Loading from '../../Utils/Loading/Loading';
 import axios from 'axios';
 
 class ProductsDisplayGrid extends Component {
@@ -95,7 +96,7 @@ function DisplayGrid(props) {
       <div id="product-grid" >
         <GridItem productSelected={props.productSelected} products={props.products} history={props.history} />
       </div>
-    </div> : <>loading</>
+    </div> : <Loading/>
 
   }
 
