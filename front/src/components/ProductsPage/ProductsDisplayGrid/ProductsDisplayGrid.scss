@@ -1,6 +1,7 @@
 .product-grid-wrapper{
-  margin: 0 20px 20px;
+  margin-bottom: 20px;
   #product-section{
+    margin: 20px 0;
   #product-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
@@ -65,6 +66,7 @@
             color: white;
             background: #0000008c;
             padding: 5px;
+                width: 100%;
       }
     }
     .gas{
@@ -88,11 +90,16 @@
 
 .pagination{
   display: flex;
-  justify-content: flex-end;
+      justify-content: flex-end;
+      margin: auto 20px 32px;
   li{
-    margin: 10px;
     a{
+        padding: 10px 15px;
+        background: #00c0ff;
+        color: white;
         text-decoration: none;
+        border: white solid 1px;
+        border-radius: 5px;
     }
 
   }

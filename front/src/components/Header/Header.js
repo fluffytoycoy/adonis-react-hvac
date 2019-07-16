@@ -11,8 +11,10 @@ function Header(){
     return (
       <div className="header">
         <div className="container">
-            <h1>Header</h1>
-            </div>
+          <div>
+              <h1>Header</h1>
+          </div>
+        </div>
       </div>
 
     );
