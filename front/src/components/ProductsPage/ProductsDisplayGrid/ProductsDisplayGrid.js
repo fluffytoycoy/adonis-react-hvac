@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 ///import NotFound from './components/NotFound/NotFound';
 import GridItem from './GridItem';
 import './ProductsDisplayGrid.scss';
-import Filters from './Filters/Filters';
 import Pagination from 'react-router-pagination';
 import Loading from '../../Utils/Loading/Loading';
 import axios from 'axios';
@@ -14,13 +13,14 @@ class ProductsDisplayGrid extends Component {
       currentSelection: '',
       products: undefined,
       call: '',
-      productCount: ''
+      productCount: '',
     };
   };
 
   getAllProducts () {
     var self = this;
     const queryString = this.getFilterQueries(this.props.queries)
+    console.log(queryString)
     setTimeout(function() {
     axios.get(`/api/v1/getProductsByType${queryString}`)
         .catch(error => console.log(error))
@@ -72,29 +72,32 @@ class ProductsDisplayGrid extends Component {
     return {path: '/products/:type/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: this.props.limit}}
   }
 
-  handleFilter = async (submitEvent) =>{
-    submitEvent.preventDefault();
-    console.log('yes')
-  }
+  // handleFilterSubmit = async (newQuery) =>{
+  //   this.setState({
+  //     queries: newQuery
+  //   })
+  // }
 
   getTotalPages(){
     return Math.ceil(this.state.productCount/this.props.limit)
   }
 
-  test(){
+  scrollToTop(){
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   render(){
-
     return (
       <>
       <div className="product-grid-wrapper">
-        <Filters currentSelection={this.state.currentSelection}/>
-        <DisplayGrid productSelected={this.props.productSelected} products={this.state.products} history={this.props.history}/>
 
+
+        <DisplayGrid
+          productSelected={this.props.productSelected}
+          products={this.state.products}
+          history={this.props.history}/>
       </div>
-      {this.isLoaded() ? <Pagination match={this.getPageInfo()} onClick={this.test}totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
+      {this.isLoaded() ? <Pagination match={this.getPageInfo()} onClick={this.scrollToTop} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
       </>
     );
   }

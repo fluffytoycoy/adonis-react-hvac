@@ -8,16 +8,22 @@ class GridItem extends Component {
     super(props);
     this.state = {
       powerOptions: [
-        {label: "Low", value: 1, color: 'orange'},
-        {label: "High", value: 2, color: 'red'}
+        {label: "Low", value: 'low', color: 'orange', filter:'powerFilter'},
+        {label: "High", value: 'high', color: 'red', filter:'powerFilter'}
       ],
       sideOptions: [
-        {label: 'Front Facing', value: 1},
-        {label: 'Double Sided', value: 2}
+        {label: 'Front Facing', value: 'single', filter:'powerFilter'},
+        {label: 'Double Sided', value: 'double', filter:'powerFilter'}
       ],
-      powerFilter: '',
-      sideFilter: '',
+      queries:{
+        powerFilter: '',
+        sideFilter: ''
+      },
+
     };
+    this.setPowerFilter = this.setPowerFilter.bind(this);
+    this.setSideFilter = this.setSideFilter.bind(this);
+    this.submit = this.submit.bind(this);
   };
 
   componentWillReceiveProps(newprops){
@@ -39,28 +45,27 @@ class GridItem extends Component {
     //push history the selected product page
   }
 
-  setPowerFilter =(e) =>{
-    if(!e){
-      this.setState({
-        powerFilter: ''
-      })
-    }else{
-      this.setState({
-        powerFilter: e.value
-      })
+  setPowerFilter(e){
+    this.setState(prevState =>({
+      queries: {
+        ...prevState.queries,
+      powerFilter: e ? e.value : ''
     }
+    }))
   }
 
-  setSideFilter = (e) =>{
-    if(!e){
-      this.setState({
-        sideFilter: ''
-      })
-    }else{
-      this.setState({
-        sideFilter: e.value
-      })
+  setSideFilter(e){
+    this.setState(prevState =>({
+      queries: {
+        ...prevState.queries,
+      sideFilter: e ? e.value : ''
     }
+    }))
+  }
+
+  submit(e){
+    e.preventDefault()
+    this.props.handleFilterSubmit(this.state.queries)
   }
 
   render(){
@@ -69,17 +74,17 @@ class GridItem extends Component {
             <form className="filters">
               <div>
                 <label>Power Options</label>
-                <Select styles={dotStyles} onChange={this.setPowerFilter}  isClearable={true} className='select'  options={this.state.powerOptions}/>
+                <Select data-name='powerFilter' styles={dotStyles} onChange={this.setPowerFilter} isClearable={true} className='select'  options={this.state.powerOptions}/>
               </div>
               <div>
                 <label>Side Options</label>
-                <Select styles={normalStyles} onChange={(select)=>console.log(select ? select.value : '', )} isClearable={true} options={this.state.sideOptions} className='select'/>
+                <Select styles={normalStyles} onChange={this.setSideFilter} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
               <div>
                 <label>Side Options</label>
                 <Select styles={normalStyles} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
-              <div className="submit-wrapper"><div className='submit-btn' onClick={()=>console.log('test')}>Search</div></div>
+              <div className="submit-wrapper"><div className='submit-btn' onClick={this.submit}>Search</div></div>
           </form>
         </div>
       )

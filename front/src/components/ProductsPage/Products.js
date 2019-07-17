@@ -1,9 +1,9 @@
 import React, {Component } from 'react';
 import axios from 'axios';
 import './Products.scss';
+import Filters from './Filters/Filters';
 import ProductTypes from './ProductTypes/ProductTypes';
 import ProductsDisplayGrid from './ProductsDisplayGrid/ProductsDisplayGrid';
-
 ///import NotFound from './components/NotFound/NotFound';
 
 class Products extends Component {
@@ -18,7 +18,7 @@ class Products extends Component {
         limit: false
       },
       queries: {
-        powerOptions: 'high',
+        powerOptions: '',
         sideOptions: '',
       }
     };
@@ -80,6 +80,7 @@ class Products extends Component {
       }
     }
 
+
   render() {
     return (
       <div className="container product">
@@ -88,16 +89,18 @@ class Products extends Component {
         </div>
         <ProductTypes
           selectedType={this.state.selectedType}
-          history={this.props.history}
-        />
+          history={this.props.history}/>
+          <Filters
+            setPowerFilter={this.setPowerFilter}
+            currentSelection={this.state.currentSelection}
+            handleFilterSubmit={this.handleFilterSubmit}/>
         <ProductsSection
             productSelected={this.props.productSelected}
             page={this.state.page}
             limit={this.state.limit}
             queries={this.state.queries}
             selectedType={this.state.selectedType}
-            history={this.props.history}
-        />
+            history={this.props.history}/>
       </div>
     );
   }
@@ -108,7 +111,5 @@ function ProductsSection(props) {
   <ProductsDisplayGrid queries={props.queries} productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
   : <></>
   }
-
-
 
 export default Products;

@@ -1,119 +1,136 @@
-.product-grid-wrapper{
+.product-grid-wrapper {
   margin-bottom: 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  #product-section{
+
+  #product-section {
     margin: 20px 0;
-  #product-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
-    grid-gap: 10px;
-    transition: opacity 2s ease-in-out;
-    .bg-img{
-      height: 300px;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      background-size: cover !important;
-      cursor: pointer;
-      background: gainsboro;
-      // animation: fade-in .5s linear 0s forwards;
-      transition: all .5s ease-in;
-      //transition: transform .5s ease-in;
-      transform: scale(.8);
-      display: flex;
-      align-items: flex-end;
-      opacity: 0;
 
-      &.test{
-        opacity: 1;
-        transform: scale(1);
-      }
-      &.fade{
-            height: 50px;
-            margin: 0;
-            .type{
-              background: lightblue;
-            }
+    #product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(307px, 332.5px));
+      grid-gap: 10px;
+      transition: opacity 2s ease-in-out;
 
-      }
-      &.selected{
-        .type{
-            background: #0000008c;
-                margin: 0;
-        }
-
-      }
-
-      .type{
+      .bg-img {
+        height: 300px;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        cursor: pointer;
+        background: gainsboro;
+        // animation: fade-in .5s linear 0s forwards;
+        transition: all 0.5s ease-in;
+        //transition: transform .5s ease-in;
+        transform: scale(.8);
         display: flex;
-        justify-content: center;
         align-items: flex-end;
-        color: white;
-        font-size: 2rem;
-        background: #0000008c;
-        height: 30px;
-        padding: 10px;
+        opacity: 0;
 
-      }
-      &:hover{
-        .type{
-              background: #000000c4;
-          text-shadow: white 0px 0px 10px;
+        &.test {
+          opacity: 1;
+          transform: scale(1);
+        }
 
+        &.fade {
+          height: 50px;
+          margin: 0;
+
+          .type {
+            background: lightblue;
+          }
+        }
+
+        &.selected {
+          .type {
+            background: #0000008c;
+            margin: 0;
+          }
+        }
+
+        .type {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          color: white;
+          font-size: 2rem;
+          background: #0000008c;
+          height: 30px;
+          padding: 10px;
+        }
+
+        &:hover {
+          .type {
+            background: #000000c4;
+            text-shadow: white 0 0 10px;
+          }
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 1.5rem;
+          color: white;
+          background: #0000008c;
+          padding: 5px;
+          width: 100%;
         }
       }
-      h1{
-            text-align: center;
-            font-size: 1.5rem;
-            color: white;
-            background: #0000008c;
-            padding: 5px;
-                width: 100%;
+
+      .gas {
+        background: url("https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Foundation%20Pier%20Series%20Gas%20Fireplace/Slides/Slide%201-1/-/media/images/fpl/product-images/fireplaces/hng/foundation/fdn-pier_960x456.jpg");
+      }
+
+      .wood {
+        background: url("https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Royal%20Hearth%20Wood%20Fireplace/Slides/Royal%20Hearth/-/media/images/fpl/product-images/fireplaces/hng/royal-hearth/hng_woodfp_royal-hearth-36_960x456.jpg");
+      }
+
+      .electric {
+        background: url("https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Simplifire/Simplifire%20Wall-Mount%20Electric%20Fireplace/Slides/Slide%201/-/media/images/product-images/simplifire-product-images/wall-mount/simplifire_wall-mount58_black_blue_blue_960x456.jpg");
+      }
+
+      .outdoors {
+        background: url("https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Outdoor/Plaza%20Gas%20Fire%20Pit/Slides/Plaza%20Slide%201/-/media/images/product-images/outdoor-products-images/fire-pit/plaza/plaza_4ft_poolside_high-960x456.jpg");
       }
     }
-    .gas{
-      background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Foundation%20Pier%20Series%20Gas%20Fireplace/Slides/Slide%201-1/-/media/images/fpl/product-images/fireplaces/hng/foundation/fdn-pier_960x456.jpg');
-
-    }
-    .wood{
-      background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Royal%20Hearth%20Wood%20Fireplace/Slides/Royal%20Hearth/-/media/images/fpl/product-images/fireplaces/hng/royal-hearth/hng_woodfp_royal-hearth-36_960x456.jpg');
-
-    }
-    .electric{
-        background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Simplifire/Simplifire%20Wall-Mount%20Electric%20Fireplace/Slides/Slide%201/-/media/images/product-images/simplifire-product-images/wall-mount/simplifire_wall-mount58_black_blue_blue_960x456.jpg');
-    }
-    .outdoors{
-        background: url('https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Outdoor/Plaza%20Gas%20Fire%20Pit/Slides/Plaza%20Slide%201/-/media/images/product-images/outdoor-products-images/fire-pit/plaza/plaza_4ft_poolside_high-960x456.jpg');
-    }
   }
 }
 
-}
-
-.pagination{
+.pagination {
   display: flex;
-      justify-content: flex-end;
-      margin: auto 20px 32px;
-  li{
-    a{
-        padding: 10px 15px;
-        background: #00c0ff;
-        color: white;
-        text-decoration: none;
-        border: white solid 1px;
-        border-radius: 5px;
-    }
+  justify-content: flex-end;
+  margin: auto 20px 32px;
 
+  li {
+    a {
+      padding: 10px 15px;
+      background: #00c0ff;
+      color: white;
+      text-decoration: none;
+      border: white solid 1px;
+      border-radius: 5px;
+    }
   }
 }
+@media only screen and (max-width: 1400px) {
+  .product-grid-wrapper {
 
-@keyframes fade-in{
-  0%{
+    #product-section {
+
+      #product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
+
+      }
+    }
+  }
+}
+@keyframes fade-in {
+  0% {
     opacity: 0;
     transform: scale(.8);
   }
-  100%{
+
+  100% {
     opacity: 1;
     transform: scale(1);
   }

@@ -12,8 +12,11 @@
     &:nth-last-child(2) {
       margin-right: auto;
     }
+    svg{
+      cursor: pointer;
+    }
   }
-  
+
   .submit-wrapper{
     display: flex;
     align-items: flex-end;
