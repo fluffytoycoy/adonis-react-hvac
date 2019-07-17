@@ -17,9 +17,9 @@ class GridItem extends Component {
       ],
       queries:{
         powerFilter: '',
-        sideFilter: ''
+        sideFilter: '',
       },
-
+      SearchUpdate: false,
     };
     this.setPowerFilter = this.setPowerFilter.bind(this);
     this.setSideFilter = this.setSideFilter.bind(this);
@@ -29,15 +29,6 @@ class GridItem extends Component {
   componentWillReceiveProps(newprops){
     //everytime new selection is made load new products and set visablity to none
     //then add visablity
-
-  }
-
-  componentWillUnmount(){
-    console.log('test')
-  }
-
-
-  addAnimationToGridItems(items) {
 
   }
 
@@ -60,7 +51,25 @@ class GridItem extends Component {
         ...prevState.queries,
       sideFilter: e ? e.value : ''
     }
-    }))
+  }),()=>{
+      this.updateSearch(this.isQueryChanged(this.props.currentQuery));
+  })
+  }
+
+  isQueryChanged(query){
+    const currentQuery = this.state.queries;
+    if(query.sideFilter === currentQuery.sideFilter
+      && query.powerFilter === currentQuery.powerFilter){
+        return false
+      }else{
+        return true;
+      }
+  }
+
+  updateSearch(value){
+    this.setState({
+      updateSearch: value
+    })
   }
 
   submit(e){
@@ -84,6 +93,7 @@ class GridItem extends Component {
                 <label>Side Options</label>
                 <Select styles={normalStyles} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
+              {this.state.updateSearch ? <p>Update Search</p> : <></>}
               <div className="submit-wrapper"><div className='submit-btn' onClick={this.submit}>Search</div></div>
           </form>
         </div>

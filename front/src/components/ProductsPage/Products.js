@@ -18,8 +18,8 @@ class Products extends Component {
         limit: false
       },
       queries: {
-        powerOptions: '',
-        sideOptions: '',
+        powerFilter: '',
+        sideFilter: '',
       }
     };
     this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
@@ -98,7 +98,9 @@ class Products extends Component {
           history={this.props.history}/>
           <FilterSection
             selectedType={this.state.selectedType}
-            handleFilterSubmit={this.handleFilterSubmit}/>
+            handleFilterSubmit={this.handleFilterSubmit}
+            currentQuery={this.state.queries}
+            />
         <ProductsSection
             productSelected={this.props.productSelected}
             page={this.state.page}
@@ -119,7 +121,7 @@ function ProductsSection(props) {
 
   function FilterSection(props){
     return props.selectedType ?
-    <Filters currentSelection={props.selectedType} handleFilterSubmit={props.handleFilterSubmit}/>
+    <Filters currentQuery={props.currentQuery} currentSelection={props.selectedType} handleFilterSubmit={props.handleFilterSubmit}/>
     : <></>
   }
 
