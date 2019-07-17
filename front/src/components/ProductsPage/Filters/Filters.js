@@ -74,6 +74,7 @@ class GridItem extends Component {
 
   submit(e){
     e.preventDefault()
+    this.updateSearch(false);
     this.props.handleFilterSubmit(this.state.queries)
   }
 
@@ -93,8 +94,11 @@ class GridItem extends Component {
                 <label>Side Options</label>
                 <Select styles={normalStyles} isClearable={true} options={this.state.sideOptions} className='select'/>
               </div>
+
+              <div className="submit-wrapper">
               {this.state.updateSearch ? <p>Update Search</p> : <></>}
-              <div className="submit-wrapper"><div className='submit-btn' onClick={this.submit}>Search</div></div>
+                <div className='submit-btn' onClick={this.submit}>Search</div>
+              </div>
           </form>
         </div>
       )
