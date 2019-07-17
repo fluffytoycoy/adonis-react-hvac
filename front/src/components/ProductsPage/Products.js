@@ -22,6 +22,7 @@ class Products extends Component {
         sideOptions: '',
       }
     };
+    this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
   };
 
   componentWillMount(){
@@ -80,6 +81,11 @@ class Products extends Component {
       }
     }
 
+  handleFilterSubmit(query){
+    this.setState({
+      queries: query
+    })
+  }
 
   render() {
     return (
@@ -90,9 +96,8 @@ class Products extends Component {
         <ProductTypes
           selectedType={this.state.selectedType}
           history={this.props.history}/>
-          <Filters
-            setPowerFilter={this.setPowerFilter}
-            currentSelection={this.state.currentSelection}
+          <FilterSection
+            selectedType={this.state.selectedType}
             handleFilterSubmit={this.handleFilterSubmit}/>
         <ProductsSection
             productSelected={this.props.productSelected}
@@ -110,6 +115,12 @@ function ProductsSection(props) {
   return props.selectedType ?
   <ProductsDisplayGrid queries={props.queries} productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
   : <></>
+  }
+
+  function FilterSection(props){
+    return props.selectedType ?
+    <Filters currentSelection={props.selectedType} handleFilterSubmit={props.handleFilterSubmit}/>
+    : <></>
   }
 
 export default Products;
