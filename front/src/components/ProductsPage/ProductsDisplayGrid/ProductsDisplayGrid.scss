@@ -9,7 +9,7 @@
 
     #product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(307px, 332.5px));
+      grid-template-columns: repeat(auto-fit, minmax(302px, 332.5px));
       grid-gap: 10px;
       transition: opacity 2s ease-in-out;
 
@@ -112,7 +112,7 @@
     }
   }
 }
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1420px) {
   .product-grid-wrapper {
 
     #product-section {
