@@ -8,9 +8,8 @@
     "start": "node server.js",
     "test": "node ace test",
     "front": "npm start --prefix front",
-    "react": "node run front",
     "dev": "concurrently \"npm run start\" \"npm run front\"",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+     "heroku-postbuild":      "NPM_CONFIG_PRODUCTION=false npm install --prefix front  && npm run build --prefix front"  },
   },
   "keywords": [
     "adonisjs",
