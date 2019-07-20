@@ -1,3 +1,5 @@
+@import '../../../sass/variables';
+
 .product-type-grid{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(307px, 1fr));
@@ -11,18 +13,25 @@
     cursor: pointer;
     transition: height 1s ease-in-out;
     &.fade{
+      &:hover{
+        border: none;
+        .type{
+          border: 2px solid $light-blue;
+        }
+      }
           height: 50px;
           margin: 0;
           .type{
-            background: lightblue;
+            background: white;
+            color: $light-black !important;
           }
     }
     &.selected{
       .type{
-          background: #0000008c;
-              margin: 0;
+          background: #0000008c !important;
+          margin: 0;
+          color: white !important;
       }
-
     }
 
     .type{
@@ -37,8 +46,8 @@
 
     }
     &:hover{
+      border: 2px solid $light-blue;
       .type{
-            background: #000000c4;
         text-shadow: white 0px 0px 10px;
 
       }

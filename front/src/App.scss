@@ -3,7 +3,7 @@
 .body{
   margin-top: $header-height;
   min-height: calc(100vh - (100px + #{$header-height}));
-
+  color: $light-black;
 }
 
 .container{
