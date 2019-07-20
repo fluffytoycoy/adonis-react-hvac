@@ -1,6 +1,8 @@
+@import 'sass/variables';
+
 .body{
-  margin-top: 56px;
-  min-height: calc(100vh - 156px);
+  margin-top: $header-height;
+  min-height: calc(100vh - (100px + #{$header-height}));
 
 }
 
