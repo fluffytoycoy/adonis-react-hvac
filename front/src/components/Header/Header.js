@@ -8,7 +8,7 @@ function Header(){
       <div id="header">
         <div className="container">
           <div className="nav">
-              <img src="/img/chamber_logo.png" />
+              <Link className="logo" to="/"><img src="/img/chamber_logo.png" /></Link>
               <div>
                 <h3>(565)-555-3432</h3>
                 <ul>

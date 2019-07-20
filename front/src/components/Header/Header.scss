@@ -1,39 +1,49 @@
-#header{
+#header {
   background: #00c0ff;
   //padding: 20px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 5;
-  .nav{
+
+  .nav {
     display: flex;
     padding: 10px 0;
-    img{
-      height: 100%;
-      margin-right: auto;
-      position: relative;
-      min-height: 74px;
 
+    .logo {
+      margin-right: auto;
+
+      img {
+        height: 100%;
+        position: relative;
+        min-height: 74px;
+      }
     }
-    > div{
+
+    > div {
       display: flex;
-    flex-direction: column;
-      h3{
+      flex-direction: column;
+
+      h3 {
         font-size: 1.5rem;
         text-align: right;
         font-weight: 500;
       }
-      ul{
+
+      ul {
         display: flex;
         margin-top: auto;
-        li{
+
+        li {
           letter-spacing: 1px;
           font-weight: 500;
-          &:not(:last-child){
+
+          &:not(:last-child) {
             margin-right: 30px;
           }
-          a{
-            &:hover{
+
+          a {
+            &:hover {
               text-shadow: orange 0 0 2px;
               color: white;
             }

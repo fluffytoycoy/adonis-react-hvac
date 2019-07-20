@@ -16,14 +16,14 @@
       &:hover{
         border: none;
         .type{
-          border: 2px solid $light-blue;
+          text-shadow: $light-blue 0px 0px 5px;
         }
       }
           height: 50px;
           margin: 0;
           .type{
             background: white;
-            color: $light-black !important;
+            color: $light-blue;
           }
     }
     &.selected{
