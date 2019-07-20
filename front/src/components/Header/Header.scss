@@ -11,7 +11,9 @@
   .nav {
     display: flex;
     padding: 10px 0;
-
+    h3{
+      color: white;
+    }
     .logo {
       margin-right: auto;
 
@@ -67,6 +69,6 @@
     z-index: -1;
     border-bottom: #d7d7d7 1px solid;
     /* border-top: #d7d7d7 1px solid; */
-    box-shadow: #7b7a7a 0 0 11px 0;
+    //box-shadow: #7b7a7a 0 0 11px 0;
   }
 }
