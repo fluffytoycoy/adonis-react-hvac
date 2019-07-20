@@ -1,8 +1,30 @@
-.header{
+#header{
   background: #00c0ff;
-  padding: 20px 0;
+  //padding: 20px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 5;
+  .nav{
+    display: flex;
+    img{
+      height: 100%;
+      margin-right: auto;
+      position: relative;
+      top: 23px;
+
+    }
+    > div{
+      display: flex;
+    flex-direction: column;
+      h3{
+        font-size: 2rem;
+        text-align: right;
+      }
+      ul{
+        display: flex;
+        margin-top: auto;
+      }
+    }
+  }
 }
