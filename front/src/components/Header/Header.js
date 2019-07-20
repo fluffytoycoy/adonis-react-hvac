@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './Header.scss';
 
 function Header(){
@@ -11,11 +12,11 @@ function Header(){
               <div>
                 <h3>(565)-555-3432</h3>
                 <ul>
-                  <li><a href="">Home</a></li>
-                  <li><a href="">Services</a></li>
-                  <li><a href="">Products</a></li>
-                  <li><a href="">About</a></li>
-                  <li><a href="">Contact</a></li>
+                  <li><Link to="/">Home</Link></li>
+                  <li><Link to="">Services</Link></li>
+                  <li><Link to="/products">Products</Link></li>
+                  <li><Link to="about">About</Link></li>
+                  <li><Link href="contact">Contact</Link></li>
                 </ul>
               </div>
           </div>

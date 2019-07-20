@@ -7,23 +7,39 @@
   z-index: 5;
   .nav{
     display: flex;
+    padding: 10px 0;
     img{
       height: 100%;
       margin-right: auto;
       position: relative;
-      top: 23px;
+      min-height: 74px;
 
     }
     > div{
       display: flex;
     flex-direction: column;
       h3{
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: right;
+        font-weight: 500;
       }
       ul{
         display: flex;
         margin-top: auto;
+        li{
+          letter-spacing: 1px;
+          font-weight: 500;
+          &:not(:last-child){
+            margin-right: 30px;
+          }
+          a{
+            color: #454545f5;
+            &:hover{
+              text-shadow: orange 0 0 2px;
+              color: white;
+            }
+          }
+        }
       }
     }
   }
