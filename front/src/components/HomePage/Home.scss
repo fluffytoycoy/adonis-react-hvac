@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     h1 {
       font-size: 4rem;
       color: white;
@@ -33,6 +34,27 @@
   .home-body{
     height: 500px;
     background: white;
-        clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
+    margin-top: 100px;
+    &:before{
+      background: inherit;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 10%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      -webkit-transform: skewY(-1.5deg);
+      transform: skewY(2.8deg);
+      -webkit-transform-origin: 100%;
+      transform-origin: 0%;
+      z-index: -1;
+    }
+    .about-us{
+      padding-top: 20px;
+      h2{
+        font-size: 2rem;
+      }
+    }
   }
 }

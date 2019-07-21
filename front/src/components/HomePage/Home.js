@@ -15,7 +15,13 @@ function Home(){
           <div className="bg">
           </div>
         </div>
-        <div className="home-body"></div>
+        <div className="home-body">
+          <div className="container">
+            <div className="about-us">
+              <h2>About Us</h2>
+            </div>
+          </div>
+        </div>
       </div>
     );
 
