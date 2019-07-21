@@ -1,0 +1,38 @@
+#home {
+  min-height: inherit;
+  .hero{
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-transform: uppercase;
+
+      span {
+        color: orange;
+        font-weight: 700;
+      }
+    }
+    .bg {
+
+      min-height: 100vh;
+      background: linear-gradient(#00c1ff, #0000007d), url("https://www.co.muscatine.ia.us/ImageRepository/Document?documentID=3150");
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+
+  .home-body{
+    height: 500px;
+    background: white;
+        clip-path: polygon(0 0, 100% 19%, 100% 100%, 0% 100%);
+  }
+}

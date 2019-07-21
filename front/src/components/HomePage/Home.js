@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Home.scss';
 
 function Home(){
 
@@ -9,10 +9,13 @@ function Home(){
 
 
     return (
-      <div className="container home">
-        <div>
-          <h1>Home</h1>
+      <div id="home">
+        <div className="hero">
+          <h1>Muscatines trusted <span>HVAC</span> experts</h1>
+          <div className="bg">
+          </div>
         </div>
+        <div className="home-body"></div>
       </div>
     );
 
