@@ -1,3 +1,5 @@
+@import '../../sass/variables';
+
 #home {
   min-height: inherit;
   .hero{
@@ -5,15 +7,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    color: white;
     h1 {
       font-size: 4rem;
-      color: white;
       text-transform: uppercase;
+      padding: 0 20px;
+      margin: 0 auto;
+      text-align: center;
 
       span {
         color: orange;
         font-weight: 700;
+      }
+    }
+    h3{
+        text-align: center;
+        margin: 20px;
+        font-size: 1.5rem;
+    }
+    .contact-btn{
+      padding: 10px 20px;
+      background: #ffa500d6;
+      border-radius: 10px;
+      border: 2px solid white;
+      cursor: pointer;
+      border: 2px solid #ffffff9c;
+      text-shadow: $light-black 0 0 2px;
+      &:hover{
+        border: 2px solid #ffffff;
+        background: orange;
       }
     }
     .bg {
