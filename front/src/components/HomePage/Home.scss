@@ -120,8 +120,30 @@
 
         img {
           max-height: 100px;
+          max-width: 100%;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  #home {
+    .service-model-icons {
+      grid-template-columns: repeat(auto-fill, minmax(181px, 1fr)) !important;
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 763px) {
+
+  #home {
+    .service-model-icons {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+
     }
   }
 }
