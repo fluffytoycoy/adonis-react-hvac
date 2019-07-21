@@ -2,13 +2,15 @@
 
 #home {
   min-height: inherit;
-  .hero{
+
+  .hero {
     min-height: inherit;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: white;
+
     h1 {
       font-size: 4rem;
       text-transform: uppercase;
@@ -21,12 +23,14 @@
         font-weight: 700;
       }
     }
-    h3{
-        text-align: center;
-        margin: 20px;
-        font-size: 1.5rem;
+
+    h3 {
+      text-align: center;
+      margin: 20px;
+      font-size: 1.5rem;
     }
-    .contact-btn{
+
+    .contact-btn {
       padding: 10px 20px;
       background: #ffa500d6;
       border-radius: 10px;
@@ -34,13 +38,14 @@
       cursor: pointer;
       border: 2px solid #ffffff9c;
       text-shadow: $light-black 0 0 2px;
-      &:hover{
+
+      &:hover {
         border: 2px solid #ffffff;
         background: orange;
       }
     }
-    .bg {
 
+    .bg {
       min-height: 100vh;
       background: linear-gradient(#00c1ff, #0000007d), url("https://www.co.muscatine.ia.us/ImageRepository/Document?documentID=3150");
       background-size: cover;
@@ -53,12 +58,11 @@
     }
   }
 
-
-  .home-body{
-    height: 500px;
+  .home-body {
     background: white;
     margin-top: 100px;
-    &:before{
+
+    &:before {
       background: inherit;
       bottom: 0;
       content: '';
@@ -70,13 +74,53 @@
       -webkit-transform: skewY(-1.5deg);
       transform: skewY(2.8deg);
       -webkit-transform-origin: 100%;
-      transform-origin: 0%;
+      transform-origin: 0;
       z-index: -1;
     }
-    .about-us{
+
+    .about-us {
       padding-top: 20px;
-      h2{
+
+      h2 {
         font-size: 2rem;
+        text-align: center;
+      }
+    }
+
+    .space {
+      height: 500px;
+
+      &:nth-child(odd) {
+        background: orange;
+      }
+    }
+
+    .service-section {
+      padding: 50px 0;
+
+      h2 {
+        margin: 50px 0 100px;
+        text-align: center;
+        font-size: 3rem;
+      }
+
+      .service-model-icons {
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: repeat(2, 100px);
+        justify-items: center;
+        align-items: center;
+        grid-row-gap: 50px;
+        row-gap: 50px;
+        grid-column-gap: 20px;
+        column-gap: 20px;
+        margin: 0 auto;
+        margin: 50px auto;
+        grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+
+        img {
+          max-height: 100px;
+        }
       }
     }
   }
