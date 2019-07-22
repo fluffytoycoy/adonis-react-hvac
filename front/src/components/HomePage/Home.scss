@@ -79,7 +79,7 @@
     }
 
     .about-us {
-      padding: 0 0 50px;
+          padding: 50px 0;
 
       img {
         height: 500px;
@@ -114,18 +114,21 @@
     }
 
     .bullet-points {
-      height: 500px;
       background: linear-gradient(#ffa5008c, #ffa5008c), url("~/img/hvac.png");
+      background-repeat: no-repeat;
+      background-size: cover;
       .container{
           > div{
             display: flex;
             justify-content: space-evenly;
-            padding: 50px 0;
+            padding: 50px 0 0;
+            flex-wrap: wrap;
             .circle{
               text-shadow: black 0 0 10px;
               text-align: center;
               background: #0000007a;
               padding: 20px;
+              margin-bottom: 50px;
               h3{
                 text-align: center;
                 font-size: 1.5rem;
@@ -138,7 +141,13 @@
                 background: #00c0ff;
                 padding: 40px;
                 border-radius: 50%;
-                box-shadow: white 0 0 5px;
+                box-shadow: #013b4e 0px 5px 0px 0px;
+
+                transition: all .1s ease-in;
+                &:hover{
+                  box-shadow: #013b4e 0px 0px 0px 0px;
+                  transform: translate(0, 5px);
+                }
               }
               p{
                 color: white;
