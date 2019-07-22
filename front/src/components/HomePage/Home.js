@@ -10,24 +10,30 @@ function Home(){
             <div className="contact-btn">Contact Us</div>
           <div className="bg"></div>
         </div>
-        <div className="home-body">
-          <div className="">
-            <div className="container about-us">
-              <div>
-              <h2>Its All About the Details</h2>
-                </div>
-                <img src="/img/family.png"/>
-                <p>Since 2006, Chamberlin Heating & Air Conditioning
-                has been recognized as a top HVAC Contractor in Muscatine.
-                 We’ve provided clients with a wide range of contracting
-                 services for all their remodeling and repairing needs.
-                  Whether you’re looking to renovate your existing space or
-                  add a whole new extension, we’re happy to help you achieve
-                  the results you seek. Contact us today to receive a free
-                  estimate.</p>
-
+        <div className="home-body-wrapper">
+            <div className="about-us container">
+                <div className="title"></div>
+                <div className="about-us-info">
+                  <img src="/img/family.webp"/>
+                  <div>
+                    <h2>Its All About the Details</h2>
+                    <p>Since 2006, Chamberlin Heating & Air Conditioning
+                     has been recognized as a top HVAC Contractor in Muscatine.
+                     We’ve provided clients with a wide range of contracting
+                     services for all their remodeling and repairing needs.
+                     Whether you’re looking to renovate your existing space or
+                     add a whole new extension, we’re happy to help you achieve
+                     the results you seek. </p>
+                   </div>
+                  </div>
             </div>
-            <div className="space">
+            <div className="space-one">
+              <div className="container">
+                <div>
+                  <img src="/img/tower.png"/>
+                  <img src="/img/tower.png"/>
+                </div>
+              </div>
             </div>
             <div className="space">
             </div>
@@ -50,7 +56,6 @@ function Home(){
 
             </div>
           </div>
-        </div>
       </div>
     );
 }
