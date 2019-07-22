@@ -88,12 +88,12 @@
 
       .about-us-info {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         font-weight: 100;
         > div {
           padding: 20px;
-          width: 50%;
+          width: 70%;
         }
 
         p {
@@ -119,43 +119,49 @@
       background-size: cover;
       .container{
           > div{
+            padding: 30px 0;
             display: flex;
-            justify-content: space-evenly;
-            padding: 50px 0 0;
+            justify-content: center;
             flex-wrap: wrap;
+            margin: 0;
             .circle{
               text-shadow: black 0 0 10px;
               text-align: center;
               background: #0000007a;
+              flex-grow: 0;
+              flex-shrink: 0;
+              flex-basis: calc(25% - 80px);
+              color: white;
               padding: 20px;
-              margin-bottom: 50px;
+              margin: 20px;
+              min-width: 260px;
+              width: 100%;
+              flex-grow: 1;
               h3{
                 text-align: center;
                 font-size: 1.5rem;
                 font-weight: 700;
                 margin-bottom: 50px;
-                color: white;
                 letter-spacing: .5rem;
               }
               img{
                 background: #00c0ff;
-                padding: 40px;
+                padding: 20px;
                 border-radius: 50%;
+                width: 60%;
                 box-shadow: #013b4e 0px 5px 0px 0px;
-
                 transition: all .1s ease-in;
+                max-width: 200px;
                 &:hover{
                   box-shadow: #013b4e 0px 0px 0px 0px;
                   transform: translate(0, 5px);
                 }
               }
               p{
-                color: white;
-                max-width: 300px;
-                text-align: center;
-                margin-top: 20px;
-                font-size: 1.2rem;
-                line-height: 1.7rem;
+                    max-width: 300px;
+                    margin: 50px auto 0;
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
               }
             }
           }
@@ -201,6 +207,15 @@
   }
 }
 
+
+@media screen and (max-width: 1200px) {
+  #home {
+    .circle{
+      min-width: 310px !important;
+    }
+  }
+}
+
 @media screen and (max-width: 1058px) {
   #home {
     .hero {
@@ -221,7 +236,7 @@
 
     .about-us-info {
       flex-wrap: wrap;
-
+      justify-content: center !important;
       > div {
         padding: 0 !important;
         margin-top: 50px;

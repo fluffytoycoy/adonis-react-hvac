@@ -46,6 +46,14 @@ function Home(){
                          Heat can help.</p>
                   </div>
                   <div class="circle">
+                    <h3>FIREPLACES</h3>
+                    <img src="/img/tower.png"/>
+                    <p>Whether you need a new heat pump or emergency
+                      AC repairs, Total Air &amp; Heat is the HVAC
+                      contractor for you.
+                    </p>
+                  </div>
+                  <div class="circle">
                     <h3>GRILLS</h3>
                     <img src="/img/tower.png"/>
                     <p>Whether you need a new heat pump or emergency
