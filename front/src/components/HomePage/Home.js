@@ -27,14 +27,43 @@ function Home(){
                    </div>
                   </div>
             </div>
-            <div className="space-one">
+
+            <div className="bullet-points">
               <div className="container">
-                <div>
-                  <img src="/img/tower.png"/>
-                  <img src="/img/tower.png"/>
+              <div>
+                <div class="circle">
+                    <h3>COMMERCIAL</h3>
+                    <img src="/img/tower.png"/>
+                    <p>Total Air &amp; Heat offers comprehensive
+                       HVAC services to help ensure your systems
+                       run efficiently.</p>
+                 </div>
+                 <div class="circle">
+                      <h3>RESIDENTIAL</h3>
+                      <img src="/img/tower.png"/>
+                      <p>Whatever your commercial HVAC needs,
+                         the certified technicians at Total Air &amp;
+                         Heat can help.</p>
+                  </div>
+                  <div class="circle">
+                    <h3>GRILLS</h3>
+                    <img src="/img/tower.png"/>
+                    <p>Whether you need a new heat pump or emergency
+                      AC repairs, Total Air &amp; Heat is the HVAC
+                      contractor for you.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
+
+
+
+
+
+
+
             <div className="space">
             </div>
             <div className="service-section">
