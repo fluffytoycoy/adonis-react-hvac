@@ -65,14 +65,18 @@ function Home(){
               </div>
             </div>
 
-
-
-
-
-
-
-
-            <div className="space">
+            <div className="coupon">
+              <div className="container">
+                <div>
+                  <div className="coupon-title">
+                    <h1>SAVE MONEY RIGHT NOW</h1>
+                    <h1> HEAT &amp; GLO COUPON</h1>
+                  </div>
+                  <div>
+                    <img src="https://www.heatnglo.com:443/Offers/Coupons/Discount-100/-/media/images/promotion-images/coupon/new-100-coupon/hng-coupon.jpg" />
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="service-section">
               <div className="container">

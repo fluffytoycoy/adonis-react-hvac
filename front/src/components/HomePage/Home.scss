@@ -79,7 +79,7 @@
     }
 
     .about-us {
-          padding: 50px 0;
+      padding: 50px 0;
 
       img {
         height: 500px;
@@ -91,6 +91,7 @@
         justify-content: space-between;
         align-items: center;
         font-weight: 100;
+
         > div {
           padding: 20px;
           width: 70%;
@@ -117,62 +118,94 @@
       background: linear-gradient(#ffa5008c, #ffa5008c), url("~/img/hvac.png");
       background-repeat: no-repeat;
       background-size: cover;
-      .container{
-          > div{
-            padding: 30px 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 0;
-            .circle{
-              text-shadow: black 0 0 10px;
+
+      .container {
+        > div {
+          padding: 30px 0;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin: 0;
+
+          .circle {
+            text-shadow: black 0 0 10px;
+            text-align: center;
+            background: #0000007a;
+            flex-basis: calc(25% - 40px);
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            min-width: 260px;
+            flex-grow: 1;
+            h3 {
               text-align: center;
-              background: #0000007a;
-              flex-grow: 0;
-              flex-shrink: 0;
-              flex-basis: calc(25% - 80px);
-              color: white;
+              font-size: 1.5rem;
+              font-weight: 700;
+              margin-bottom: 50px;
+              letter-spacing: 0.3rem;
+            }
+
+            img {
+              background: #00c0ff;
               padding: 20px;
-              margin: 20px;
-              min-width: 260px;
-              width: 100%;
-              flex-grow: 1;
-              h3{
-                text-align: center;
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin-bottom: 50px;
-                letter-spacing: .5rem;
-              }
-              img{
-                background: #00c0ff;
-                padding: 20px;
-                border-radius: 50%;
-                width: 60%;
-                box-shadow: #013b4e 0px 5px 0px 0px;
-                transition: all .1s ease-in;
-                max-width: 200px;
-                &:hover{
-                  box-shadow: #013b4e 0px 0px 0px 0px;
-                  transform: translate(0, 5px);
-                }
-              }
-              p{
-                    max-width: 300px;
-                    margin: 50px auto 0;
-                    font-size: 1.2rem;
-                    line-height: 1.7rem;
+              border-radius: 50%;
+              width: 60%;
+              box-shadow: #013b4e 0 5px 0 0;
+              transition: all 0.1s ease-in;
+              max-width: 200px;
+
+              &:hover {
+                box-shadow: #013b4e 0 0 0 0;
+                transform: translate(0, 5px);
               }
             }
+
+            p {
+              max-width: 300px;
+              margin: 50px auto 0;
+              font-size: 1.2rem;
+              line-height: 1.7rem;
+            }
           }
+        }
       }
     }
 
-    .space {
-      height: 500px;
+    .coupon {
+      background: #00c0ff;
 
-      &:nth-child(odd) {
-        background: $light-blue;
+      .container{
+        >div{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 100px 0;
+          .coupon-title{
+              text-align: center;
+              font-size: 3rem;
+              text-transform: uppercase;
+            h1:nth-of-type(1){
+              font-weight: 100;
+            }
+            h1:nth-of-type(2){
+              font-weight: 700;
+              color: white;
+              margin-top: 10px;
+              letter-spacing: .4rem;
+              text-shadow: #fe8125 0px -3px 0px;
+            }
+
+          }
+          img{
+            max-width: 700px;
+            width: 100%;
+            margin: 50px 0 0;
+            background: #72dcff;
+            border: dashed 5px #fe8125;
+            box-shadow: #ffffff 0px 0px 20px 0px;
+          }
+        }
       }
     }
 
@@ -207,27 +240,25 @@
   }
 }
 
-
+//Laptop
 @media screen and (max-width: 1200px) {
-  #home {
-    .circle{
-      min-width: 310px !important;
-    }
-  }
-}
-
-@media screen and (max-width: 1058px) {
   #home {
     .hero {
       h1 {
         font-size: 3rem !important;
-
-        span {}
       }
+    }
+
+    .circle {
+          //looks better on ipad small but worse for 1200-1100
+          min-width: 344px !important;
+          //better 1200-1000 worse ipad small
+          min-width: 361px !important;
     }
   }
 }
 
+//ipad
 @media screen and (max-width: 854px) {
   #home {
     .service-model-icons {
@@ -237,6 +268,7 @@
     .about-us-info {
       flex-wrap: wrap;
       justify-content: center !important;
+
       > div {
         padding: 0 !important;
         margin-top: 50px;
