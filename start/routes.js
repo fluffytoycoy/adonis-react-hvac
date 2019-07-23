@@ -23,7 +23,3 @@ Route.group(() => {
   Route.get('/getProductById/:id', 'ApiController.getProductById');
   Route.get('/getReviews', 'ApiController.getReviews');
 }).prefix('api/v1/');
-
-Route.any('*', ({ response }) => {
-  response.download(Helpers.publicPath('react/app.html'));
-});
