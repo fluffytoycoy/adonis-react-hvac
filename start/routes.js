@@ -25,10 +25,5 @@ Route.group(() => {
 }).prefix('api/v1/');
 
 Route.any('*', ({ response }) => {
-
-Finally, re-reading better this React Routing works in local machine but not Heroku I've added this line to my Express
-
-app.get('/*', (req, res) => {
-  let url = path.join(__dirname, '../front/build', 'index.html');
-  res.sendFile(url);
+  response.download(Helpers.publicPath('react/app.html'));
 });
