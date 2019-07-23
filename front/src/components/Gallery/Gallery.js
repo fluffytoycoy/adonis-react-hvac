@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-function Header(){
+function Gallery(){
 
     return (
       <h1>Gallery</h1>
 
+
     );
 }
 
-export default Header;
+export default Gallery;
