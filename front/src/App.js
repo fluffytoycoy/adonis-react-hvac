@@ -6,7 +6,7 @@ import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
-import Gallery from './Gallery/Gallery';
+import Gallery from './components/Gallery/Gallery';
 
 class App extends Component {
   constructor() {
