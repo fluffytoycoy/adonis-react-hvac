@@ -6,6 +6,7 @@ import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
+import Gallery from './Gallery/Gallery';
 
 class App extends Component {
   constructor() {
@@ -40,7 +41,7 @@ class App extends Component {
 						<Route exact  path="/" component={Home} />
             <Route
               exact
-              path="/products"
+              path="/products/"
               render={(props) => <Products {...props} productSelected={this.productSelected}/>}
             />
             <Route
@@ -57,6 +58,11 @@ class App extends Component {
               exact
               path="/products/:type/:pageNum/:itemsPerPage"
               render={(props) => <Products {...props} productSelected={this.productSelected} />} />
+            />
+            <Route
+              exact
+              path="/products/gallery"
+              render={(props) => <Gallery {...props} productSelected={this.productSelected} />} />
             />
             <Route
               exact
