@@ -4,13 +4,26 @@
   min-height: inherit;
 
   .hero {
-    min-height: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     color: white;
-
+    margin-top: 96px;
+    min-height: calc(100vh - 96px);
+    background: linear-gradient(rgb(0, 193, 255), rgba(0, 0, 0, 0.49019607843137253)), url(https://www.co.muscatine.ia.us/ImageRepository/Document?documentID=3150);
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    > div{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      top: 35%;
+      width: 100%;
+      text-align: center;
+    }
     h1 {
       font-size: 4rem;
       text-transform: uppercase;
@@ -33,16 +46,15 @@
 
     .contact-btn {
       padding: 10px 20px;
-      background: #ffa500d6;
+      background: orange;
       border-radius: 10px;
-      border: 2px solid white;
       cursor: pointer;
-      border: 2px solid #ffffff9c;
-      text-shadow: $light-black 0 0 2px;
-
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      text-shadow: $light-black 0 0 4px;
+      font-size: 1.5rem;
       &:hover {
         border: 2px solid #ffffff;
-        background: orange;
+        background: #ff9900;
       }
     }
 
@@ -61,7 +73,6 @@
 
   .home-body-wrapper {
     background: white;
-    margin-top: 100px;
 
     &:before {
       background: inherit;
@@ -75,7 +86,7 @@
       transform: skewY(2.5deg);
       -webkit-transform-origin: 100%;
       transform-origin: 0;
-      z-index: -1;
+      z-index: 0;
     }
 
     .about-us {
