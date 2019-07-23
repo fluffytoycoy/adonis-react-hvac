@@ -61,7 +61,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/products/gallery"
+              path="/product/gallery"
               render={(props) => <Gallery {...props} productSelected={this.productSelected} />} />
             />
             <Route
