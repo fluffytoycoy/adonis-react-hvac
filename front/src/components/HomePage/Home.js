@@ -31,21 +31,21 @@ function Home(){
             <div className="bullet-points">
               <div className="container">
               <div>
-                <div class="circle">
+                <div className="circle">
                     <h3>COMMERCIAL</h3>
                     <img src="/img/tower.png"/>
                     <p>Total Air &amp; Heat offers comprehensive
                        HVAC services to help ensure your systems
                        run efficiently.</p>
                  </div>
-                 <div class="circle">
+                 <div className="circle">
                       <h3>RESIDENTIAL</h3>
                       <img src="/img/tower.png"/>
                       <p>Whatever your commercial HVAC needs,
                          the certified technicians at Total Air &amp;
                          Heat can help.</p>
                   </div>
-                  <div class="circle">
+                  <div className="circle">
                     <h3>FIREPLACES</h3>
                     <img src="/img/tower.png"/>
                     <p>Whether you need a new heat pump or emergency
@@ -53,7 +53,7 @@ function Home(){
                       contractor for you.
                     </p>
                   </div>
-                  <div class="circle">
+                  <div className="circle">
                     <h3>GRILLS</h3>
                     <img src="/img/tower.png"/>
                     <p>Whether you need a new heat pump or emergency

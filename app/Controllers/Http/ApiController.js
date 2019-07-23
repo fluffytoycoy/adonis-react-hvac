@@ -1,6 +1,7 @@
 'use strict';
 
 const Products = use('App/Models/Products');
+const axios = use('axios');
 
 class ApiController {
   async getProductsByType({request}) {
@@ -30,6 +31,19 @@ class ApiController {
     const productId = parseInt(request.params.id);
     const productPayload = await Products.find(product => product.id === productId)
     return productPayload;
+  }
+
+  async getReviews(){
+    try{
+      const response = await axios.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJ20dqT1vl44cRJnqsDjGxYtw&fields=reviews&key=${process.env.GOOGLE_API}`);
+      if(response.status === 200){
+        return response.data.result.reviews;
+      }
+    }
+    catch (error){
+      console.log(error)
+      return [];
+    }
   }
 }
 
