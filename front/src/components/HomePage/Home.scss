@@ -151,6 +151,7 @@
               padding: 20px;
               border-radius: 50%;
               width: 60%;
+              height: auto;
               box-shadow: #013b4e 0 5px 0 0;
               transition: all 0.1s ease-in;
               max-width: 200px;
@@ -180,8 +181,12 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          flex-direction: column;
           padding: 75px 0;
+          margin: 0;
+          .row{
+            flex-basis: calc(50% - 40px);
+            margin: 0 20px;
+          }
           .coupon-title{
               text-align: center;
               font-size: 3rem;
@@ -201,7 +206,6 @@
           img{
             max-width: 700px;
             width: 100%;
-            margin: 50px 0 0;
             background: #72dcff;
             border: dashed 5px #fe8125;
             box-shadow: #ffffff 0px 0px 20px 0px;
@@ -235,6 +239,64 @@
         img {
           max-height: 100px;
           max-width: 100%;
+        }
+      }
+    }
+
+    .reviews{
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      background: wheat;
+      .review-slide{
+        width: 100%;
+        display: flex !important;
+        justify-content: center;
+        .review{
+          display: flex;
+          justify-content: center;
+          padding: 30px;
+          background: #ffffff9c;
+          max-width: 800px;
+          min-height: 300px;
+          .reviewer{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 50px;
+            margin-left: 30px;
+            .img{
+              height: 125px;
+              width: 125px;
+              background: white;
+              margin-bottom: 20px;
+              border-radius: 50%;
+            }
+            p{
+              text-align: center;
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+            }
+          }
+          .info{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: $light-black;
+            font-weight: 100;
+            .stars{
+                  align-self: center;
+            }
+            p:nth-of-type(1){
+              margin: 20px 0;
+              font-size: 1.4rem;
+              line-height: 1.8rem;
+            }
+            p:nth-of-type(2){
+              text-align: right;
+            }
+          }
         }
       }
     }

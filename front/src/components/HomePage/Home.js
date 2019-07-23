@@ -1,4 +1,5 @@
 import React from 'react';
+import ReviewSlider from './Slider';
 import './Home.scss';
 
 function Home(){
@@ -68,16 +69,26 @@ function Home(){
             <div className="coupon">
               <div className="container">
                 <div>
-                  <div className="coupon-title">
+                  <div className="coupon-title row">
                     <h1>SAVE MONEY RIGHT NOW</h1>
                     <h1> HEAT &amp; GLO COUPON</h1>
                   </div>
-                  <div>
+                  <div className="row">
                     <img src="https://www.heatnglo.com:443/Offers/Coupons/Discount-100/-/media/images/promotion-images/coupon/new-100-coupon/hng-coupon.jpg" />
                   </div>
                 </div>
               </div>
             </div>
+
+
+            <div className="reviews">
+              <div className="container">
+               <div>
+                <ReviewSlider/>
+                </div>
+              </div>
+            </div>
+
             <div className="service-section">
               <div className="container">
                 <div>
@@ -96,6 +107,7 @@ function Home(){
               </div>
 
             </div>
+
           </div>
       </div>
     );
