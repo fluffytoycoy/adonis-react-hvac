@@ -25,5 +25,5 @@ Route.group(() => {
 }).prefix('api/v1/');
 
 Route.any('*', ({ response }) => {
-  response.download(Helpers.publicPath('front/build/index.html'));
+  response.download(Helpers.publicPath('react/app.html'));
 });
