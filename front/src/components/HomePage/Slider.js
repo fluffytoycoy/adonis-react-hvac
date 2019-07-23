@@ -7,7 +7,10 @@ class ReviewSlider extends Component {
       arrows: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000
+
     };
     return (
         <Slider {...settings}>

@@ -121,6 +121,7 @@
       background-size: cover;
 
       .container {
+            width: 100%;
         > div {
           padding: 30px 0;
           display: flex;
@@ -215,7 +216,6 @@
     }
 
     .service-section {
-      padding: 50px 0;
 
       h2 {
         margin: 50px 0 100px;
@@ -244,10 +244,17 @@
     }
 
     .reviews{
-      min-height: 500px;
+      padding: 50px 0;
       display: flex;
       align-items: center;
       background: wheat;
+      h2{
+        text-align: center;
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        font-weight: 100;
+        margin-bottom: 30px;
+      }
       .review-slide{
         width: 100%;
         display: flex !important;
@@ -257,8 +264,9 @@
           justify-content: center;
           padding: 30px;
           background: #ffffff9c;
-          max-width: 800px;
           min-height: 300px;
+          margin: 20px;
+          border-radius: 5px;
           .reviewer{
             display: flex;
             justify-content: space-between;
@@ -316,7 +324,7 @@
           //looks better on ipad small but worse for 1200-1100
           min-width: 344px !important;
           //better 1200-1000 worse ipad small
-          min-width: 361px !important;
+          //min-width: 361px !important;
     }
   }
 }
