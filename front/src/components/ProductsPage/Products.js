@@ -77,7 +77,11 @@ class Products extends Component {
       }
 
       function isValidNumParam(param) {
-        return Number.isInteger(parseInt(param));
+        Number.isInteger = Number.isInteger || function(param) {
+            return typeof param === "number" &&
+                   isFinite(param) &&
+                   Math.floor(param) === param;
+        };
       }
     }
 
