@@ -21,5 +21,9 @@ const Helpers = use('Helpers');
 Route.group(() => {
   Route.get('/GetProductsByType', 'ApiController.getProductsByType');
   Route.get('/getProductById/:id', 'ApiController.getProductById');
-  Route.get('/getReviews', 'ApiController.getReviews');
+  Route.get('/getReviews', 'ApiController.getReviews')
 }).prefix('api/v1/');
+
+Route.any('*', ({ response }) => {
+  response.download(Helpers.publicPath('front/build/index.html'));
+});
