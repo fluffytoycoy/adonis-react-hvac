@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
 import Gallery from './components/Gallery/Gallery';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   constructor() {
@@ -73,9 +74,7 @@ class App extends Component {
               />
             <Route component={NotFound}/>
 				</Switch>
-        <section style={{background: 'orange', width: '100%', height: '100px', position: 'relative', bottom: '0'}}>
-
-        </section>
+        <Footer/>
       </Router>
     );
   }

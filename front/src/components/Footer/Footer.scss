@@ -1,0 +1,95 @@
+@import '../../sass/variables';
+
+#footer {
+  background: #292c2f;
+  color: white;
+
+  .container {
+    > div {
+      display: flex;
+      padding: 50px 0;
+      justify-content: center;
+
+      .row {
+        flex-basis: 50%;
+        flex-grow: 1;
+
+        h3 {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 100;
+          margin-bottom: 50px;
+        }
+
+        &.hours div {
+          display: flex;
+          text-align: center;
+
+          &:not(:last-child) {
+            p {
+              margin-bottom: 20px;
+            }
+          }
+
+          p {
+            width: 50%;
+          }
+        }
+
+        &.location {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+
+          img {
+            width: 100%;
+            filter: drop-shadow(0px 10px 8px black);
+            min-width: 350px;
+          }
+
+          .address {
+            font-size: 1.5rem;
+            font-weight: 500;
+            text-align: center;
+
+            p {
+              margin-top: 10px;
+            }
+          }
+
+          .phone {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 100;
+            margin: 20px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .social-media {
+    background: orange;
+  }
+}
+@media screen and (max-width: 767px) {
+  #footer {
+    .container {
+      > div {
+        flex-wrap: wrap;
+      }
+    }
+    .row{
+      flex-basis: 100% !important;
+    }
+    .location {
+      margin-bottom: 50px !important;
+      img{
+        width: 100%;
+      min-width: 300px !important;
+      }
+    }
+
+  }
+}
