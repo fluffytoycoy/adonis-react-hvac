@@ -1,9 +1,13 @@
 @import 'sass/variables';
 
+html, body, #root {
+    height: 100%;
+    color: $light-black;
+}
+
 .body{
   margin-top: $header-height;
   min-height: calc(100vh - (100px + #{$header-height}));
-  color: $light-black;
 }
 
 .container{
