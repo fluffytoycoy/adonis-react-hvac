@@ -24,7 +24,7 @@ function PdfButtons(props){
 function ActivePdfButtons(props){
   return(
   <div className="buttons">
-    <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
+    <a className="new-page-manual" href={props.manualSrc} target="_blank" rel="noopener noreferrer">Manual Page</a>
     <a className="close-btn" onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">close</a>
 
   </div>)
@@ -33,7 +33,7 @@ function ActivePdfButtons(props){
 function ClosedPdfButtons(props){
   return(
   <div className="buttons">
-              <a className="new-page-manual" href={props.manualSrc} target="_blank">Manual Page</a>
+              <a className="new-page-manual" href={props.manualSrc} target="_blank" rel="noopener noreferrer" >Manual Page</a>
     <a className="open-btn" onClick={props.toggleiframe} href={props.manualSrc} target="myFrame">View Manual</a>
   </div>)
 }

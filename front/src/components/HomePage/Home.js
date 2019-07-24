@@ -103,7 +103,7 @@ function Home(){
             <div className="reviews">
               <div className="container">
                <div>
-                <h2>Google Reviews</h2>
+                <h2>Reviews</h2>
                 <ReviewSlider/>
                 </div>
               </div>
