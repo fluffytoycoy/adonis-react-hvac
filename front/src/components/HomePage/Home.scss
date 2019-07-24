@@ -1,13 +1,11 @@
 @import '../../sass/variables';
-/* autoprefixer: on */
 
 #home {
   min-height: inherit;
 
   .hero {
     color: white;
-    margin-top: 96px;
-    min-height: calc(100vh - 96px);
+    min-height: inherit;
     background: linear-gradient(rgb(0, 193, 255), rgba(0, 0, 0, 0.49019607843137253)), url(https://www.co.muscatine.ia.us/ImageRepository/Document?documentID=3150);
     position: relative;
     background-attachment: fixed;

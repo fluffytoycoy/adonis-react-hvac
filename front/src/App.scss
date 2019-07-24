@@ -5,9 +5,11 @@ html, body, #root {
     color: $light-black;
 }
 
-.body{
-  margin-top: $header-height;
-  min-height: calc(100vh - (100px + #{$header-height}));
+#root{
+  >:nth-child(2){
+    margin-top: 96px;
+    min-height: calc(100vh - 96px);
+  }
 }
 
 .container{
