@@ -93,25 +93,27 @@ class Products extends Component {
 
   render() {
     return (
-      <div className="container product">
-        <div className="product-header">
-          <h1>Products</h1>
-        </div>
-        <ProductTypes
-          selectedType={this.state.selectedType}
-          history={this.props.history}/>
-          <FilterSection
-            selectedType={this.state.selectedType}
-            handleFilterSubmit={this.handleFilterSubmit}
-            currentQuery={this.state.queries}
-            />
-        <ProductsSection
-            productSelected={this.props.productSelected}
-            page={this.state.page}
-            limit={this.state.limit}
-            queries={this.state.queries}
+      <div id="product">
+        <div className="container">
+          <div className="product-header">
+            <h1>Products</h1>
+          </div>
+          <ProductTypes
             selectedType={this.state.selectedType}
             history={this.props.history}/>
+            <FilterSection
+              selectedType={this.state.selectedType}
+              handleFilterSubmit={this.handleFilterSubmit}
+              currentQuery={this.state.queries}
+              />
+          <ProductsSection
+              productSelected={this.props.productSelected}
+              page={this.state.page}
+              limit={this.state.limit}
+              queries={this.state.queries}
+              selectedType={this.state.selectedType}
+              history={this.props.history}/>
+        </div>
       </div>
     );
   }
