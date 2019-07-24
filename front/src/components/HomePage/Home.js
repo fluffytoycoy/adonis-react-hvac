@@ -1,5 +1,5 @@
 import React from 'react';
-import ReviewSlider from './Slider';
+import ReviewSlider from './ReviewSlider';
 import './Home.scss';
 
 function Home(){

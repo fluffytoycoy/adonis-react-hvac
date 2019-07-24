@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
-import GoogleReviews from './GoogleReviews';
 import Loading from '../Utils/Loading/Loading';
 
 class ReviewSlider extends Component {
@@ -113,4 +112,5 @@ function Review(props){
           </div>
       </div>)
 }
+
 export default ReviewSlider;
