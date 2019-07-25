@@ -95,9 +95,7 @@ class Products extends Component {
     return (
       <div id="product">
         <div className="container">
-          <div className="product-header">
-            <h1>Products</h1>
-          </div>
+        <div>
           <ProductTypes
             selectedType={this.state.selectedType}
             history={this.props.history}/>
@@ -113,6 +111,7 @@ class Products extends Component {
               queries={this.state.queries}
               selectedType={this.state.selectedType}
               history={this.props.history}/>
+              </div>
         </div>
       </div>
     );

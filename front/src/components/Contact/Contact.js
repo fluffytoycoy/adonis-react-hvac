@@ -18,8 +18,11 @@ class Contact extends Component{
 
       }
   }
+  componentWillMount(){
+    window.scrollTo({ top: 0 });
+  }
 
-  renderForm = (props: any) => (
+  renderForm = (props) => (
     <Form >
       <Field name="name" placeholder="Name"/>
       <Field name="email" placeholder="Your-Email@email.com"/>
