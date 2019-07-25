@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Slider from "react-slick";
 import Loading from '../Utils/Loading/Loading';
+import StarRatings from 'react-star-ratings';
 
 class ReviewSlider extends Component {
   constructor(props) {
@@ -102,7 +103,12 @@ function Review(props){
           </div>
           <div className="info">
             <div className="stars">
-              stars
+              <StarRatings
+              rating={props.review.rating}
+              starRatedColor="#00c0ff"
+              numberOfStars={5}
+              starDimension='100%'
+              />
             </div>
             <p>
               {props.review.text}

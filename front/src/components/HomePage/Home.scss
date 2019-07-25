@@ -282,8 +282,21 @@
             justify-content: space-between;
             color: $light-black;
             font-weight: 100;
-            .stars{
-                  align-self: center;
+            .stars {
+              .star-ratings{
+                display: flex !important;
+                justify-content: center;
+                .star-container {
+                  width: 20%;
+                  max-width: 50px;
+                  padding: 0 !important;
+                  margin: 0 1%;
+                  .star {
+                    stroke: $light-black;
+                  }
+              }
+              }
+
             }
             p:nth-of-type(1){
               margin: 20px 0;
