@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
 import Gallery from './components/Gallery/Gallery';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -62,7 +63,12 @@ class App extends Component {
             <Route
               exact
               path="/product/gallery"
-              render={(props) => <Gallery {...props} productSelected={this.productSelected} />} />
+              render={(props) => <Gallery {...props}/>} />
+            />
+            <Route
+              exact
+              path="/contact"
+              render={(props) => <Contact {...props}/>} />
             />
             <Route
               exact

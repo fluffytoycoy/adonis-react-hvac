@@ -13,9 +13,9 @@ function Header(){
                 <h3>(565)-555-3432</h3>
                 <ul>
                   <li><Link aria-label="Go To HomePage" to="/">Home</Link></li>
-                  <li><Link aria-label="Go To Services Page" to="">Services</Link></li>
+                  <li><Link aria-label="Go To Services Page" to="/services">Services</Link></li>
                   <li><Link aria-label="Go To Products Page" to="/products">Products</Link></li>
-                  <li><Link aria-label="Go To Contact Page" to="contact">Contact</Link></li>
+                  <li><Link aria-label="Go To Contact Page" to="/contact">Contact</Link></li>
                 </ul>
               </div>
           </div>
