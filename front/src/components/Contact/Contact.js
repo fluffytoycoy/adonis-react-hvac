@@ -8,15 +8,15 @@ const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email is required!")
     .email("Invalid Email!"),
-  phone: Yup.string().matches('', {message: "Please enter valid number.", excludeEmptyString: false}),
+
 });
 
 class Contact extends Component{
   constructor(props){
     super(props);
-    this.state = {
+      this.state = {
 
-    }
+      }
   }
 
   renderForm = (props: any) => (
@@ -41,7 +41,6 @@ class Contact extends Component{
             <div>
               <h1>Contact Us</h1>
                 <FormContainer
-                  initialValues={{ }}
                   validationSchema={schema}
                   onSubmit={this.onSubmit}
                   render={this.renderForm}
