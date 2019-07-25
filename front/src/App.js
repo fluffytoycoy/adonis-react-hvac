@@ -8,6 +8,7 @@ import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
+import ScrollToTop from './components/Utils/Scroll/Scroll';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
@@ -37,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+      <ScrollToTop>
 				<Header/>
 					<Switch>
 						<Route exact  path="/" component={Home} />
@@ -81,6 +83,7 @@ class App extends Component {
             <Route component={NotFound}/>
 				</Switch>
         <Footer/>
+        </ScrollToTop>
       </Router>
     );
   }

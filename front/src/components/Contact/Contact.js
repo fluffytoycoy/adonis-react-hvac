@@ -19,7 +19,7 @@ class Contact extends Component{
       }
   }
   componentWillMount(){
-    window.scrollTo({ top: 0 });
+    
   }
 
   renderForm = (props) => (
