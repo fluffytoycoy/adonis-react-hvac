@@ -164,47 +164,7 @@
       }
     }
 
-    .coupon {
-      background: #00c0ff;
 
-      .container{
-        >div{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 75px 0;
-          margin: 0;
-          flex-wrap: wrap;
-          .row{
-            flex-basis: calc(50% - 40px);
-            margin: 0 20px;
-          }
-          .coupon-title{
-              text-align: center;
-              text-transform: uppercase;
-            h2:nth-of-type(1){
-              font-weight: 100;
-            }
-            h2:nth-of-type(2){
-              font-weight: 700;
-              color: white;
-              margin-top: 10px;
-              letter-spacing: .4rem;
-              text-shadow: #fe8125 0px -3px 0px;
-            }
-
-          }
-          img{
-            max-width: 700px;
-            width: 100%;
-            min-width: 344px;
-            background: #72dcff;
-            border: dashed 5px #fe8125;
-            box-shadow: #ffffff 0px 0px 20px 0px;
-          }
-        }
-      }
-    }
 
     .service-section {
       padding: 50px 0;

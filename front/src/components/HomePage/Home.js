@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewSlider from './ReviewSlider';
+import Coupon from '../Utils/Coupon/Coupon';
 import './Home.scss';
 
 function Home(){
@@ -29,20 +30,6 @@ function Home(){
                      the results you seek. </p>
                    </div>
                   </div>
-            </div>
-
-            <div className="coupon">
-              <div className="container">
-                <div>
-                  <div className="coupon-title row">
-                    <h2>SAVE MONEY RIGHT NOW</h2>
-                    <h2> HEAT &amp; GLO COUPON</h2>
-                  </div>
-                  <div className="row">
-                    <img src="https://www.heatnglo.com:443/Offers/Coupons/Discount-100/-/media/images/promotion-images/coupon/new-100-coupon/hng-coupon.jpg" />
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="bullet-points">
@@ -100,8 +87,8 @@ function Home(){
               </div>
 
             </div>
-
-
+            
+            <Coupon/>
 
             <div className="reviews">
               <div className="container">
@@ -111,6 +98,8 @@ function Home(){
                 </div>
               </div>
             </div>
+
+
 
 
           </div>
