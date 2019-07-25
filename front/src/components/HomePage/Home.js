@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewSlider from './ReviewSlider';
 import Coupon from '../Utils/Coupon/Coupon';
+import {Link} from 'react-router-dom';
 import './Home.scss';
 
 function Home(){
@@ -10,7 +11,7 @@ function Home(){
           <div>
             <h1>Muscatines trusted <span>HVAC</span> experts</h1>
             <h3>Contact us for a free estimate today!</h3>
-            <div className="contact-btn">Contact Us</div>
+            <Link to="contact"><div className="contact-btn">Contact Us</div></Link>
           </div>
         </div>
         <div className="home-body-wrapper">
@@ -37,21 +38,21 @@ function Home(){
               <div>
                 <div className="circle">
                     <h3>COMMERCIAL</h3>
-                    <img src="/img/tower.png"/>
+                    <img alt="house clip art" src="/img/tower.png"/>
                     <p>Total Air &amp; Heat offers comprehensive
                        HVAC services to help ensure your systems
                        run efficiently.</p>
                  </div>
                  <div className="circle">
                       <h3>RESIDENTIAL</h3>
-                      <img src="/img/tower.png"/>
+                      <img alt="building clip art" src="/img/tower.png"/>
                       <p>Whatever your commercial HVAC needs,
                          the certified technicians at Total Air &amp;
                          Heat can help.</p>
                   </div>
                   <div className="circle">
                     <h3>FIREPLACES</h3>
-                    <img src="/img/tower.png"/>
+                    <img alt="fireplace clip art" src="/img/tower.png"/>
                     <p>Whether you need a new heat pump or emergency
                       AC repairs, Total Air &amp; Heat is the HVAC
                       contractor for you.
@@ -59,7 +60,7 @@ function Home(){
                   </div>
                   <div className="circle">
                     <h3>GRILLS</h3>
-                    <img src="/img/tower.png"/>
+                    <img alt="grill clip art" src="/img/tower.png"/>
                     <p>Whether you need a new heat pump or emergency
                       AC repairs, Total Air &amp; Heat is the HVAC
                       contractor for you.
@@ -74,20 +75,20 @@ function Home(){
                 <div>
                 <h2>We Service All Makes & Models</h2>
                 <div className="service-model-icons">
-                  <img src="/img/amana.png"/>
-                  <img src="/img/american-standard.png"/>
-                  <img src="/img/ao-smith.png"/>
-                  <img src="/img/carrier.png"/>
-                  <img src="/img/lennox.png"/>
-                  <img src="/img/rheem.png"/>
-                  <img src="/img/state-water.png"/>
-                  <img src="/img/york.png"/>
+                  <img alt="amana logo" src="/img/amana.png"/>
+                  <img alt="american statndard logo" src="/img/american-standard.png"/>
+                  <img alt="ao smith logo" src="/img/ao-smith.png"/>
+                  <img alt="carrier logo" src="/img/carrier.png"/>
+                  <img alt="lennox logo" src="/img/lennox.png"/>
+                  <img alt="rheem logo" src="/img/rheem.png"/>
+                  <img alt="state-water logo" src="/img/state-water.png"/>
+                  <img alt="york logo" src="/img/york.png"/>
                 </div>
                 </div>
               </div>
 
             </div>
-            
+
             <Coupon/>
 
             <div className="reviews">

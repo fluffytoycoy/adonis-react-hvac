@@ -58,7 +58,7 @@ class App extends Component {
               exact
               path="/products/:type/:pageNum/:itemsPerPage"
               render={(props) => <Products {...props} productSelected={this.productSelected} />} />
-            />
+              />
             <Route
               exact
               path="/product/gallery"

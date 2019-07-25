@@ -98,7 +98,7 @@ function Review(props){
     <div className="review-slide">
         <div className="review">
           <div className="reviewer">
-            <img src={props.review.profile_photo_url} className="img"/>
+            <img alt="reviewer photo"src={props.review.profile_photo_url} className="img"/>
             <p>{props.review.author_name}</p>
           </div>
           <div className="info">

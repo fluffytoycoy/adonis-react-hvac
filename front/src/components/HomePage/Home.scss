@@ -12,7 +12,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
     > div{
       display: flex;
       justify-content: center;
@@ -47,12 +46,16 @@
       border-radius: 10px;
       cursor: pointer;
       border: 2px solid rgba(255, 255, 255, 0.6);
-      text-shadow: $light-black 0 0 4px;
+      text-shadow: $light-black 0 0 2px;
       font-size: 1.3rem;
       &:hover {
         border: 2px solid #ffffff;
         background: #ff9900;
       }
+    }
+    a{
+      text-decoration: none;
+      color: $light-black;
     }
   }
 
@@ -71,15 +74,15 @@
       transform: skewY(2.5deg);
       -webkit-transform-origin: 100%;
       transform-origin: 0;
-      z-index: -1;
     }
 
     .about-us {
       padding: 0 0 75px;
 
       img {
-        height: 500px;
+        max-height: 495px;
         border: solid #0076a0 5px;
+        z-index: 1;
       }
 
       .about-us-info {
