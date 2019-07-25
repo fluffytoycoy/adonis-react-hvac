@@ -26,7 +26,7 @@ class Contact extends Component{
       <Field name="phone" placeholder="(555)-555-5555"/>
       <Field name="city" placeholder="Davenport"/>
       <Field name="address" placeholder="123 Imawesome Street"/>
-      <Field name="message" placeholder="Message"/>
+      <Field textarea height='300px'name="message" placeholder="Message"/>
       <Button type="submit"  />
     </Form>
   );
@@ -37,15 +37,15 @@ class Contact extends Component{
     return (
       <div id="contact">
         <div className="container">
-          <div>
-            <div>
+        <div>
+          <div className="form-card">
               <h1>Contact Us</h1>
                 <FormContainer
                   validationSchema={schema}
                   onSubmit={this.onSubmit}
                   render={this.renderForm}
                 />
-              </div>
+          </div>
           </div>
         </div>
      </div>
