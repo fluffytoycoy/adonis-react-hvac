@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import './Footer.scss';
 
 function Footer(){
-
     return (
       <div id="footer">
         <div className="container">
@@ -52,13 +51,13 @@ function Footer(){
           </div>
         </div>
         <div className="social-media">
-        <div className="container">
-          <div>
-          </div>
+          <div className="container">
+            <div>
+              <p>©{new Date().getFullYear()} BY CHAMBERLIN HEATING & AIR CONDITIONING.</p>
+            </div>
           </div>
         </div>
-      </div>
-
+     </div>
     );
 }
 

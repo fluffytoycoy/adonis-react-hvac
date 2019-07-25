@@ -71,8 +71,16 @@
 
   .social-media {
     background: orange;
+    color: $light-black;
+    text-shadow: black 0 0 2px;
+    .container{
+      > div{
+        padding: 20px 0 ;
+      }
+    }
   }
 }
+
 @media screen and (max-width: 767px) {
   #footer {
     .container {
@@ -90,6 +98,8 @@
       min-width: 300px !important;
       }
     }
+    .social-media {
 
+    }
   }
 }
