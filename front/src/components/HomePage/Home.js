@@ -19,7 +19,7 @@ function Home(){
             <div className="about-us container">
                 <div className="title"></div>
                 <div className="about-us-info">
-                  <img src="/img/family.png"/>
+                  <img alt="The Chamberlin family"src="/img/family.png"/>
                   <div>
                     <h2>Its All About the Details</h2>
                     <p>Since 2006, Chamberlin Heating & Air Conditioning

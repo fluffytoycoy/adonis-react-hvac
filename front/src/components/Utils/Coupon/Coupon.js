@@ -12,7 +12,7 @@ function Coupon(){
               <h2> HEAT &amp; GLO COUPON</h2>
             </div>
             <div className="row">
-              <img src="https://www.heatnglo.com:443/Offers/Coupons/Discount-100/-/media/images/promotion-images/coupon/new-100-coupon/hng-coupon.jpg" />
+              <img  alt="current coupon" src="https://www.heatnglo.com:443/Offers/Coupons/Discount-100/-/media/images/promotion-images/coupon/new-100-coupon/hng-coupon.jpg" />
             </div>
           </div>
         </div>

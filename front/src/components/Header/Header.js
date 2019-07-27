@@ -8,7 +8,7 @@ function Header(){
       <div id="header">
         <div className="container">
           <div className="nav">
-              <Link aria-label="Go To HomePage" className="logo" to="/"><img src="/img/chamber_logo.png" /></Link>
+              <Link aria-label="Go To HomePage" className="logo" to="/"><img  alt="Chamberlin logo" src="/img/chamber_logo.png" /></Link>
               <div>
                 <h3>(565)-555-3432</h3>
                 <ul>

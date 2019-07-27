@@ -1,6 +1,5 @@
 import React from 'react';
 import Select from 'react-select';
-import chroma from 'chroma-js';
 
 function ModelSelection(props){
   //selected value formated to select-react requirements

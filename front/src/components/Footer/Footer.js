@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import './Footer.scss';
 
 function Footer(){
@@ -9,7 +9,7 @@ function Footer(){
           <div>
             <div className="row location">
               <div>
-                <img src="/img/chamber_logo.png" />
+                <img alt="Chamberlin logo" src="/img/chamber_logo.png" />
               </div>
               <div className="address">
                 <p>4214 Domino Avenue, Suite A </p>

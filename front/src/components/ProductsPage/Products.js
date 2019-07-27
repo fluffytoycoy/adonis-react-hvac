@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import './Products.scss';
 import Filters from './Filters/Filters';
 import ProductTypes from './ProductTypes/ProductTypes';
@@ -26,6 +26,7 @@ class Products extends Component {
   };
 
   componentWillMount(){
+    console.log(this.props.location)
     console.log(this.props.match.params)
     this.setPagingParams(this.props.match.params)
     const type = this.props.match.params.type;

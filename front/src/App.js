@@ -15,9 +15,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      selectedProduct: undefined
+      selectedProduct: undefined,
+      productsQuery:{
+        pageInfo:{
+          pageNum: 1,
+          numPerPage: 8
+        },
+        Filters:{
+          type: '',
+          power: '',
+          sides: ''
+        }
+      }
     };
      this.productSelected = this.productSelected.bind(this);
+     this.setPageInfo = this.setPageInfo.bind(this);
+
   };
 
   componentWillMount(){
@@ -35,6 +48,16 @@ class App extends Component {
     })
   }
 
+  setPageInfo(pageInfo){
+    this.setState(prevState=> ({
+      productsQuery: {
+        ...prevState.productsQuery,
+        pageInfo: pageInfo
+      }
+    }))
+  }
+
+
   render() {
     return (
       <Router>
@@ -45,7 +68,7 @@ class App extends Component {
             <Route
               exact
               path="/products/"
-              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
+              render={(props) => <Products {...props} setPageInfo={this.setPageInfo} productSelected={this.productSelected}/>}
             />
             <Route
               exact
