@@ -111,7 +111,7 @@ class Products extends Component {
               queries={this.state.queries}
               selectedType={this.state.selectedType}
               history={this.props.history}/>
-              </div>
+            </div>
         </div>
       </div>
     );

@@ -82,10 +82,6 @@ class ProductsDisplayGrid extends Component {
     return Math.ceil(this.state.productCount/this.props.limit)
   }
 
-  scrollToTop(){
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   render(){
     return (
       <>
@@ -97,7 +93,7 @@ class ProductsDisplayGrid extends Component {
           products={this.state.products}
           history={this.props.history}/>
       </div>
-      {this.isLoaded() ? <Pagination match={this.getPageInfo()} onClick={this.scrollToTop} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
+      {this.isLoaded() ? <Pagination match={this.getPageInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
       </>
     );
   }
