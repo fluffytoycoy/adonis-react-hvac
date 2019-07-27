@@ -13,10 +13,7 @@ class Products extends Component {
       selectedType: '',
       page: 1,
       limit: 8,
-      error: {
-        pageNum: false,
-        limit: false
-      },
+      error: false,
       queries: {
         powerFilter: '',
         sideFilter: '',
@@ -27,7 +24,7 @@ class Products extends Component {
 
   componentWillMount(){
     console.log(this.props.location)
-    console.log(this.props.match.params)
+
     this.setPagingParams(this.props.match.params)
     const type = this.props.match.params.type;
     if(type){
@@ -37,8 +34,15 @@ class Products extends Component {
       }
     }
 
+    componentDidMount(){
+      if(this.state.error){
+        this.props.history.push(`/Products/${this.props.match.params.type}`)
+      }
+    }
+
   componentWillReceiveProps(nextProps){
       //Handle new PagingInfo
+      console.log('here')
       this.setPagingParams(nextProps.match.params)
       //If selected Type is different setState to new type prop
       if(this.props.match.params.type !== nextProps.match.params.type){
@@ -53,14 +57,12 @@ class Products extends Component {
       if (isValidNumParam(params.pageNum)) {
         this.setState({
           page: params.pageNum
-        })
+        }, ()=>{console.log(this.state.page)})
       } else {
+        console.log('error')
         this.setState(prevState => ({
           page: 1,
-          error: {
-            ...this.state.error,
-            pageNum: true
-          }
+          error: true
         }))
       }
       if (isValidNumParam(params.itemsPerPage)) {
@@ -70,19 +72,12 @@ class Products extends Component {
       } else {
         this.setState(prevState => ({
           limit: 8,
-          error: {
-            ...this.state.error,
-            limit: true
-          }
+          error: true
         }))
       }
 
       function isValidNumParam(param) {
-        Number.isInteger = Number.isInteger || function(param) {
-            return typeof param === "number" &&
-                   isFinite(param) &&
-                   Math.floor(param) === param;
-        };
+        return Number(param)
       }
     }
 

@@ -69,7 +69,7 @@ class ProductsDisplayGrid extends Component {
   }
 
   getPageInfo(){
-    return {path: '/products/:type/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: this.props.limit}}
+    return {path: '/Products/:type/Page/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: this.props.limit}}
   }
 
   // handleFilterSubmit = async (newQuery) =>{

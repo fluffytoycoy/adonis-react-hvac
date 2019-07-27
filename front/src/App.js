@@ -19,7 +19,7 @@ class App extends Component {
       productsQuery:{
         pageInfo:{
           pageNum: 1,
-          numPerPage: 8
+          productsPerPage: 8
         },
         Filters:{
           type: '',
@@ -67,8 +67,8 @@ class App extends Component {
 						<Route exact  path="/" component={Home} />
             <Route
               exact
-              path="/products/"
-              render={(props) => <Products {...props} setPageInfo={this.setPageInfo} productSelected={this.productSelected}/>}
+              path="/Products/"
+              render={(props, state) => <Products {...props} setPageInfo={this.setPageInfo} productSelected={this.productSelected}/>}
             />
             <Route
               exact
@@ -77,12 +77,12 @@ class App extends Component {
             />
             <Route
               exact
-              path="/products/:type/:pageNum/"
+              path="/Products/:type/Page/:pageNum/"
               render={(props) => <Products {...props} productSelected={this.productSelected}/>}
             />
             <Route
               exact
-              path="/products/:type/:pageNum/:itemsPerPage"
+              path="/Products/:type/Page/:pageNum/:itemsPerPage"
               render={(props) => <Products {...props} productSelected={this.productSelected} />} />
               />
             <Route
