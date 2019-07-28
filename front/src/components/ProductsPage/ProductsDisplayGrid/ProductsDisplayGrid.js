@@ -33,7 +33,9 @@ class ProductsDisplayGrid extends Component {
   }
 
   getFilterQueries(queries){
-    let queryString = `?type=${this.state.currentSelection}&pageNum=${this.props.page}&limit=${this.props.limit}`;
+    const pageInfo = this.props.pageInfo;
+    console.log(this.props)
+    let queryString = `?type=${this.state.currentSelection}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
     Object.keys(queries).map(key=>{
       if(queries[key]){
         queryString += `&${key}=${queries[key]}`
@@ -69,7 +71,8 @@ class ProductsDisplayGrid extends Component {
   }
 
   getPageInfo(){
-    return {path: '/Products/:type/Page/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: this.props.limit}}
+    const pageInfo = this.props.pageInfo;
+    return {path: '/Products/:type/Page/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: pageInfo.productsPerPage}}
   }
 
   // handleFilterSubmit = async (newQuery) =>{
@@ -79,7 +82,8 @@ class ProductsDisplayGrid extends Component {
   // }
 
   getTotalPages(){
-    return Math.ceil(this.state.productCount/this.props.limit)
+    const pageInfo = this.props.pageInfo;
+    return Math.ceil(this.state.productCount/pageInfo.productsPerPage)
   }
 
   render(){
@@ -93,7 +97,7 @@ class ProductsDisplayGrid extends Component {
           products={this.state.products}
           history={this.props.history}/>
       </div>
-      {this.isLoaded() ? <Pagination match={this.getPageInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.page} spread={12/2} /> : <></>}
+      {this.isLoaded() ? <Pagination match={this.getPageInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.pageInfo.pageNum} spread={12/2} /> : <></>}
       </>
     );
   }

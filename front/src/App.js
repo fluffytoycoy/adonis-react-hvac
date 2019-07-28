@@ -21,7 +21,7 @@ class App extends Component {
           pageNum: 1,
           productsPerPage: 8
         },
-        Filters:{
+        filters:{
           type: '',
           power: '',
           sides: ''
@@ -30,7 +30,6 @@ class App extends Component {
     };
      this.productSelected = this.productSelected.bind(this);
      this.setPageInfo = this.setPageInfo.bind(this);
-
   };
 
   componentWillMount(){
@@ -68,27 +67,40 @@ class App extends Component {
             <Route
               exact
               path="/Products/"
-              render={(props, state) => <Products {...props} setPageInfo={this.setPageInfo} productSelected={this.productSelected}/>}
+              render={(props) =>
+                <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
             />
             <Route
               exact
-              path="/products/:type/"
-              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
+              path="/Products/:type/"
+              render={(props) => <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
             />
             <Route
               exact
               path="/Products/:type/Page/:pageNum/"
-              render={(props) => <Products {...props} productSelected={this.productSelected}/>}
+              render={(props) => <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
             />
             <Route
               exact
               path="/Products/:type/Page/:pageNum/:itemsPerPage"
-              render={(props) => <Products {...props} productSelected={this.productSelected} />} />
+              render={(props) => <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
               />
             <Route
               exact
               path="/product/gallery"
-              render={(props) => <Gallery {...props}/>} />
+              render={(props) => <Gallery {...props}/>}
             />
             <Route
               exact

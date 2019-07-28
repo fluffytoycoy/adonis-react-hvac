@@ -11,8 +11,6 @@ class Products extends Component {
     super(props);
     this.state = {
       selectedType: '',
-      page: 1,
-      limit: 8,
       error: false,
       queries: {
         powerFilter: '',
@@ -23,10 +21,10 @@ class Products extends Component {
   };
 
   componentWillMount(){
-    console.log(this.props.location)
-
-    this.setPagingParams(this.props.match.params)
+    //get Product Type from param
+    console.log('mounting')
     const type = this.props.match.params.type;
+    //If Type is truthy set the page
     if(type){
         this.setState({
           selectedType: type
@@ -42,8 +40,6 @@ class Products extends Component {
 
   componentWillReceiveProps(nextProps){
       //Handle new PagingInfo
-      console.log('here')
-      this.setPagingParams(nextProps.match.params)
       //If selected Type is different setState to new type prop
       if(this.props.match.params.type !== nextProps.match.params.type){
         this.setState({
@@ -53,28 +49,25 @@ class Products extends Component {
 
     }
 
-  setPagingParams(params) {
-      if (isValidNumParam(params.pageNum)) {
-        this.setState({
-          page: params.pageNum
-        }, ()=>{console.log(this.state.page)})
-      } else {
-        console.log('error')
-        this.setState(prevState => ({
-          page: 1,
-          error: true
-        }))
-      }
-      if (isValidNumParam(params.itemsPerPage)) {
-        this.setState({
-          limit: parseInt(params.itemsPerPage)
-        })
-      } else {
-        this.setState(prevState => ({
-          limit: 8,
-          error: true
-        }))
-      }
+  pagingParams() {
+    const pageInfo = this.props.match.params;
+        return {pageNum: Number(pageInfo.pageNum) || 1, productsPerPage: Number(pageInfo.productsPerPage) || 8 }
+      //
+      // } else {
+      //   this.setState(prevState => ({
+      //     error: true
+      //   }))
+      // }
+      // if (isValidNumParam(params.itemsPerPage)) {
+      //   this.setState({
+      //     limit: parseInt(params.itemsPerPage)
+      //   })
+      // } else {
+      //   this.setState(prevState => ({
+      //     limit: 8,
+      //     error: true
+      //   }))
+      // }
 
       function isValidNumParam(param) {
         return Number(param)
@@ -102,8 +95,7 @@ class Products extends Component {
               />
           <ProductsSection
               productSelected={this.props.productSelected}
-              page={this.state.page}
-              limit={this.state.limit}
+              pageInfo = {this.pagingParams()}
               queries={this.state.queries}
               selectedType={this.state.selectedType}
               history={this.props.history}/>
@@ -115,8 +107,9 @@ class Products extends Component {
 }
 
 function ProductsSection(props) {
+  console.log(props)
   return props.selectedType ?
-  <ProductsDisplayGrid queries={props.queries} productSelected={props.productSelected} page={props.page} limit={props.limit} selectedType={props.selectedType} history={props.history}/>
+  <ProductsDisplayGrid queries={props.queries} productSelected={props.productSelected} pageInfo={props.pageInfo} selectedType={props.selectedType} history={props.history}/>
   : <></>
   }
 
