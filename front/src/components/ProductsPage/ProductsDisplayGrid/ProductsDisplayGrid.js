@@ -34,7 +34,7 @@ class ProductsDisplayGrid extends Component {
 
   getFilterQueries(queries){
     const pageInfo = this.props.pageInfo;
-    console.log(this.props)
+    console.log(this.props.history.location.search)
     let queryString = `?type=${this.state.currentSelection}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
     Object.keys(queries).map(key=>{
       if(queries[key]){
@@ -72,7 +72,7 @@ class ProductsDisplayGrid extends Component {
 
   getPageInfo(){
     const pageInfo = this.props.pageInfo;
-    return {path: '/Products/:type/Page/:pageNumber/:offset', params: {type: this.state.currentSelection, offset: pageInfo.productsPerPage}}
+    return {path: '/Products/:type/Page/:pageNumber/:productsPerPage', params: {type: this.state.currentSelection, productsPerPage: pageInfo.productsPerPage || ''}}
   }
 
   // handleFilterSubmit = async (newQuery) =>{

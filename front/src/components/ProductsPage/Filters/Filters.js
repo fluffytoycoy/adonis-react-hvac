@@ -1,23 +1,26 @@
 import React, {Component} from 'react';
 import Select from 'react-select';
 import './Filters.scss';
+import queryString from 'query-string'
 import chroma from 'chroma-js';
 
 class GridItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      powerOptions: [
-        {label: "Low", value: 'low', color: 'orange', filter:'powerFilter'},
-        {label: "High", value: 'high', color: 'red', filter:'powerFilter'}
-      ],
-      sideOptions: [
-        {label: 'Front Facing', value: 'single', filter:'powerFilter'},
-        {label: 'Double Sided', value: 'double', filter:'powerFilter'}
-      ],
+      filterOptions: {
+        power: [
+          {label: "Low", value: 'low', color: 'orange', filter:'power'},
+          {label: "High", value: 'high', color: 'red', filter:'power'}
+        ],
+        sides: [
+          {label: 'Front Facing', value: 'single', filter:'sides'},
+          {label: 'Double Sided', value: 'double', filter:'sides'}
+        ],
+      },
       queries:{
-        powerFilter: '',
-        sideFilter: '',
+        power: '',
+        sides: '',
       },
       SearchUpdate: false,
     };
@@ -25,6 +28,30 @@ class GridItem extends Component {
     this.setSideFilter = this.setSideFilter.bind(this);
     this.submit = this.submit.bind(this);
   };
+
+  componentWillMount(){
+    // filters = {power: '', sides: ''}
+      const filters = queryString.parseUrl(this.props.history.location.search).query;
+      this.setQueryUrl(filters);
+  }
+
+  setQueryUrl(filters){
+    //get acceptable queries for components
+    let queries = {};
+    const keys = Object.keys(this.state.queries)
+    //for each acceptable query check the filterOptions for a matching url param value
+    //set matching query key equal to filter option value or '' if param value is invalid
+    for (const key of keys) {
+      queries[key] = this.state.filterOptions[key].find(option=>{
+        return option.value === filters[key]
+      }) || ''
+    }
+    //set state of queries from acceptable url params
+    this.setState({
+      queries: queries
+    })
+    console.log(queries)
+  }
 
   componentWillReceiveProps(newprops){
     //everytime new selection is made load new products and set visablity to none
@@ -40,9 +67,9 @@ class GridItem extends Component {
     this.setState(prevState =>({
       queries: {
         ...prevState.queries,
-      powerFilter: e ? e.value : ''
+      power: e ? e : ''
     }
-    }))
+  }), ()=>{console.log(queryString.parse(this.props.history.location.search))})
   }
 
   setSideFilter(e){
@@ -72,10 +99,29 @@ class GridItem extends Component {
     })
   }
 
+  buildqueryStringFromState(){
+    let query = {}
+      const keys = Object.keys(this.state.queries)
+      for (const key of keys) {
+        if(this.state.queries[key]){
+          query[key] = this.state.queries[key].value;
+        }
+      }
+      console.log(query)
+  }
+
   submit(e){
     e.preventDefault()
     this.updateSearch(false);
-    this.props.handleFilterSubmit(this.state.queries)
+    this.buildqueryStringFromState();
+    //this.props.handleFilterSubmit(this.state.queries)
+    this.props.history.push(`?${this.state.queries.power}`);
+  }
+
+  selectedOption(){
+    return this.state.powerOptions.find(option => {
+      return option.value === this.state.queries.powerFilter
+    })
   }
 
   render(){
@@ -84,11 +130,25 @@ class GridItem extends Component {
             <form className="filters">
               <div>
                 <label>Power Options</label>
-                <Select data-name='powerFilter' styles={dotStyles} onChange={this.setPowerFilter} isClearable={true} className='select'  options={this.state.powerOptions}/>
+                <Select
+                  data-name='powerFilter'
+                  isClearable={true}
+                  className='select'
+                  styles={dotStyles}
+                  value={this.state.queries.power}
+                  onChange={this.setPowerFilter}
+                  options={this.state.filterOptions.power}
+                />
               </div>
               <div>
                 <label>Side Options</label>
-                <Select styles={normalStyles} onChange={this.setSideFilter} isClearable={true} options={this.state.sideOptions} className='select'/>
+                <Select
+                  styles={normalStyles}
+                  onChange={this.setSideFilter}
+                  isClearable={true}
+                  options={this.state.filterOptions.sides}
+                  className='select'
+                />
               </div>
               <div>
                 <label>Side Options</label>
