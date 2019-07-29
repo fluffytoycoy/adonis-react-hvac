@@ -11,11 +11,8 @@ class ProductsDisplayGrid extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentSelection: '',
       products: undefined,
-      call: '',
       productCount: '',
-      queries: ''
     };
   };
 
@@ -37,7 +34,7 @@ class ProductsDisplayGrid extends Component {
     const pageInfo = this.props.pageInfo;
     const filters = queryString.parse(this.props.history.location.search)
     console.log(filters)
-    let _qs = `?type=${this.state.currentSelection}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
+    let _qs = `?type=${this.props.selectedType}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
     Object.keys(filters).map(key=>{
       if(filters[key]){
         _qs += `&${key}=${filters[key]}`
@@ -49,18 +46,18 @@ class ProductsDisplayGrid extends Component {
   componentWillMount(){
     //on mount if exact route wasn't /products render with
     //minimized pictures
-    this.setState({
-      currentSelection: this.props.selectedType,
-    }, ()=> {
       this.getAllProducts();
-    })
+    // this.setState({
+    //   currentSelection: this.props.selectedType,
+    // }, ()=> {
+    //
+    // })
   }
 
   componentWillReceiveProps(newprops){
     //this handles forward and backwards movement routing browser
-    if(this.state.currentSelection !== newprops.selectedType || true){
+    if(this.props.selectedType !== newprops.selectedType || true){
       this.setState({
-        currentSelection: newprops.selectedType,
         products: undefined
       }, ()=> {
         this.getAllProducts()
@@ -74,7 +71,7 @@ class ProductsDisplayGrid extends Component {
 
   getPageRouteInfo(){
     const pageInfo = this.props.pageInfo;
-    return {path: `/Products/:type/Page/:pageNumber/:productsPerPage?${this.props.history.location.search}`, params: {type: this.state.currentSelection, productsPerPage: pageInfo.productsPerPage  || ''}}
+    return {path: `/Products/:type/Page/:pageNumber/:productsPerPage?${this.props.history.location.search}`, params: {type: this.props.selectedType, productsPerPage: pageInfo.productsPerPage  || ''}}
   }
 
 

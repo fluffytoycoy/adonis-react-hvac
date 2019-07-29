@@ -21,11 +21,6 @@ class App extends Component {
           pageNum: 1,
           productsPerPage: 8
         },
-        filters:{
-          type: '',
-          power: '',
-          sides: ''
-        }
       }
     };
      this.productSelected = this.productSelected.bind(this);

@@ -50,7 +50,6 @@ class GridItem extends Component {
     this.setState({
       queries: queries
     })
-    console.log(queries)
   }
 
   componentWillReceiveProps(newprops){
@@ -68,34 +67,34 @@ class GridItem extends Component {
     }
   }
 
-  linkToProduct(e){
-    //push history the selected product page
-  }
-
   setPowerFilter(e){
     this.setState(prevState =>({
       queries: {
         ...prevState.queries,
       power: e ? e : ''
     }
-  }), ()=>{console.log(queryString.parse(this.props.history.location.search))})
+  }), ()=>{
+    this.updateSearch(true);
+  })
   }
 
   setSideFilter(e){
     this.setState(prevState =>({
       queries: {
         ...prevState.queries,
-      sideFilter: e ? e.value : ''
+      sides: e ? e : ''
     }
   }),()=>{
-      this.updateSearch(this.isQueryChanged(this.props.currentQuery));
+      this.updateSearch(true);
   })
   }
 
   isQueryChanged(query){
+    //// TODO: function for changing update search bassed on the state being equal to the query params
     const currentQuery = this.state.queries;
-    if(query.sideFilter === currentQuery.sideFilter
-      && query.powerFilter === currentQuery.powerFilter){
+    console.log('Side 1:', query.sides, 'Side: 2', query.sides === currentQuery.sides)
+    if(query.sides === currentQuery.sides
+      && query.power === currentQuery.power){
         return false
       }else{
         return true;
@@ -158,6 +157,7 @@ class GridItem extends Component {
                 <Select
                   styles={normalStyles}
                   onChange={this.setSideFilter}
+                  value={this.state.queries.sides}
                   isClearable={true}
                   options={this.state.filterOptions.sides}
                   className='select'

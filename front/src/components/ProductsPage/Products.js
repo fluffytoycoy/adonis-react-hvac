@@ -12,10 +12,6 @@ class Products extends Component {
     this.state = {
       selectedType: '',
       error: false,
-      queries: {
-        powerFilter: '',
-        sideFilter: '',
-      }
     };
     this.handleFilterSubmit = this.handleFilterSubmit.bind(this)
   };
