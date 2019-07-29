@@ -47,11 +47,6 @@ class ProductsDisplayGrid extends Component {
     //on mount if exact route wasn't /products render with
     //minimized pictures
       this.getAllProducts();
-    // this.setState({
-    //   currentSelection: this.props.selectedType,
-    // }, ()=> {
-    //
-    // })
   }
 
   componentWillReceiveProps(newprops){
@@ -70,10 +65,9 @@ class ProductsDisplayGrid extends Component {
   }
 
   getPageRouteInfo(){
-    const pageInfo = this.props.pageInfo;
-    return {path: `/Products/:type/Page/:pageNumber/:productsPerPage?${this.props.history.location.search}`, params: {type: this.props.selectedType, productsPerPage: pageInfo.productsPerPage  || ''}}
+    const pageInfo = this.props.pageInfo.productsPerPage || '';
+    return {path: `/Products/${this.props.selectedType}/Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}
   }
-
 
   getTotalPages(){
     const pageInfo = this.props.pageInfo;
@@ -102,7 +96,7 @@ class ProductsDisplayGrid extends Component {
 function DisplayGrid(props) {
   return props.products ?   <div id="product-section">
       <div id="product-grid" >
-        <GridItem productSelected={props.productSelected} products={props.products} history={props.history} />
+        <GridItem {...props} />
       </div>
     </div> : <Loading/>
 

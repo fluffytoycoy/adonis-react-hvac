@@ -6,14 +6,12 @@ class GridItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
     };
     this.linkToProduct = this.linkToProduct.bind(this)
   };
 
   componentWillMount(){
     this.setState({
-      products: this.props.products,
       visable: []
     }, () => this.addAnimationToGridItems(this.props.products))
   }
@@ -22,7 +20,6 @@ class GridItem extends Component {
     //everytime new selection is made load new products and set visablity to none
     //then add visablity
     this.setState({
-      products: newprops.products,
       visable: []
     }, () => this.addAnimationToGridItems(newprops.products))
   }
@@ -51,13 +48,13 @@ class GridItem extends Component {
     const productId = e.target.getAttribute('data-id');
     const index = e.target.getAttribute('data-index');
     console.log(productId)
-    this.props.productSelected(this.state.products[index])
+    this.props.productSelected(this.props.products[index])
     this.props.history.push('/product/' + productId)
   }
 
 
   render(){
-    const products = this.state.products.map((product, index)=>(
+    const products = this.props.products.map((product, index)=>(
           <div onClick={this.linkToProduct} key={product.id} data-id={product.id} data-index={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
             <h1>{product.name}</h1>
           </div>
