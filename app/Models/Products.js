@@ -4,7 +4,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -135,7 +135,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -162,7 +162,7 @@ const Products = [
     id: 6,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -189,7 +189,7 @@ const Products = [
     id: 7,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -216,7 +216,7 @@ const Products = [
     id: 8,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -243,7 +243,7 @@ const Products = [
     id: 9,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -270,7 +270,7 @@ const Products = [
     id: 10,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -297,7 +297,7 @@ const Products = [
     id: 11,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -325,7 +325,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -353,7 +353,7 @@ const Products = [
     name: 'Heat & Glo Rutherford Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Rutherford%20Wood%20Fireplace/Slides/Rutherford%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/rutherford/hng_woodfp_rutherford-36_960x456.jpg',
     details: {
@@ -456,7 +456,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'wood',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -486,7 +486,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'gas',
     productType: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -514,7 +514,7 @@ const Products = [
     name: 'Heat & Glo Rutherford Wood Fireplace',
     category: 'outdoor',
     productType: 'outdoor',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Rutherford%20Wood%20Fireplace/Slides/Rutherford%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/rutherford/hng_woodfp_rutherford-36_960x456.jpg',
     details: {
@@ -617,7 +617,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -644,7 +644,7 @@ const Products = [
     id: 600,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -671,7 +671,7 @@ const Products = [
     id: 700,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -698,7 +698,7 @@ const Products = [
     id: 800,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -725,7 +725,7 @@ const Products = [
     id: 900,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'electric',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -752,7 +752,7 @@ const Products = [
     id: 1000,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'electric',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -779,7 +779,7 @@ const Products = [
     id: 1100,
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'outdoor',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -807,7 +807,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'outdoor',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {
@@ -835,7 +835,7 @@ const Products = [
     name: 'Heat & Glo Rutherford Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'electric',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Heatnglo/Rutherford%20Wood%20Fireplace/Slides/Rutherford%20Slide%201/-/media/images/fpl/product-images/fireplaces/hng/rutherford/hng_woodfp_rutherford-36_960x456.jpg',
     details: {
@@ -938,7 +938,7 @@ const Products = [
     name: 'Quadra-Fire Pioneer II Wood Fireplace',
     category: 'Wood Fireplace',
     productType: 'gas',
-    HeatingPower: 'low',
+    HeatingPower: 'high',
     sides: 'single',
     imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
     details: {

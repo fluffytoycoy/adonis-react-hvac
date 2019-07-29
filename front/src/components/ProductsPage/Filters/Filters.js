@@ -54,9 +54,18 @@ class GridItem extends Component {
   }
 
   componentWillReceiveProps(newprops){
-    //everytime new selection is made load new products and set visablity to none
-    //then add visablity
-    console.log('got props')
+    //if new type is selected clear the selected query state
+    if(newprops.selectedType !== this.props.selectedType){
+      let emptyQuery = {};
+      const keys = Object.keys(this.state.queries);
+      for (const key of keys){
+        emptyQuery[key] = '';
+      }
+
+      this.setState({
+        queries: emptyQuery
+      })
+    }
   }
 
   linkToProduct(e){

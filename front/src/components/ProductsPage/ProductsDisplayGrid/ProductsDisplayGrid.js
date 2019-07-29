@@ -74,8 +74,7 @@ class ProductsDisplayGrid extends Component {
 
   getPageRouteInfo(){
     const pageInfo = this.props.pageInfo;
-    const filters = pageInfo.productsPerPage + '' + this.props.history.location.search;
-    return {path: '/Products/:type/Page/:pageNumber/:productsPerPage', params: {type: this.state.currentSelection, productsPerPage: filters || ''}}
+    return {path: `/Products/:type/Page/:pageNumber/:productsPerPage?${this.props.history.location.search}`, params: {type: this.state.currentSelection, productsPerPage: pageInfo.productsPerPage  || ''}}
   }
 
 

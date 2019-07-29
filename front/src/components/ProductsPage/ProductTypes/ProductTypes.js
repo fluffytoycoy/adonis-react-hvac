@@ -37,7 +37,9 @@ class ProductTypes extends Component {
 
   selection(value){
     //when a selection is made push new location in history
-    this.props.history.push(`/Products/${value}`)
+    // const queryString = this.props.history.location.search ? `${this.props.history.location.search}` : '';
+    // this.props.history.push(`/Products/${value}/${queryString}`)
+    this.props.history.push(`/Products/${value}/`)
   }
 
 render(){
@@ -52,7 +54,7 @@ render(){
       <div className={`electric product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection('electric')}>
         <div className="type">Electric Fireplaces</div>
       </div>
-      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoors' )? 'selected': ''}`} onClick={()=> this.selection('outdoors')}>
+      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoor' )? 'selected': ''}`} onClick={()=> this.selection('outdoor')}>
         <div className="type">Outdoor Fireplaces</div>
       </div>
     </div>
