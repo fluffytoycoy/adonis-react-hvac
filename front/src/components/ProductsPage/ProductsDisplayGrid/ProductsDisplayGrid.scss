@@ -28,10 +28,15 @@
         align-items: flex-end;
         opacity: 0;
 
-        &.test {
+        &.grid-item-enter-active{
           opacity: 1;
           transform: scale(1);
         }
+
+                &.grid-item-enter-done{
+                  opacity: 1;
+                  transform: scale(1);
+                }
 
         &.fade {
           height: 50px;

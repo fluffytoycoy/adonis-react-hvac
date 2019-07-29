@@ -1,27 +1,34 @@
 import React, {Component} from 'react';
-
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 
 class GridItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      mounted: false
     };
     this.linkToProduct = this.linkToProduct.bind(this)
   };
 
   componentWillMount(){
+    // this.setState({
+    //   visable: [],
+    // }, () => this.addAnimationToGridItems(this.props.products))
+  }
+
+  componentDidMount(){
     this.setState({
-      visable: []
-    }, () => this.addAnimationToGridItems(this.props.products))
+      mounted: true
+    })
   }
 
   componentWillReceiveProps(newprops){
     //everytime new selection is made load new products and set visablity to none
     //then add visablity
-    this.setState({
-      visable: []
-    }, () => this.addAnimationToGridItems(newprops.products))
+    // this.setState({
+    //   visable: []
+    // }, () => this.addAnimationToGridItems(newprops.products))
   }
 
 
@@ -54,12 +61,21 @@ class GridItem extends Component {
 
 
   render(){
-    const products = this.props.products.map((product, index)=>(
-          <div onClick={this.linkToProduct} key={product.id} data-id={product.id} data-index={index} className={`bg-img ${this.state.visable[index]}`} style={{ background: `url(${product.imgSrc})`}}>
+    const products = this.props.products.map((product, index)=>{
+      const itemStyle = { background: `url(${product.imgSrc})`, transitionDelay: `${index*100}ms`};
+
+      return(
+      <CSSTransition
+        in={this.state.mounted}
+        classNames="grid-item"
+        timeout={0}
+        key={product.id}>
+          <div onClick={this.linkToProduct} data-id={product.id} data-index={index} className={`bg-img`} style={itemStyle}>
             <h1>{product.name}</h1>
           </div>
+      </CSSTransition>)
 
-  ));
+  });
       return <>{products}</>
   }
 }
