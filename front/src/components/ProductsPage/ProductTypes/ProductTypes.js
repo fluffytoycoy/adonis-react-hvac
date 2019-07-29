@@ -37,7 +37,7 @@ class ProductTypes extends Component {
 
   selection(value){
     //when a selection is made push new location in history
-    this.props.history.push(`/products/${value}`)
+    this.props.history.push(`/Products/${value}`)
   }
 
 render(){

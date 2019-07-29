@@ -56,7 +56,7 @@ class GridItem extends Component {
   componentWillReceiveProps(newprops){
     //everytime new selection is made load new products and set visablity to none
     //then add visablity
-
+    console.log('got props')
   }
 
   linkToProduct(e){
@@ -107,15 +107,19 @@ class GridItem extends Component {
           query[key] = this.state.queries[key].value;
         }
       }
-      console.log(query)
+      return queryString.stringify(query);
+  }
+
+  addQuery(){
+    this.props.history.push(`?${this.buildqueryStringFromState()}`);
   }
 
   submit(e){
     e.preventDefault()
     this.updateSearch(false);
-    this.buildqueryStringFromState();
+    this.addQuery()
     //this.props.handleFilterSubmit(this.state.queries)
-    this.props.history.push(`?${this.state.queries.power}`);
+
   }
 
   selectedOption(){
