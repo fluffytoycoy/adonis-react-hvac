@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Route, Redirect } from 'react-router-dom'
 import GasProduct from './GasProduct/GasProduct'
 import SingleProduct from './SingleProduct'
+import NotFound from '../NotFound/NotFound'
 class ProductHOC extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,9 @@ class ProductHOC extends Component {
         break;
         case 'wood':
         return <SingleProduct {...this.props}/>
+        break;
+        default:
+        return <NotFound/>
       }
     }
     render()
