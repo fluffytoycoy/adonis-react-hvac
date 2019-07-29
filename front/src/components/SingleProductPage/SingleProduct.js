@@ -18,6 +18,7 @@ class SingleProductPage extends Component {
   };
 
   componentWillMount() {
+    console.log(this.props)
   if (!this.props.selectedProduct) {
     const self = this;
     setTimeout(function() {

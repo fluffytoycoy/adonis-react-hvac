@@ -6,6 +6,7 @@ import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 import SingleProduct from './components/SingleProductPage/SingleProduct';
+import ProductHOC from './components/SingleProductPage/ProductHOC';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
 import ScrollToTop from './components/Utils/Scroll/Scroll';
@@ -104,8 +105,8 @@ class App extends Component {
             />
             <Route
               exact
-              path="/product/:item"
-              render={(props) => <SingleProduct {...props}
+              path="/product/:type/:item"
+              render={(props) => <ProductHOC {...props}
                 productSelected={this.productSelected}
                 selectedProduct={this.state.selectedProduct} />}
                 />
