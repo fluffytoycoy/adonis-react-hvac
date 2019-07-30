@@ -39,22 +39,22 @@ class ProductTypes extends Component {
     //when a selection is made push new location in history
     // const queryString = this.props.history.location.search ? `${this.props.history.location.search}` : '';
     // this.props.history.push(`/Products/${value}/${queryString}`)
-    this.props.history.push(`/Products/${value}/`)
+    this.props.history.push(`/Products/${value.category}/${value.subType}`)
   }
 
 render(){
   return (
     <div className="product-type-grid">
-      <div className={`gas product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'gas' )? 'selected': ''}`} onClick={()=> this.selection('gas')}>
+      <div className={`gas product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'gas' ) ? 'selected': ''}`} onClick={()=> this.selection({category: 'fireplace', subType: 'gas'})}>
         <div className="type">Gas Fireplaces</div>
       </div>
-      <div className={`wood product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'wood' )? 'selected': ''}` }onClick={()=> this.selection('wood')}>
+      <div className={`wood product-type-bg ${this.state.fadeClass} ${(this.props.selectedType === 'wood' )? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace', subType: 'wood'})}>
         <div className="type">Wood Fireplaces</div>
       </div>
-      <div className={`electric product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection('electric')}>
+      <div className={`electric product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace', subType: 'electric'})}>
         <div className="type">Electric Fireplaces</div>
       </div>
-      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoor' )? 'selected': ''}`} onClick={()=> this.selection('outdoor')}>
+      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoor' )? 'selected': ''}`} onClick={()=> this.selection({category: 'fireplace', subType: 'outdoor'})}>
         <div className="type">Outdoor Fireplaces</div>
       </div>
     </div>

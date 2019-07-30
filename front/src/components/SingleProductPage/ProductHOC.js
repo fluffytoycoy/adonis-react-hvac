@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Route, Redirect } from 'react-router-dom'
 import GasProduct from './GasProduct/GasProduct'
 import SingleProduct from './SingleProduct'
 import NotFound from '../NotFound/NotFound'
@@ -12,12 +11,10 @@ class ProductHOC extends Component {
 
     renderProductPage(param){
       switch(param){
-        case 'gas':
-        return <GasProduct {...this.props}/>
-        break;
-        case 'wood':
+        case 'fireplace':
         return <SingleProduct {...this.props}/>
-        break;
+        case 'grill':
+        return <GasProduct {...this.props}/>
         default:
         return <NotFound/>
       }

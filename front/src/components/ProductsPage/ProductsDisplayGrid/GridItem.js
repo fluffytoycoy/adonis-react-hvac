@@ -27,7 +27,7 @@ class GridItem extends Component {
     const index = e.target.getAttribute('data-index');
     console.log(this.props.products[index])
     this.props.productSelected(this.props.products[index])
-    this.props.history.push(`/Product/${this.props.products[index].productType}/${productId}`)
+    this.props.history.push(`/Product/${this.props.products[index].category}/${productId}`)
   }
 
 

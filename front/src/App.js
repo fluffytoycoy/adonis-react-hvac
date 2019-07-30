@@ -5,7 +5,8 @@ import Header from './components/Header/Header';
 import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
-import SingleProduct from './components/SingleProductPage/SingleProduct';
+//import SingleProduct from './components/SingleProductPage/SingleProduct';
+
 import ProductHOC from './components/SingleProductPage/ProductHOC';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
@@ -71,7 +72,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Products/:type/"
+              path="/Products/:category/:subType"
               render={(props) => <Products
                 {...props}
                 productSelected={this.productSelected}
@@ -79,7 +80,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Products/:type/Page/:pageNum/"
+              path="/Products/:category/:subType/Page/:pageNum/"
               render={(props) => <Products
                 {...props}
                 productSelected={this.productSelected}
@@ -87,7 +88,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Products/:type/Page/:pageNum/:productsPerPage"
+              path="/Products/:category/:subType/Page/:pageNum/:productsPerPage"
               render={(props) => <Products
                 {...props}
                 productSelected={this.productSelected}

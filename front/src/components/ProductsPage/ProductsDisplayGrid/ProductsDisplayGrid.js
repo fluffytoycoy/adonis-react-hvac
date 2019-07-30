@@ -31,10 +31,11 @@ class ProductsDisplayGrid extends Component {
   }
 
   getFilterQueries(queries){
+    const {category, subType} = this.props.match.params;
     const pageInfo = this.props.pageInfo;
     const filters = queryString.parse(this.props.history.location.search)
     console.log(filters)
-    let _qs = `?type=${this.props.selectedType}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
+    let _qs = `?category=${category}&subType=${subType}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
     Object.keys(filters).map(key=>{
       if(filters[key]){
         _qs += `&${key}=${filters[key]}`
@@ -65,8 +66,9 @@ class ProductsDisplayGrid extends Component {
   }
 
   getPageRouteInfo(){
+    const {category, subType} = this.props.match.params;
     const pageInfo = this.props.pageInfo.productsPerPage || '';
-    return {path: `/Products/${this.props.selectedType}/Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}
+    return {path: `/Products/${category}/${subType}/Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}
   }
 
   getTotalPages(){
