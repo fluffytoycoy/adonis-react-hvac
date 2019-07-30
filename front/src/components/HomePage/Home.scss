@@ -362,3 +362,14 @@
     }
   }
 }
+
+//phones
+@media screen and (max-width: 500px) {
+  #home {
+    .hero{
+      h1 {
+          font-size: 2rem !important;
+      }
+    }
+  }
+}

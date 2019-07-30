@@ -20,11 +20,10 @@ class Products extends Component {
   componentWillMount(){
     //get Product Type from param
     const {category, subType} = this.props.match.params;
-    console.log(category, subType)
     //If Type is truthy set the page
-    if(subType){
+    if(category){
         this.setState({
-          selectedType: subType
+          selectedType: category
         })
       }
     }
@@ -40,9 +39,9 @@ class Products extends Component {
       //Handle new PagingInfo
       //If selected Type is different setState to new type prop
       const {category, subType} = this.props.match.params;
-      if(subType !== nextProps.match.params.subType){
+      if(category !== nextProps.match.params.category){
         this.setState({
-          selectedType: nextProps.match.params.subType
+          selectedType: nextProps.match.params.category
         })
       }
     }

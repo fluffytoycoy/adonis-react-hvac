@@ -46,11 +46,11 @@ render(){
   return (
     <div className="product-type-grid">
 
-      <div className={`electric product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'electric' )? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace', subType: 'electric'})}>
-        <div className="type">Electric Fireplaces</div>
+      <div className={`fireplace product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'fireplace' ) ? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace', subType: 'electric'})}>
+        <div className="type">Fireplaces</div>
       </div>
-      <div className={`outdoors product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'outdoor' )? 'selected': ''}`} onClick={()=> this.selection({category: 'fireplace', subType: 'outdoor'})}>
-        <div className="type">Outdoor Fireplaces</div>
+      <div className={`grills product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'grill' ) ? 'selected': ''}`} onClick={()=> this.selection({category: 'grill', subType: 'outdoor'})}>
+        <div className="type">Grills</div>
       </div>
     </div>
   );
