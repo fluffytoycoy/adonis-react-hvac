@@ -978,6 +978,7 @@ const Products = [
         'Up to 10 hours of burn time from each load of fuel'
       ]
     }
+  }
 ]
 
 module.exports = Products

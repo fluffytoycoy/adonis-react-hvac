@@ -30,8 +30,9 @@ class Products extends Component {
 
   componentDidMount() {
     const {category, subType} = this.props.match.params;
+    console.log(subType || '')
       if (this.state.error) {
-        this.props.history.push(`/Products/${category}/${subType}`)
+        this.props.history.push(`/Products/${category}/${subType || ''}`)
       }
     }
 

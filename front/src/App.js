@@ -80,7 +80,23 @@ class App extends Component {
             />
             <Route
               exact
+              path="/Products/:category/"
+              render={(props) => <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
+            />
+            <Route
+              exact
               path="/Products/:category/:subType/Page/:pageNum/"
+              render={(props) => <Products
+                {...props}
+                productSelected={this.productSelected}
+                />}
+            />
+            <Route
+              exact
+              path="/Products/:category/Page/:pageNum/"
               render={(props) => <Products
                 {...props}
                 productSelected={this.productSelected}
@@ -94,6 +110,14 @@ class App extends Component {
                 productSelected={this.productSelected}
                 />}
               />
+              <Route
+                exact
+                path="/Products/:category/Page/:pageNum/:productsPerPage"
+                render={(props) => <Products
+                  {...props}
+                  productSelected={this.productSelected}
+                  />}
+                />
             <Route
               exact
               path="/product/gallery"

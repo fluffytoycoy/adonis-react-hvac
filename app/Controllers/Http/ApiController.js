@@ -13,10 +13,11 @@ class ApiController {
     const offset = (request._qs.pageNum - 1) * numOfItems;
     //END: page info
     //filter based on heating and sides
+    console.log(subType)
     productPayload.result = await Products
       .filter(product=> (
         (category === product.category)
-        && (subType === product.subType)
+        && (subType === undefined || subType === product.subType)
         && (power === undefined || product.HeatingPower === power)
         && (sides === undefined || product.sides === sides)
       ))

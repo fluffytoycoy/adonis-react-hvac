@@ -34,8 +34,7 @@ class ProductsDisplayGrid extends Component {
     const {category, subType} = this.props.match.params;
     const pageInfo = this.props.pageInfo;
     const filters = queryString.parse(this.props.history.location.search)
-    console.log(filters)
-    let _qs = `?category=${category}&subType=${subType}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
+    let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
     Object.keys(filters).map(key=>{
       if(filters[key]){
         _qs += `&${key}=${filters[key]}`
@@ -66,9 +65,13 @@ class ProductsDisplayGrid extends Component {
   }
 
   getPageRouteInfo(){
-    const {category, subType} = this.props.match.params;
+    //build new url from previous url
+    //if variables are undefined return '/' or '' instead
+    const category = this.props.match.params.category;
+    const subType = this.props.match.params.subType ? subType + '/' : '/'
     const pageInfo = this.props.pageInfo.productsPerPage || '';
-    return {path: `/Products/${category}/${subType}/Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}
+
+    return {path: `/Products/${category}${subType}Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}
   }
 
   getTotalPages(){

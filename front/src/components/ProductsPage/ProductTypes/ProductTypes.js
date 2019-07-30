@@ -39,17 +39,17 @@ class ProductTypes extends Component {
     //when a selection is made push new location in history
     // const queryString = this.props.history.location.search ? `${this.props.history.location.search}` : '';
     // this.props.history.push(`/Products/${value}/${queryString}`)
-    this.props.history.push(`/Products/${value.category}/${value.subType}`)
+    this.props.history.push(`/Products/${value.category}/`)
   }
 
 render(){
   return (
     <div className="product-type-grid">
 
-      <div className={`fireplace product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'fireplace' ) ? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace', subType: 'electric'})}>
+      <div className={`fireplace product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'fireplace' ) ? 'selected': ''}` }onClick={()=> this.selection({category: 'fireplace'})}>
         <div className="type">Fireplaces</div>
       </div>
-      <div className={`grills product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'grill' ) ? 'selected': ''}`} onClick={()=> this.selection({category: 'grill', subType: 'outdoor'})}>
+      <div className={`grills product-type-bg ${this.state.fadeClass}  ${(this.props.selectedType === 'grill' ) ? 'selected': ''}`} onClick={()=> this.selection({category: 'grill'})}>
         <div className="type">Grills</div>
       </div>
     </div>
