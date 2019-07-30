@@ -4,6 +4,7 @@ import './Products.scss';
 import Filters from './Filters/Filters';
 import ProductTypes from './ProductTypes/ProductTypes';
 import ProductsDisplayGrid from './ProductsDisplayGrid/ProductsDisplayGrid';
+import Coupon from '../Utils/Coupon/Coupon'
 ///import NotFound from './components/NotFound/NotFound';
 
 class Products extends Component {
@@ -61,21 +62,23 @@ class Products extends Component {
     return (
       <div id="product">
         <div className="container">
-        <div>
-          <ProductTypes
-            selectedType={this.state.selectedType}
-            history={this.props.history}/>
+          <div>
+            <ProductTypes
+              {...this.props}
+              selectedType={this.state.selectedType}
+              />
+            <ProductBanner   selectedType={this.state.selectedType}/>
             <FilterSection
-              {...this.props}
-              selectedType={this.state.selectedType}
-              currentQuery={this.state.queries}
+                {...this.props}
+                selectedType={this.state.selectedType}
+                currentQuery={this.state.queries}
               />
-          <ProductsSection
-              {...this.props}
-              pageInfo = {this.pagingParams()}
-              queries={this.state.queries}
-              selectedType={this.state.selectedType}
-              />
+            <ProductsSection
+                {...this.props}
+                pageInfo = {this.pagingParams()}
+                queries={this.state.queries}
+                selectedType={this.state.selectedType}
+                />
             </div>
         </div>
       </div>
@@ -95,4 +98,9 @@ function FilterSection(props){
     : <></>
   }
 
+function ProductBanner(props){
+  return  props.selectedType ?
+      <></>
+      : <Coupon/>
+}
 export default Products;

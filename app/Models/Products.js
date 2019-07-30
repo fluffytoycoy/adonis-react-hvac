@@ -960,7 +960,24 @@ const Products = [
         viewingArea:	'38 x 20-7/8\"'
       }
     ]
-  }
+  },
+  {
+    id: 10000,
+    name: 'gas grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    details: {
+      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      bulletPoints: [
+        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
+        'Low emission levels of 3.3 grams per hour, certified by the EPA',
+        '2.7 cu ft firebox capacity / recommended 22” log length',
+        'Up to 10 hours of burn time from each load of fuel'
+      ]
+    }
 ]
 
 module.exports = Products
