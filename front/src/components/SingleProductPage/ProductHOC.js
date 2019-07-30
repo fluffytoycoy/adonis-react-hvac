@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import GasProduct from './GasProduct/GasProduct'
 import SingleProduct from './SingleProduct'
 import NotFound from '../NotFound/NotFound'
+
 class ProductHOC extends Component {
   constructor(props) {
     super(props);
