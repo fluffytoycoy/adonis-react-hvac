@@ -10,7 +10,8 @@ class GrillFilters extends FilterInterface {
 
   render(){
       return (
-            <form className="filters">
+            <form className={`filters {this.props.className}`}>
+              <div>
               <div>
                 <label>Power Options</label>
                 <Select
@@ -37,6 +38,7 @@ class GrillFilters extends FilterInterface {
               <div className="submit-wrapper">
               {this.state.updateSearch ? <p>Update Search</p> : <></>}
                 <div className='submit-btn' onClick={this.submit}>Search</div>
+              </div>
               </div>
           </form>
       )

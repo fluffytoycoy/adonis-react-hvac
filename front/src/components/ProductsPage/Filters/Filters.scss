@@ -1,28 +1,37 @@
 @import '../../../sass/variables';
 
-.select{
+.filter-btn {
+  display: none;
+}
+
+.select {
   width: 200px;
   margin-top: 10px;
   margin-right: 40px;
 }
+
 .filters {
-  display: flex;
-  justify-content: flex-start;
-  padding: 20px 0;
+  > div {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
 
   div {
     &:nth-last-child(2) {
       margin-right: auto;
     }
-    svg{
+
+    svg {
       cursor: pointer;
     }
   }
 
-  .submit-wrapper{
+  .submit-wrapper {
     display: flex;
     align-items: flex-end;
-    .submit-btn{
+
+    .submit-btn {
       background: $light-blue;
       height: 38px;
       width: 100px;
@@ -35,10 +44,61 @@
       font-weight: 700;
       border: 1px solid lightgrey;
       cursor: pointer;
-      &:active{
+
+      &:active {
         background: blue;
       }
     }
   }
+}
+@media only screen and (max-width: 863px) {
+  .select {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .filter-btn {
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background: #fbf9f7;
+    color: #14c4fe;
+    flex-grow: 1;
+    box-shadow: black 0 0 2px;
+  }
 
+  .filters {
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+    transition: height 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+    &.open {
+      height: 350px;
+    }
+
+    > div {
+      margin: 20px;
+      flex-direction: column;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      > div {
+        margin: 10px 0 10px 0 !important;
+
+        &.submit-wrapper {
+          margin: 20px auto;
+
+          .submit-btn {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
 }

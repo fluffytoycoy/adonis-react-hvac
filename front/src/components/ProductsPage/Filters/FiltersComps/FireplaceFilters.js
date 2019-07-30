@@ -13,8 +13,10 @@ class FireplaceFilters extends FilterInterface {
   };
 
   render(){
+    console.log(this.props.className)
       return (
-            <form className="filters">
+            <form className={`filters ${this.props.className}`} >
+            <div>
               <div>
                 <label>Power Options</label>
                 <Select
@@ -53,6 +55,7 @@ class FireplaceFilters extends FilterInterface {
               {this.state.updateSearch ? <p>Update Search</p> : <></>}
                 <div className='submit-btn' onClick={this.submit}>Search</div>
               </div>
+            </div>
           </form>
       )
   }
