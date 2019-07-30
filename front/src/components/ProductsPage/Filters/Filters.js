@@ -4,28 +4,36 @@ import './Filters.scss';
 import queryString from 'query-string'
 import chroma from 'chroma-js';
 
-class GridItem extends Component {
+class Filters extends Component {
   constructor(props) {
     super(props);
     this.state = {
       filterOptions: {
         power: [
-          {label: "Low", value: 'low', color: 'orange', filter:'power'},
-          {label: "High", value: 'high', color: 'red', filter:'power'}
+          {label: "Low", value: 'low', color: 'orange', filter: 'power'},
+          {label: "High", value: 'high', color: 'red', filter: 'power'}
         ],
         sides: [
-          {label: 'Front Facing', value: 'single', filter:'sides'},
-          {label: 'Double Sided', value: 'double', filter:'sides'}
+          {label: 'Front Facing', value: 'single', filter: 'sides'},
+          {label: 'Double Sided', value: 'double', filter: 'sides'}
+        ],
+        subType:[
+          {label: 'Gas', value: 'gas', filter: 'sides'},
+          {label: 'Electric', value: 'electric', filter: 'sides'},
+          {label: 'Wood', value: 'wood', filter: 'sides'},
+          {label: 'Outdoor', value: 'outdoor', filter: 'sides'}
         ],
       },
       queries:{
         power: '',
         sides: '',
+        subType: '',
       },
       SearchUpdate: false,
     };
     this.setPowerFilter = this.setPowerFilter.bind(this);
     this.setSideFilter = this.setSideFilter.bind(this);
+    this.setSubType = this.setSubType.bind(this);
     this.submit = this.submit.bind(this);
   };
 
@@ -84,15 +92,26 @@ class GridItem extends Component {
         ...prevState.queries,
       sides: e ? e : ''
     }
-  }),()=>{
-      this.updateSearch(true);
-  })
+    }),()=>{
+        this.updateSearch(true);
+    })
+  }
+
+  setSubType(e){
+    console.log(e)
+    this.setState(prevState =>({
+      queries: {
+        ...prevState.queries,
+        subType: e ? e : ''
+      }
+    }),()=>{
+        this.updateSearch(true);
+    })
   }
 
   isQueryChanged(query){
     //// TODO: function for changing update search bassed on the state being equal to the query params
     const currentQuery = this.state.queries;
-    console.log('Side 1:', query.sides, 'Side: 2', query.sides === currentQuery.sides)
     if(query.sides === currentQuery.sides
       && query.power === currentQuery.power){
         return false
@@ -107,33 +126,21 @@ class GridItem extends Component {
     })
   }
 
-  buildqueryStringFromState(){
-    let query = {}
-      const keys = Object.keys(this.state.queries)
-      for (const key of keys) {
-        if(this.state.queries[key]){
-          query[key] = this.state.queries[key].value;
-        }
-      }
-      return queryString.stringify(query);
-  }
-
-  addQuery(){
-    this.props.history.push(`?${this.buildqueryStringFromState()}`);
-  }
-
   submit(e){
     e.preventDefault()
     this.updateSearch(false);
-    this.addQuery()
-    //this.props.handleFilterSubmit(this.state.queries)
+    this.props.history.push(`?${buildQueryString(this.state)}`);
 
-  }
-
-  selectedOption(){
-    return this.state.powerOptions.find(option => {
-      return option.value === this.state.queries.powerFilter
-    })
+    function buildQueryString(state){
+      let query = {}
+        const keys = Object.keys(state.queries)
+        for (const key of keys) {
+          if(state.queries[key]){
+            query[key] = state.queries[key].value;
+          }
+        }
+        return queryString.stringify(query);
+    }
   }
 
   render(){
@@ -164,8 +171,14 @@ class GridItem extends Component {
                 />
               </div>
               <div>
-                <label>Side Options</label>
-                <Select styles={normalStyles} isClearable={true} options={this.state.sideOptions} className='select'/>
+                <label>Type Options</label>
+                <Select styles={normalStyles}
+                  isClearable={true}
+                  onChange={this.setSubType}
+                  defaultValue={{label: 'test', value: 'test'}}
+                  value={this.state.queries.subType}
+                  options={this.state.filterOptions.subType}
+                  className='select'/>
               </div>
 
               <div className="submit-wrapper">
@@ -199,52 +212,52 @@ const fontWeight = {
 }
 
 const normalStyles={
-option: (styles)=>{
-  return {...styles, ...fontWeight}
-},
-singleValue: (styles) => ({ ...styles, ...fontWeight, height: 18 }),
+  option: (styles)=>{
+    return {...styles, ...fontWeight}
+  },
+  singleValue: (styles) => ({ ...styles, ...fontWeight, height: 18 }),
 }
 
 const dotStyles = {
-control: (styles, {isFocused, isSelected, isActive, isHover}) => ({ ...styles,
-  backgroundColor: 'white',
-  ':hover': {
-    borderColor: 'lightblue'
-  }
-}),
-option: (styles, { data, value, isDisabled, isFocused, isSelected }) => {
-  const color = chroma(data.color);
-  return {
-    ...styles,
-    backgroundColor: isDisabled
-      ? null
-      : isSelected
-      ? data.color
-      : isFocused
-      ? color.alpha(0.1).css()
-      : null,
-    color: isDisabled
-      ? '#ccc'
-      : isSelected
-      ? chroma.contrast(color, 'white') > 2
-        ? 'white'
-        : 'black'
-      : data.color,
-    cursor: isDisabled ? 'not-allowed' : 'default',
-    ...fontWeight,
-    ':active': {
-      ...styles[':active'],
-      backgroundColor: !isDisabled && (isSelected ? data.color : color.alpha(0.3).css()),
+  control: (styles, {isFocused, isSelected, isActive, isHover}) => ({ ...styles,
+    backgroundColor: 'white',
+    ':hover': {
+      borderColor: 'lightblue'
+    }
+  }),
+  option: (styles, { data, value, isDisabled, isFocused, isSelected }) => {
+    const color = chroma(data.color);
+    return {
+      ...styles,
+      backgroundColor: isDisabled
+        ? null
+        : isSelected
+        ? data.color
+        : isFocused
+        ? color.alpha(0.1).css()
+        : null,
+      color: isDisabled
+        ? '#ccc'
+        : isSelected
+        ? chroma.contrast(color, 'white') > 2
+          ? 'white'
+          : 'black'
+        : data.color,
+      cursor: isDisabled ? 'not-allowed' : 'default',
+      ...fontWeight,
+      ':active': {
+        ...styles[':active'],
+        backgroundColor: !isDisabled && (isSelected ? data.color : color.alpha(0.3).css()),
 
-    },
-  };
-},
-input: styles => ({ ...styles}),
-placeholder: styles => ({ ...styles }),
-singleValue: (styles, { data, value }) => ({ ...styles, ...dot(data.color), ...fontWeight, height: 18}),
+      },
+    };
+  },
+  input: styles => ({ ...styles}),
+  placeholder: styles => ({ ...styles }),
+  singleValue: (styles, { data, value }) => ({ ...styles, ...dot(data.color), ...fontWeight, height: 18}),
 
 };
 
 
 
-export default GridItem
+export default Filters

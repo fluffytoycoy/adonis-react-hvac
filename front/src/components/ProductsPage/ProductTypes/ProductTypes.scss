@@ -23,9 +23,9 @@
         }
       }
           .type{
-            background: white;
+            background: rgba(255, 255, 255, 0.90);
             color: $light-blue;
-            transition: all 1s ease-in-out;
+            transition: all .5s ease-in-out;
           }
     }
     &.selected{
