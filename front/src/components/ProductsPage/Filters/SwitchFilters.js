@@ -41,7 +41,7 @@ class SwitchFilters extends Component{
     console.log(this.props)
     return (
       <div>
-        <div className="filter-btn" onClick={this.FilterToggle}>Filters</div>
+        <div className="filter-btn" onClick={this.FilterToggle}>Search</div>
         {this.renderFilters(this.props.match.params.category)}
       </div>
     )}
