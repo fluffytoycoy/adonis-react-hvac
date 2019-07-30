@@ -30,6 +30,16 @@ class FireplaceFilters extends FilterInterface {
                 />
               </div>
               <div>
+                <label>Type Options</label>
+                <Select
+                  styles={normalStyles}
+                  isClearable={true}
+                  onChange={this.setSubType}
+                  value={this.state.queries.subType}
+                  options={this.state.filterOptions.subType}
+                  className='select'/>
+              </div>
+              <div>
                 <label>Side Options</label>
                 <Select
                   styles={normalStyles}
@@ -39,16 +49,6 @@ class FireplaceFilters extends FilterInterface {
                   options={this.state.filterOptions.sides}
                   className='select'
                 />
-              </div>
-              <div>
-                <label>Type Options</label>
-                <Select
-                  styles={normalStyles}
-                  isClearable={true}
-                  onChange={this.setSubType}
-                  value={this.state.queries.subType}
-                  options={this.state.filterOptions.subType}
-                  className='select'/>
               </div>
 
               <div className="submit-wrapper">

@@ -10,7 +10,7 @@ class GrillFilters extends FilterInterface {
 
   render(){
       return (
-            <form className={`filters {this.props.className}`}>
+            <form className={`filters ${this.props.className}`}>
               <div>
               <div>
                 <label>Power Options</label>

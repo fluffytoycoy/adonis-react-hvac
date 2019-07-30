@@ -29,7 +29,7 @@ class SwitchFilters extends Component{
       case 'fireplace':
       return <FireplaceFilters className={this.isFilterOpen()} {...this.props}/>
       case 'grill':
-      return <GrillFilters className={this.filterOptions}{...this.props}/>
+      return <GrillFilters className={this.isFilterOpen()}{...this.props}/>
       default:
       return <></>
     }

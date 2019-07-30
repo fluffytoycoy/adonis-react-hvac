@@ -2,6 +2,7 @@
 
 .filter-btn {
   display: none;
+  cursor: pointer;
 }
 
 .select {
@@ -29,8 +30,12 @@
 
   .submit-wrapper {
     display: flex;
-    align-items: flex-end;
-
+    flex-direction: column;
+    justify-content: flex-end;
+    p{
+      color: red;
+      margin-bottom: auto;
+    }
     .submit-btn {
       background: $light-blue;
       height: 38px;
@@ -44,7 +49,7 @@
       font-weight: 700;
       border: 1px solid lightgrey;
       cursor: pointer;
-
+      align-self: flex-end;
       &:active {
         background: blue;
       }
@@ -69,7 +74,9 @@
     flex-grow: 1;
     box-shadow: black 0 0 2px;
   }
-
+  .select{
+    margin-right: 0px;
+  }
   .filters {
     margin: 2px;
     display: flex;
@@ -78,7 +85,7 @@
     height: 0;
     overflow: hidden;
     &.open {
-      height: 350px;
+      height: 380px;
     }
 
     > div {
