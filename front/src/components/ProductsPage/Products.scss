@@ -8,8 +8,36 @@
       justify-content: space-evenly;
       .coupon{
             margin: 0px 0 20px;
+            .container > div {
+              padding: 50px 0;
+            }
       }
     }
   }
 
+}
+
+
+@media screen and (max-width: 1024px) {
+#product{
+    .coupon{
+      .container > div {
+        padding: 50px 0 !important;
+        flex-wrap: wrap;
+        .row{
+          flex-basis: auto;
+              text-align: center;
+              img{
+                width: 91%;
+              }
+        }
+        .coupon-title {
+            margin-bottom: 50px !important;
+            flex-basis: 100% !important;
+            h2{
+            }
+        }
+      }
+    }
+  }
 }
