@@ -94,7 +94,8 @@ class ServiceBody extends Component{
   render(){
     const service = this.props.match.params.service;
     return (
-      <div>
+
+      <div className="service-info card">
         {this.renderFilters(service)}
       </div>
     )}
