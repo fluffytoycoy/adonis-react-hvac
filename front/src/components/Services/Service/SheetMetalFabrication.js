@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
 
@@ -16,7 +16,7 @@ function AirConditioningRepair(props) {
           <p>At Chamberlin Heating And Air Conditioning, we believe in offering our
            clients options. We work with a variety of materials and are happy to customize
            a sheet metal fabrication solution to suit your specific needs and budget. We pride
-           urselves on excellent customer service and always aim to please; and we welcome the 
+           urselves on excellent customer service and always aim to please; and we welcome the
            opportunity to show you why our sheet metal fabrication services are superior in
            Muscatine, IA. So let's see how we can work together. Call us today for more
             information or to schedule an estimate.</p>

@@ -1,7 +1,4 @@
-import React, {Component} from 'react';
-import Select from 'react-select';
-import {dotStyles, normalStyles} from './FilterStyles'
-
+import {Component} from 'react';
 import queryString from 'query-string'
 
 class FilterInterface extends Component {

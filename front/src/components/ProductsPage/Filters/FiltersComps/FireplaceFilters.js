@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Select from 'react-select';
 import {dotStyles, normalStyles} from './FilterStyles'
 import FilterInterface from './FilterInterface'
-
-import queryString from 'query-string'
 
 
 class FireplaceFilters extends FilterInterface {

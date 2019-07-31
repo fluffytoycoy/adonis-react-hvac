@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
-import Select from 'react-select';
+import React from 'react';
 import SwitchFilters from './SwitchFilters'
 import './Filters.scss';
-import queryString from 'query-string'
 
 function Filters(props) {
       return (

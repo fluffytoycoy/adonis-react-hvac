@@ -1,6 +1,5 @@
 import React from 'react';
 import './Services.scss';
-import {Link} from 'react-router-dom';
 import ServiceBody from './ServiceBody'
 import ServiceLinks from './ServiceLinks'
 
