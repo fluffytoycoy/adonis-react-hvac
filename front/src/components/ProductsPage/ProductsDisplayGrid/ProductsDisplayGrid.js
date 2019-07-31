@@ -20,6 +20,7 @@ class ProductsDisplayGrid extends Component {
     var self = this;
     const _qs = this.getFilterQueries(this.props.queries)
     console.log(_qs)
+    
     setTimeout(function() {
     axios.get(`/api/v1/getProductsByType${_qs}`)
         .then(response =>
@@ -27,7 +28,7 @@ class ProductsDisplayGrid extends Component {
           products: response.data.result,
           productCount: response.data.count
         })).catch(error => console.log(error))
-    }, 1000)
+    }, 1500)
   }
 
   getFilterQueries(queries){

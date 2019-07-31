@@ -18,7 +18,6 @@ class FireplaceFilters extends FilterInterface {
   }
 
   render(){
-    console.log(this.props.className)
       return (
             <form className={`filters ${this.props.className}`} >
             <div>

@@ -21,6 +21,17 @@ class GridItem extends Component {
     })
   }
 
+  componentWillReceiveProps(newprops){
+    var self = this
+    //If new product props are sent reset the mounted state
+    //This is needed otherwise the CSSTransition wont properly render GridItems
+    this.setState({
+      mounted: false
+    }, ()=>{self.setState({
+      mounted: true
+    })})
+
+  }
 
   linkToProduct(e){
     //push history the selected product page
@@ -34,7 +45,7 @@ class GridItem extends Component {
 
   render(){
     const products = this.props.products.map((product, index)=>{
-      const itemStyle = { background: `url(${product.imgSrc})`, transitionDelay: `${index*100}ms`};
+    const itemStyle = { background: `url(${product.imgSrc})`, transitionDelay: `${index*100}ms`};
 
       return(
       <CSSTransition
