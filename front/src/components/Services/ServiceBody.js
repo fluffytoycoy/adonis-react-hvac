@@ -95,7 +95,6 @@ class ServiceBody extends Component{
     const service = this.props.match.params.service;
     return (
       <div>
-        <div className="filter-btn" onClick={this.FilterToggle}>Search</div>
         {this.renderFilters(service)}
       </div>
     )}
