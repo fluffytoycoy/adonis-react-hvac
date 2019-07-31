@@ -8,7 +8,7 @@ class SwitchFilters extends Component{
     this.state={
       filterOpen: false
     }
-    this.FilterToggle = this.FilterToggle.bind(this)
+    this.filterToggle = this.filterToggle.bind(this)
     this.isFilterOpen = this.isFilterOpen.bind(this)
   }
 
@@ -17,7 +17,7 @@ class SwitchFilters extends Component{
     return this.state.filterOpen ? 'open' : ''
   }
 
-  FilterToggle(){
+filterToggle(){
     this.setState({
       filterOpen: !this.state.filterOpen
     })
@@ -27,9 +27,9 @@ class SwitchFilters extends Component{
   renderFilters(param){
     switch(param){
       case 'fireplace':
-      return <FireplaceFilters className={this.isFilterOpen()} {...this.props}/>
+      return <FireplaceFilters filterToggle={this.filterToggle} className={this.isFilterOpen()} {...this.props}/>
       case 'grill':
-      return <GrillFilters className={this.isFilterOpen()}{...this.props}/>
+      return <GrillFilters filterToggle={this.filterToggle} className={this.isFilterOpen()}{...this.props}/>
       default:
       return <></>
     }
@@ -41,7 +41,7 @@ class SwitchFilters extends Component{
     console.log(this.props)
     return (
       <div>
-        <div className="filter-btn" onClick={this.FilterToggle}>Search</div>
+        <div className="filter-btn" onClick={this.filterToggle}>Search</div>
         {this.renderFilters(this.props.match.params.category)}
       </div>
     )}

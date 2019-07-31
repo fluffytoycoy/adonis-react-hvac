@@ -6,7 +6,13 @@ import FilterInterface from './FilterInterface'
 class GrillFilters extends FilterInterface {
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this)
   };
+
+  handleSubmit(e){
+    super.submit(e)
+    this.props.filterToggle();
+  }
 
   render(){
       return (
@@ -37,7 +43,7 @@ class GrillFilters extends FilterInterface {
 
               <div className="submit-wrapper">
               {this.state.updateSearch ? <p>Update Search</p> : <></>}
-                <div className='submit-btn' onClick={this.submit}>Search</div>
+                <div className='submit-btn' onClick={this.handleSubmit}>Search</div>
               </div>
               </div>
           </form>

@@ -9,8 +9,13 @@ import queryString from 'query-string'
 class FireplaceFilters extends FilterInterface {
   constructor(props) {
     super(props);
-
+    this.handleSubmit = this.handleSubmit.bind(this)
   };
+
+  handleSubmit(e){
+    super.submit(e)
+    this.props.filterToggle();
+  }
 
   render(){
     console.log(this.props.className)
@@ -53,7 +58,7 @@ class FireplaceFilters extends FilterInterface {
 
               <div className="submit-wrapper">
               {this.state.updateSearch ? <p>Update Search</p> : <></>}
-                <div className='submit-btn' onClick={this.submit}>Search</div>
+                <div className='submit-btn' onClick={this.handleSubmit}>Search</div>
               </div>
             </div>
           </form>

@@ -21,6 +21,12 @@ class GridItem extends Component {
     })
   }
 
+  componentWillReceiveProps(){
+    this.setState({
+      mounted: false
+    })
+  }
+
   linkToProduct(e){
     //push history the selected product page
     const productId = e.target.getAttribute('data-id');
@@ -39,7 +45,7 @@ class GridItem extends Component {
       <CSSTransition
         in={this.state.mounted}
         classNames="grid-item"
-        timeout={0}
+        timeout={1000}
         key={product.id}>
           <div onClick={this.linkToProduct} data-id={product.id} data-index={index} className={`bg-img`} style={itemStyle}>
             <h1>{product.name}</h1>
