@@ -21,11 +21,6 @@ class GridItem extends Component {
     })
   }
 
-  componentWillReceiveProps(){
-    this.setState({
-      mounted: false
-    })
-  }
 
   linkToProduct(e){
     //push history the selected product page
