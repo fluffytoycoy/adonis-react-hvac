@@ -35,7 +35,7 @@ class ProductsDisplayGrid extends Component {
     const pageInfo = this.props.pageInfo;
     const filters = queryString.parse(this.props.history.location.search)
     let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
-    Object.keys(filters).map(key=>{
+    Object.keys(filters).forEach(key=>{
       if(filters[key]){
         _qs += `&${key}=${filters[key]}`
       }
@@ -68,7 +68,7 @@ class ProductsDisplayGrid extends Component {
     //build new url from previous url
     //if variables are undefined return '/' or '' instead
     const category = this.props.match.params.category;
-    const subType = this.props.match.params.subType ? subType + '/' : '/'
+    const subType = this.props.match.params.subType ? this.props.match.params.subType + '/' : '/'
     const pageInfo = this.props.pageInfo.productsPerPage || '';
 
     return {path: `/Products/${category}${subType}Page/:pageNumber/${pageInfo}${this.props.history.location.search}`}

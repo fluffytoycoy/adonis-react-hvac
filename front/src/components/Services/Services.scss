@@ -1,4 +1,6 @@
 #services {
+  display: flex;
+flex-direction: column;
   .header{
     padding: 75px 0;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/hvac.png);
@@ -7,6 +9,7 @@
     .container{
       > div{
         .header-title{
+          transform: scaley(1.3);
           display: flex;
           color: white;
           font-weight: 500;
@@ -24,7 +27,7 @@
           max-width: 1000px;
           color: white;
           text-align: center;
-          margin: 50px auto 0;
+          margin: 60px auto 0;
           font-size: 1.5rem;
           line-height: 2rem;
           font-weight: 100;
@@ -33,8 +36,49 @@
       }
     }
   }
+  .service-body{
+    margin: 30px 0;
+    .service-links{
+      background: gainsboro;
+      padding: 20px;
+      clear: both;
+      float: left;
+      width: calc(30% - 15px);
+      h3{
+        font-size: 2rem;
+        text-align: center;
+        font-weight: 700;
+        &::after{
+          content: '';
+          display: block;
+          height: 2px;
+          width: 100%;
+          background: orange;
+          margin: 10px 0 20px;
+        }
+      }
+      li{
+        margin: 20px 0;
+        text-align: center;
+      }
+    }
+
+    .service-info{
+      background: gainsboro;
+      padding: 20px;
+      float: right;
+      width: calc(70% - 15px);
+    }
+
+    .card{
+      border-radius: 5px;
+      box-shadow: black 0 0 2px;
+    }
+  }
+
 }
 
+//laptop -> ipadx
 @media screen and (max-width: 1399px){
   #services {
     .header{
@@ -43,7 +87,27 @@
           .header-title{
             justify-content: space-evenly;
             h1{
-              font-size: 3rem;
+              font-size: 2.9rem;
+              &:first-child{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//ipadx -> ipad
+@media screen and (max-width: 1008px){
+  #services {
+    .header{
+      .container{
+        > div{
+          .header-title{
+            justify-content: space-evenly;
+            h1{
+              font-size: 2.9rem;
               &:first-child{
               }
             }

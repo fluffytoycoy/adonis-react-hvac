@@ -14,8 +14,8 @@ import ScrollToTop from './components/Utils/Scroll/Scroll';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       selectedProduct: undefined,
       productsQuery:{
@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <ScrollToTop>
+      <ScrollToTop >
 				<Header/>
 					<Switch>
 						<Route exact  path="/" component={Home} />
@@ -137,6 +137,7 @@ class App extends Component {
                 selectedProduct={this.state.selectedProduct} />}
               />
             <Route exact path="/Services" component={Services}/>
+            <Route exact path="/Services/:service" component={Services}/>
             <Route component={NotFound}/>
 				</Switch>
         <Footer/>
