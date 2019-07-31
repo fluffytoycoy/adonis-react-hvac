@@ -7,8 +7,8 @@ html, body, #root {
 
 #root{
   >:nth-child(2){
-    margin-top: 96px;
-    min-height: calc(100vh - 96px);
+    margin-top: $header-height;
+    min-height: calc(100vh - 94px);
   }
 }
 

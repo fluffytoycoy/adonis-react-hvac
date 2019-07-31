@@ -21,34 +21,20 @@ class ServiceBody extends Component{
   constructor(props){
     super(props);
     this.state={
-      filterOpen: false
     }
-    this.FilterToggle = this.FilterToggle.bind(this)
-    this.isFilterOpen = this.isFilterOpen.bind(this)
-  }
-
-  isFilterOpen(){
-    console.log(this.state.filterOpen)
-    return this.state.filterOpen ? 'open' : ''
-  }
-
-  FilterToggle(){
-    this.setState({
-      filterOpen: !this.state.filterOpen
-    })
   }
 
 
   renderFilters(param){
     switch(param){
       case undefined:
-      return <ComRes className={this.isFilterOpen()} {...this.props}/>
+      return <ComRes {...this.props}/>
 
       case 'Air-Conditioning-Duct-Repair':
-      return <AirConditioningDuctRepair className={this.isFilterOpen()} {...this.props}/>
+      return <AirConditioningDuctRepair  {...this.props}/>
 
       case 'Air-Conditioning-Installation':
-      return <AirConditioningInstallation className={this.isFilterOpen()}{...this.props}/>
+      return <AirConditioningInstallation {...this.props}/>
 
       case 'Air-Conditioning-Repair':
       return <AirConditioningRepair />
