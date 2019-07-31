@@ -6,7 +6,7 @@ import Home from './components/HomePage/Home';
 import NotFound from './components/NotFound/NotFound';
 import Products from './components/ProductsPage/Products';
 //import SingleProduct from './components/SingleProductPage/SingleProduct';
-
+import Services from './components/Services/Services';
 import ProductHOC from './components/SingleProductPage/ProductHOC';
 import Gallery from './components/Gallery/Gallery';
 import Contact from './components/Contact/Contact';
@@ -110,7 +110,7 @@ class App extends Component {
                 productSelected={this.productSelected}
                 />}
               />
-              <Route
+            <Route
                 exact
                 path="/Products/:category/Page/:pageNum/:productsPerPage"
                 render={(props) => <Products
@@ -126,16 +126,17 @@ class App extends Component {
             <Route
               exact
               path="/contact"
-              render={(props) => <Contact {...props}/>} />
-            />
+              render={(props) => <Contact {...props}/>}
+              />
+
             <Route
               exact
               path="/product/:type/:item"
               render={(props) => <ProductHOC {...props}
                 productSelected={this.productSelected}
                 selectedProduct={this.state.selectedProduct} />}
-                />
               />
+            <Route exact path="/Services" component={Services}/>
             <Route component={NotFound}/>
 				</Switch>
         <Footer/>

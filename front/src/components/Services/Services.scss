@@ -1,0 +1,55 @@
+#services {
+  .header{
+    padding: 75px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/hvac.png);
+    background-size: cover;
+    background-position: center;
+    .container{
+      > div{
+        .header-title{
+          display: flex;
+          color: white;
+          font-weight: 500;
+          text-shadow: black 0 0 6px;
+          justify-content: space-between;
+          text-transform: uppercase;
+          text-align: center;
+          h1{
+            &:first-child{
+              margin-right: 10px;
+            }
+          }
+        }
+        h3{
+          max-width: 1000px;
+          color: white;
+          text-align: center;
+          margin: 50px auto 0;
+          font-size: 1.5rem;
+          line-height: 2rem;
+          font-weight: 100;
+          text-shadow: black 0 0 6px, black 0 0 8px, black 0 0 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1399px){
+  #services {
+    .header{
+      .container{
+        > div{
+          .header-title{
+            justify-content: space-evenly;
+            h1{
+              font-size: 3rem;
+              &:first-child{
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
