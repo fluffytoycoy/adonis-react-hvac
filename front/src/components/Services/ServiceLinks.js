@@ -25,7 +25,11 @@ class Services extends Component{
     render(){
       return (
           <div className="service-links card">
-            <h3 onClick={this.filterToggle}>Services</h3>
+            <h3 className={this.isFilterOpen()} onClick={this.filterToggle}>
+              <i className="fas fa-sort-down"></i>
+                Services
+              <i className="fas fa-sort-down right"></i>
+            </h3>
             <ul className={this.isFilterOpen()}>
               <li><Link to="/Services/Air-Conditioning-Duct-Repair" onClick={this.filterToggle}>Air Conditioning Duct Repair</Link></li>
               <li><Link to="/Services/Air-Conditioning-Installation" onClick={this.filterToggle}>Air Conditioning Installation</Link></li>
