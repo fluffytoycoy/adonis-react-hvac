@@ -365,11 +365,15 @@
 
 //phones
 @media screen and (max-width: 500px) {
-  #home {
-    .hero{
-      h1 {
-          font-size: 2rem !important;
-      }
+  #root{
+    h1 {
+        font-size: 2rem !important;
+    }
+    h2{
+      font-size: 2rem !important;
+    }
+    p{
+      font-size: 1rem !important;
     }
   }
 }

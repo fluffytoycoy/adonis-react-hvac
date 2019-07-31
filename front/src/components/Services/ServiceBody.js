@@ -43,6 +43,7 @@ class ServiceBody extends Component{
     switch(param){
       case undefined:
       return <ComRes className={this.isFilterOpen()} {...this.props}/>
+
       case 'Air-Conditioning-Duct-Repair':
       return <AirConditioningDuctRepair className={this.isFilterOpen()} {...this.props}/>
 
@@ -79,24 +80,22 @@ class ServiceBody extends Component{
       case 'Sheet-Metal-Fabrication':
       return <SheetMetalFabrication />
 
-
-
-
-
-
       default:
       return <></>
     }
   }
 
-
-
   render(){
     const service = this.props.match.params.service;
     return (
-
       <div className="service-info card">
         {this.renderFilters(service)}
+        <h3>WHY CHOOSE US?</h3>
+        <ul>
+          <li>Locally Owned & Operated </li>
+          <li>High Quality Work </li>
+          <li>Prompt Project Completion</li>
+        </ul>
       </div>
     )}
 }
