@@ -73,7 +73,7 @@ class SingleProductPage extends Component {
 
   function ProductBulletPoints(props){
     return (
-      <div  className="bullet-points card float">
+      <div  className="bullet-points float">
         <ul>
           <ListItem bulletPoints={props.bulletPoints}/>
         </ul>
@@ -93,8 +93,10 @@ class SingleProductPage extends Component {
     return(<>
       {props.selectedProduct ?
       <>
-        <div className="single-product card">
-          <img src={`${product.imgSrc}`} alt={product.name}/>
+        <div className="single-product">
+          <div className="img-wrapper">
+            <img src={`${product.imgSrc}`} alt={product.name}/>
+          </div>
           <div className="product-info">
             <h1>{product.name}</h1>
             <p>{product.details.info}</p>

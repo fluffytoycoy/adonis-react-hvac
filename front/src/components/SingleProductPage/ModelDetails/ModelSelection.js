@@ -6,7 +6,7 @@ function ModelSelection(props){
   const selectedValue = {label: props.selectedModel.name, value: props.selectedModel.name}
 
     return (
-      <div className="models card">
+      <div className="models">
         <h2>Change Model:</h2>
         <Select
           className="model-select"

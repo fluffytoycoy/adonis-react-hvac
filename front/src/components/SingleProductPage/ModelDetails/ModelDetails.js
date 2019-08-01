@@ -9,7 +9,7 @@ function ModelDetails(props){
         modelOptions={props.modelOptions}
         selectedModel={props.selectedModel}
       />
-      <div className="card">
+      <div>
         <h2>MODEL NUMBER: {props.selectedModel.name}</h2>
         <div className="table">
             <div>

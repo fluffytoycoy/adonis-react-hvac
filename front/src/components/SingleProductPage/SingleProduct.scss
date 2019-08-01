@@ -7,31 +7,61 @@
     color: #404040;
     min-height: inherit;
     background: white;
+
     > div {
       animation: fade-in 0.5s ease-in;
     }
 
     .single-product {
-      display: grid;
-      grid-template-rows: auto 1fr;
+      background: #96e5ff;
+      overflow: hidden;
+      border-radius: 5px;
+      grid-template-columns: 1fr 1fr;
       margin: 30PX 20px 30px;
+      display: grid;
 
-      img {
-        width: 100%;
-        max-height: 400px;
-        min-height: 250px;
-        object-fit: cover;
-        box-shadow: #d2d2d2 0 0 9px;
+      .img-wrapper {
+        min-height: 400px;
+        height: 100%;
+        overflow: hidden;
+        transform: translate(100%, 0%);
+        -webkit-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        z-index: 0;
+
+        &.loaded {
+          transform: translate(0%, 0%);
+        }
+
+        &.grill {
+          display: flex;
+          justify-content: center;
+
+          img {
+            width: auto;
+            height: 100%;
+            max-height: 400px;
+            object-position: left;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       .product-info {
+        height: 100%;
         width: 100%;
         padding: 20px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        /* grid-template-columns: 1fr 1fr; */
         grid-gap: 30px;
+        z-index: 1;
         align-items: center;
-        box-shadow: black 0 0 8px;
+        box-shadow: black 0 0 20px;
+        background: #eee;
 
         h1 {
           font-size: 2rem;
@@ -70,7 +100,6 @@
       }
 
       .bullet-points {
-        background: #eeeeee;
         padding: 20px;
         clear: both;
         margin-bottom: 30px;
@@ -186,95 +215,92 @@
         }
       }
     }
-
-    .card {
-      background: #eeeeee;
-      overflow: hidden;
-      border-radius: 5px;
-      box-shadow: #8e8e8e 0 0 5px 0;
-    }
   }
 }
 @media only screen and (max-width: 1000px) {
-  .single-product-wrapper {
-    .single-product {
-      .product-info {
-        padding: 20px;
-        display: grid;
+  #single-product {
+    .single-product-wrapper {
+      .single-product {
         grid-template-columns: 1fr;
-        grid-gap: 0;
-      }
-    }
+        .img-wrapper{
 
-    .extra-info-columns {
-      .float {
-        float: left;
-        width: 100%;
-      }
-
-      .bullet-points {
-        margin-bottom: 30px;
+          transform: translate(0, 100%);
+        }
+        .product-info {
+          display: block;
+        }
       }
 
-      .product-specs {
-        margin-left: 0;
-
-        .models {
-          padding: 20px;
-          display: flex;
-          justify-content: space-between;
-          overflow: visible;
-          align-items: center;
-
-          h2 {
-            padding: 0;
-            margin: 0;
-          }
-
-          .model-select {
-            width: 150px;
-            border-radius: 5px;
-          }
+      .extra-info-columns {
+        .float {
+          float: left;
+          width: 100%;
         }
 
-        > div {
-          padding: 20px 0;
+        .bullet-points {
           margin-bottom: 30px;
+        }
 
-          h2 {
-            font-size: 1.5rem;
-            margin: 0 0 20px 20px;
+        .product-specs {
+          margin-left: 0;
+
+          .models {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            overflow: visible;
+            align-items: center;
+
+            h2 {
+              padding: 0;
+              margin: 0;
+            }
+
+            .model-select {
+              width: 150px;
+              border-radius: 5px;
+            }
           }
 
-          .table {
-            > div {
-              display: flex;
-              justify-content: space-between;
-              border-bottom: 1px solid orange;
-              padding: 10px 0;
+          > div {
+            padding: 20px 0;
+            margin-bottom: 30px;
 
-              &:first-child {
-                border-top: 1px solid orange;
-              }
+            h2 {
+              font-size: 1.5rem;
+              margin: 0 0 20px 20px;
+            }
 
-              h3 {
-                font-size: 1.1rem;
-                text-transform: capitalize;
-                margin: 0 20px;
+            .table {
+              > div {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid orange;
+                padding: 10px 0;
 
                 &:first-child {
-                  font-weight: 500;
+                  border-top: 1px solid orange;
+                }
+
+                h3 {
+                  font-size: 1.1rem;
+                  text-transform: capitalize;
+                  margin: 0 20px;
+
+                  &:first-child {
+                    font-weight: 500;
+                  }
                 }
               }
             }
           }
         }
-      }
 
-      .downloads {
-        iframe {
-          &.open {
-            height: 70vh;
+        .downloads {
+          iframe {
+            &.open {
+              height: 70vh;
+            }
           }
         }
       }
