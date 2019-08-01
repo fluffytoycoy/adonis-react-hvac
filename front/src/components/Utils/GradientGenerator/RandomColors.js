@@ -1,7 +1,6 @@
-
 class RandomColors {
   constructor(){
-    this.linearGradient = 'linear-gradient(45deg, #0ec3ff, transparent)';
+    this.linearGradient = 'linear-gradient(45deg, transparent, #0ec3ff)';
     this.orange = 'orange';
     this.blue = "#0ec3ff";
     this.timesCalled = 0;
@@ -15,13 +14,13 @@ class RandomColors {
   }
 
   getCurrentColor(){
-    return (this.timesCalled + 1) % 2 ? this.blue : this.orange
+    return (this.timesCalled + 1) % 3 ? this.blue : this.orange
   }
 
 
   generate(){
-      let background = `linear-gradient(${this.getCalculatedDeg()}deg, ${(this.getCurrentColor())}, transparent`
-      this.timesCalled = ++this.timesCalled > 5 ? 0 : this.timesCalled;
+      let background = `linear-gradient(${this.getCalculatedDeg()}deg, transparent,${(this.getCurrentColor())} `
+      this.timesCalled = ++this.timesCalled > 2 ? 0 : this.timesCalled;
       return background;
   }
 }

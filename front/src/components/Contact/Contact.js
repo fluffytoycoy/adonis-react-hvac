@@ -19,8 +19,16 @@ class Contact extends Component{
       }
   }
   componentWillMount(){
-    
+
   }
+
+  onSubmit = (values) => {
+    
+  setTimeout(() => {
+    alert(JSON.stringify(values, null, 2));
+  }, 800);
+
+};
 
   renderForm = (props) => (
     <Form >
