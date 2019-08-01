@@ -38,21 +38,27 @@ function Home(){
               <div>
                 <div className="circle">
                     <h3>COMMERCIAL</h3>
-                    <img alt="house clip art" src="/img/tower.png"/>
+                    <div className="img-wrapper">
+                      <Link aria-label="Go To Servieces Page" to="/Services"><img alt="house clip art" src="/img/comm_icon.png"/></Link>
+                    </div>
                     <p>Total Air &amp; Heat offers comprehensive
                        HVAC services to help ensure your systems
                        run efficiently.</p>
                  </div>
                  <div className="circle">
                       <h3>RESIDENTIAL</h3>
-                      <img alt="building clip art" src="/img/tower.png"/>
+                      <div className="img-wrapper">
+                        <Link aria-label="Go To Servieces Page"  to="/Services"><img alt="building clip art" src="/img/house_icon.png"/></Link>
+                      </div>
                       <p>Whatever your commercial HVAC needs,
                          the certified technicians at Total Air &amp;
                          Heat can help.</p>
                   </div>
                   <div className="circle">
                     <h3>FIREPLACES</h3>
-                    <img alt="fireplace clip art" src="/img/tower.png"/>
+                    <div className="img-wrapper">
+                    <Link aria-label="Go To Product page for fireplaces" to="/Products/fireplace/"><img alt="fireplace clip art" src="/img/fireplace_icon.png"/></Link>
+                    </div>
                     <p>Whether you need a new heat pump or emergency
                       AC repairs, Total Air &amp; Heat is the HVAC
                       contractor for you.
@@ -60,7 +66,9 @@ function Home(){
                   </div>
                   <div className="circle">
                     <h3>GRILLS</h3>
-                    <img alt="grill clip art" src="/img/tower.png"/>
+                    <div className="img-wrapper">
+                      <Link aria-label="Go To Product page for grills" to="/Products/grill"><img alt="grill clip art" src="/img/grill_icon.png"/></Link>
+                    </div>
                     <p>Whether you need a new heat pump or emergency
                       AC repairs, Total Air &amp; Heat is the HVAC
                       contractor for you.

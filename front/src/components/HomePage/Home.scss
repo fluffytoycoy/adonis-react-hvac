@@ -139,22 +139,28 @@
               margin-bottom: 50px;
               letter-spacing: 0.3rem;
             }
-
-            img {
-              background: #00c0ff;
-              padding: 20px;
-              border-radius: 50%;
-              width: 60%;
-              height: auto;
-              box-shadow: #013b4e 0 5px 0 0;
-              transition: all 0.1s ease-in;
-              max-width: 200px;
-
-              &:hover {
-                box-shadow: #013b4e 0 0 0 0;
-                transform: translate(0, 5px);
+            .img-wrapper{
+              display: flex;
+              justify-content: center;
+              height: 200px;
+              a{
+                align-self: flex-end;
+                img {
+                  padding: 10px;
+                  width: 100%;
+                  box-shadow: $light-blue 0 5px 0 0;
+                  transition: all 0.1s ease-in;
+                  max-width: 200px;
+                  cursor: pointer;
+                  &:hover {
+                    box-shadow: $light-blue 0 0 0 0;
+                    transform: translate(0, 5px);
+                  }
+                }
               }
+
             }
+
 
             p {
               max-width: 300px;

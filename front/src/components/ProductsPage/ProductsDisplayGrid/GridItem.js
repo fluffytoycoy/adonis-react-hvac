@@ -53,7 +53,7 @@ class GridItem extends Component {
         classNames="grid-item"
         timeout={1000}
         key={product.id}>
-          <div onClick={this.linkToProduct} data-id={product.id} data-index={index} className={`bg-img`} style={itemStyle}>
+          <div aria-label="Go To Product page for this item" onClick={this.linkToProduct} data-id={product.id} data-index={index} className={`bg-img`} style={itemStyle}>
             <h1>{product.name}</h1>
           </div>
       </CSSTransition>)
