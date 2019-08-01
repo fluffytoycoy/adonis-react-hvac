@@ -17,35 +17,6 @@ class ProductsDisplayGrid extends Component {
     };
   };
 
-  getAllProducts () {
-    var self = this;
-    const _qs = getFilterQueries(this.props.queries)
-
-    setTimeout(function() {
-      if(self.state._isMounted){
-        axios.get(`/api/v1/getProductsByType${_qs}`)
-            .then(response =>
-              self.setState({
-              products: response.data.result,
-              productCount: response.data.count
-            })).catch(error => console.log(error))
-      }
-    }, 1500)
-
-    function getFilterQueries(queries){
-      const {category, subType} = self.props.match.params;
-      const pageInfo = self.props.pageInfo;
-      const filters = queryString.parse(self.props.history.location.search)
-      let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
-      Object.keys(filters).forEach(key=>{
-        if(filters[key]){
-          _qs += `&${key}=${filters[key]}`
-        }
-      })
-      return _qs;
-    }
-  }
-
   componentWillMount(){
     //on mount if exact route wasn't /products render with
     //minimized pictures
@@ -67,6 +38,40 @@ class ProductsDisplayGrid extends Component {
     }
   }
 
+  componentWillUnmount(){
+    this.state._isMounted = false;
+  }
+
+  getAllProducts () {
+    var self = this;
+    const _qs = getFilterQueries(this.props.queries)
+
+    setTimeout(function()
+    {
+      if (self.state._isMounted) {
+        axios.get(`/api/v1/getProductsByType${_qs}`)
+          .then(response =>
+            self.setState({
+              products: response.data.result,
+              productCount: response.data.count
+            })).catch(error => console.log(error))
+      }
+    }, 1500)
+
+    function getFilterQueries(queries){
+      const {category, subType} = self.props.match.params;
+      const pageInfo = self.props.pageInfo;
+      const filters = queryString.parse(self.props.history.location.search)
+      let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
+      Object.keys(filters).forEach(key=>{
+        if(filters[key]){
+          _qs += `&${key}=${filters[key]}`
+        }
+      })
+      return _qs;
+    }
+  }
+
   getPageRouteInfo(){
     //build new url from previous url
     //if variables are undefined return '/' or '' instead
@@ -80,10 +85,6 @@ class ProductsDisplayGrid extends Component {
   getTotalPages(){
     const pageInfo = this.props.pageInfo;
     return Math.ceil(this.state.productCount/pageInfo.productsPerPage)
-  }
-
-  componentWillUnmount(){
-    this.state._isMounted = false;
   }
 
   render(){
