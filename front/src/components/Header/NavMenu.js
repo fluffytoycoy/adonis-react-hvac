@@ -12,7 +12,6 @@ class NavMenu extends Component{
   }
 
     isFilterOpen(){
-      console.log(this.state.filterOpen)
       return this.state.filterOpen ? 'open' : ''
     }
 

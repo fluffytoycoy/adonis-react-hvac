@@ -13,7 +13,6 @@ class SwitchFilters extends Component{
   }
 
   isFilterOpen(){
-    console.log(this.state.filterOpen)
     return this.state.filterOpen ? 'open' : ''
   }
 
@@ -38,7 +37,6 @@ filterToggle(){
 
 
   render(){
-    console.log(this.props)
     return (
       <div>
         <div className="filter-btn" onClick={this.filterToggle}>Search</div>

@@ -65,7 +65,7 @@ class SingleProductPage extends Component {
   render() {
     return (
       <div className="container single-product-wrapper">
-        {this.state.redirect ? <NotFound/> : <ProductInfo {...this.handleModelChange} {...this.props} {...this.state}/>}
+        {this.state.redirect ? <NotFound/> : <ProductInfo handleModelChange={this.handleModelChange} {...this.props} {...this.state}/>}
       </div>
       );
     }
@@ -97,7 +97,7 @@ class SingleProductPage extends Component {
           <img src={`${product.imgSrc}`} alt={product.name}/>
           <div className="product-info">
             <h1>{product.name}</h1>
-            <h2>{product.details.info}</h2>
+            <p>{product.details.info}</p>
           </div>
         </div>
         <div className="extra-info-columns">
