@@ -50,8 +50,9 @@
     &:hover{
       .type{
         text-shadow: white 0px 0px 10px;
-        border-bottom: solid 1px black;
-
+        &:not(.selected){
+          text-shadow: $light-blue 0px 0px 3px;
+        }
       }
     }
   }
