@@ -22,7 +22,7 @@ class ProductHOC extends Component {
     }
     render()
 {    return (
-            <>{this.renderProductPage(this.props.match.params.type)}</>
+            <div id="single-product">{this.renderProductPage(this.props.match.params.type)}</div>
     )}
 }
 

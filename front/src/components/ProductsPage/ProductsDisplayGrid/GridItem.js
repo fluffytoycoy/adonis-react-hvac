@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {CSSTransition} from 'react-transition-group';
-
+import RandomColors from '../../Utils/GradientGenerator/RandomColors'
 
 class GridItem extends Component {
   constructor(props) {
@@ -44,9 +44,9 @@ class GridItem extends Component {
 
 
   render(){
+    const linearGradient = new RandomColors();
     const products = this.props.products.map((product, index)=>{
-    const itemStyle = { background: `url(${product.imgSrc})`, transitionDelay: `${index*100}ms`};
-
+    const itemStyle = { background: `url(${product.imgSrc}), ${linearGradient.generate()}`, transitionDelay: `${index*100}ms`};
       return(
       <CSSTransition
         in={this.state.mounted}

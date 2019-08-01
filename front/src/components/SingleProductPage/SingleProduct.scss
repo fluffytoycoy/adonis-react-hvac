@@ -1,191 +1,198 @@
-.single-product-wrapper {
-  display: flex;
-  flex-direction: column;
-  color: #404040;
-  min-height: inherit;
-  > div{
-    animation: fade-in .5s ease-in;
-  }
-  .single-product {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    margin: 30PX 20px 30px;
+#single-product {
+  background: #96e5ff;
 
-    img {
-      width: 100%;
-      max-height: 400px;
-      min-height: 250px;
-      object-fit: cover;
-      box-shadow: #d2d2d2 0 0 9px;
+  .single-product-wrapper {
+    display: flex;
+    flex-direction: column;
+    color: #404040;
+    min-height: inherit;
+    background: white;
+    > div {
+      animation: fade-in 0.5s ease-in;
     }
 
-    .product-info {
-      width: 100%;
-      padding: 20px;
+    .single-product {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
-      align-items: center;
-      box-shadow: black 0 0 8px;
+      grid-template-rows: auto 1fr;
+      margin: 30PX 20px 30px;
 
-      h1 {
-        font-size: 2rem;
-        text-align: center;
+      img {
+        width: 100%;
+        max-height: 400px;
+        min-height: 250px;
+        object-fit: cover;
+        box-shadow: #d2d2d2 0 0 9px;
+      }
+
+      .product-info {
+        width: 100%;
         padding: 20px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #000000;
-        clip-path: unset;
-        background: linear-gradient(#828282, #5a5a59);
-        -webkit-text-fill-color: #00000000;
-        -webkit-background-clip: text;
-        -webkit-text-stroke: #000000d6 1px;
-      }
-
-      p {
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-        text-indent: 20px;
-        line-height: 1.6rem;
-        padding: 20px;
-        text-align: center;
-      }
-
-      ul {
-        margin-bottom: 20px;
-      }
-    }
-  }
-
-  .extra-info-columns {
-    margin: 0 20px 30px;
-
-    .float {
-      width: calc(50% - 15px);
-    }
-
-    .bullet-points {
-      background: gainsboro;
-      padding: 20px;
-      clear: both;
-      margin-bottom: 30px;
-      float: left;
-
-      ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-        li {
-          margin: 10px 0;
-          font-size: 1.1rem;
-          line-height: 1.5rem;
-          text-align: center;
-          font-weight: 500;
-        }
-      }
-    }
-
-    .product-specs {
-      margin-left: 30px;
-      float: right;
-
-      .models {
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        overflow: visible;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
         align-items: center;
+        box-shadow: black 0 0 8px;
 
-        h2 {
-          padding: 0;
-          margin: 0;
+        h1 {
+          font-size: 2rem;
+          text-align: center;
+          padding: 20px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #000000;
+          clip-path: unset;
+          background: linear-gradient(#828282, #5a5a59);
+          -webkit-text-fill-color: #00000000;
+          -webkit-background-clip: text;
+          -webkit-text-stroke: #000000d6 1px;
         }
 
-        .model-select {
-          width: 150px;
-          border-radius: 5px;
+        p {
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+          text-indent: 20px;
+          line-height: 1.6rem;
+          padding: 20px;
+          text-align: center;
+        }
+
+        ul {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .extra-info-columns {
+      margin: 0 20px 30px;
+
+      .float {
+        width: calc(50% - 15px);
+      }
+
+      .bullet-points {
+        background: #eeeeee;
+        padding: 20px;
+        clear: both;
+        margin-bottom: 30px;
+        float: left;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+          }
         }
       }
 
-      > div {
-        padding: 20px 0;
-        margin-bottom: 30px;
+      .product-specs {
+        margin-left: 30px;
+        float: right;
 
-        h2 {
-          font-size: 1.5rem;
-          margin: 0 0 20px 20px;
+        .models {
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          overflow: visible;
+          align-items: center;
+
+          h2 {
+            padding: 0;
+            margin: 0;
+          }
+
+          .model-select {
+            width: 150px;
+            border-radius: 5px;
+          }
         }
 
-        .table {
-          > div {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid orange;
-            padding: 10px 0;
+        > div {
+          padding: 20px 0;
+          margin-bottom: 30px;
 
-            &:first-child {
-              border-top: 1px solid orange;
-            }
+          h2 {
+            font-size: 1.5rem;
+            margin: 0 0 20px 20px;
+          }
 
-            h3 {
-              font-size: 1.1rem;
-              text-transform: capitalize;
-              margin: 0 20px;
+          .table {
+            > div {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid orange;
+              padding: 10px 0;
 
               &:first-child {
-                font-weight: 500;
+                border-top: 1px solid orange;
+              }
+
+              h3 {
+                font-size: 1.1rem;
+                text-transform: capitalize;
+                margin: 0 20px;
+
+                &:first-child {
+                  font-weight: 500;
+                }
               }
             }
           }
         }
       }
+
+      .downloads {
+        background: red;
+        float: left;
+        width: calc(50% - 15px);
+        background: #eeeeee;
+        overflow: hidden;
+
+        iframe {
+          width: 100%;
+          height: 0;
+          display: block;
+          transition: height 1s ease-in-out;
+
+          &.open {
+            height: 835px;
+          }
+        }
+
+        .buttons {
+          display: flex;
+
+          a {
+            &.close-btn {
+              background: red;
+            }
+
+            &:first-child {
+              border-right: solid white 1px;
+            }
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            background: #00c0ff;
+            width: 50%;
+          }
+        }
+      }
     }
 
-    .downloads {
-      background: red;
-      float: left;
-      width: calc(50% - 15px);
-      background: gainsboro;
+    .card {
+      background: #eeeeee;
       overflow: hidden;
-
-      iframe {
-        width: 100%;
-        height: 0;
-        display: block;
-        transition: height 1s ease-in-out;
-
-        &.open {
-          height: 835px;
-        }
-      }
-
-      .buttons {
-        display: flex;
-
-        a {
-          &.close-btn {
-            background: red;
-          }
-          &:first-child{
-            border-right: solid white 1px;
-          }
-          text-decoration: none;
-          color: white;
-          padding: 10px 20px;
-          text-align: center;
-          background: #00c0ff;
-          width: 50%;
-        }
-      }
+      border-radius: 5px;
+      box-shadow: #8e8e8e 0 0 5px 0;
     }
-  }
-
-  .card {
-    background: gainsboro;
-    overflow: hidden;
-    border-radius: 5px;
-    box-shadow: #8e8e8e 0 0 5px 0;
   }
 }
 @media only screen and (max-width: 1000px) {
@@ -263,23 +270,23 @@
           }
         }
       }
-      .downloads{
-        iframe{
-          &.open{
-              height: 70vh;
+
+      .downloads {
+        iframe {
+          &.open {
+            height: 70vh;
           }
         }
       }
     }
   }
 }
-
-
 @keyframes fade-in {
-  0%{
+  0% {
     opacity: 0;
   }
-  100%{
+
+  100% {
     opacity: 100%;
   }
 }

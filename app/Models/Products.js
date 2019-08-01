@@ -962,23 +962,248 @@ const Products = [
     ]
   },
   {
-    id: 10000,
-    name: 'gas grill',
+    id: 100009,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
     category: 'grill',
     subType: 'gas',
     HeatingPower: 'low',
     sides: 'single',
-    imgSrc: 'https://www.fireplaces.com/en/Product%20Catalog/Fireplaces/Quadrafire/Pioneer%20II%20Wood%20Fireplace/Slides/Slide%201/-/media/images/fpl/product-images/fireplaces/qdf/pioneer-ii/qdf_pioneer-ii_woodfireplace_room-angled_960x456.jpg',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
     details: {
-      info: 'The Pioneer II is an energy-efficient heating powerhouse. This high-performance fireplace is also hassle-free and perfect for everyday use. Relax and savor long burn times, stunning flames and Quadra-Fire quality.',
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
       bulletPoints: [
-        'Heat 1,000-2,600 sq ft with 74,900 BTUs, based on climate and home efficiency',
-        'Low emission levels of 3.3 grams per hour, certified by the EPA',
-        '2.7 cu ft firebox capacity / recommended 22” log length',
-        'Up to 10 hours of burn time from each load of fuel'
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
       ]
-    }
-  }
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100008,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100007,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100006,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100005,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100004,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100003,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100002,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
+  {
+    id: 100001,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    sides: 'single',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'With a small footprint and foldable side shelves, the durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill is perfect for the griller with limited outdoor space.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: '720-0864M',
+        width: '42\"',
+        height: '43-3/4\"',
+        depth:	'24\"',
+        viewingArea:	'38 x 20-7/8\"'
+      }
+    ]
+  },
 ]
 
 module.exports = Products
