@@ -13,41 +13,47 @@ class ProductsDisplayGrid extends Component {
     this.state = {
       products: undefined,
       productCount: '',
+      _isMounted: ''
     };
   };
 
   getAllProducts () {
     var self = this;
-    const _qs = this.getFilterQueries(this.props.queries)
-    console.log(_qs)
-    
-    setTimeout(function() {
-    axios.get(`/api/v1/getProductsByType${_qs}`)
-        .then(response =>
-          self.setState({
-          products: response.data.result,
-          productCount: response.data.count
-        })).catch(error => console.log(error))
-    }, 1500)
-  }
+    const _qs = getFilterQueries(this.props.queries)
 
-  getFilterQueries(queries){
-    const {category, subType} = this.props.match.params;
-    const pageInfo = this.props.pageInfo;
-    const filters = queryString.parse(this.props.history.location.search)
-    let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
-    Object.keys(filters).forEach(key=>{
-      if(filters[key]){
-        _qs += `&${key}=${filters[key]}`
+    setTimeout(function() {
+      if(self.state._isMounted){
+        axios.get(`/api/v1/getProductsByType${_qs}`)
+            .then(response =>
+              self.setState({
+              products: response.data.result,
+              productCount: response.data.count
+            })).catch(error => console.log(error))
       }
-    })
-    return _qs;
+    }, 1500)
+
+    function getFilterQueries(queries){
+      const {category, subType} = self.props.match.params;
+      const pageInfo = self.props.pageInfo;
+      const filters = queryString.parse(self.props.history.location.search)
+      let _qs = `?category=${category}${subType ? '&subType=' + subType : ''}&pageNum=${pageInfo.pageNum}&limit=${pageInfo.productsPerPage}`;
+      Object.keys(filters).forEach(key=>{
+        if(filters[key]){
+          _qs += `&${key}=${filters[key]}`
+        }
+      })
+      return _qs;
+    }
   }
 
   componentWillMount(){
     //on mount if exact route wasn't /products render with
     //minimized pictures
-      this.getAllProducts();
+    this.setState({
+      _isMounted: true
+    }, ()=>{
+      this.getAllProducts()
+    })
   }
 
   componentWillReceiveProps(newprops){
@@ -59,10 +65,6 @@ class ProductsDisplayGrid extends Component {
         this.getAllProducts()
       })
     }
-  }
-
-  isLoaded(){
-    return this.state.products
   }
 
   getPageRouteInfo(){
@@ -80,6 +82,10 @@ class ProductsDisplayGrid extends Component {
     return Math.ceil(this.state.productCount/pageInfo.productsPerPage)
   }
 
+  componentWillUnmount(){
+    this.state._isMounted = false;
+  }
+
   render(){
     return (
       <>
@@ -91,7 +97,7 @@ class ProductsDisplayGrid extends Component {
           products={this.state.products}
           history={this.props.history}/>
       </div>
-      {this.isLoaded() ? <Pagination match={this.getPageRouteInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.pageInfo.pageNum} spread={12/2} /> : <></>}
+      {this.state.products ? <Pagination match={this.getPageRouteInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.pageInfo.pageNum} spread={12/2} /> : <></>}
       </>
     );
   }
