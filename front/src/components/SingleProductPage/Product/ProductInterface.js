@@ -80,13 +80,6 @@ class ProductInterface extends Component {
     this.state._isMounted = false;
   }
 
-  render() {
-    return (
-      <div className="container single-product-wrapper">
-        {this.state.redirect ? <NotFound/> : <ProductInfo handleModelChange={this.handleModelChange} {...this.props} {...this.state}/>}
-      </div>
-      );
-    }
   }
 
   function ProductBulletPoints(props){

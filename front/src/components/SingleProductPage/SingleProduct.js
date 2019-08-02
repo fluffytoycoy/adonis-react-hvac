@@ -21,10 +21,14 @@ class SingleProduct extends Component {
         return <NotFound/>
       }
     }
-    render()
-{    return (
-            <div id="single-product">{this.renderProductPage(this.props.match.params.type)}</div>
-    )}
+    
+    render() {
+      return (
+        <div id = "single-product" >
+          {this.renderProductPage(this.props.match.params.type)}
+        </div>
+      )
+    }
 }
 
 export default SingleProduct
