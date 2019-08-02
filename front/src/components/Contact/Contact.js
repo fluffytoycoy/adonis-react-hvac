@@ -23,12 +23,11 @@ class Contact extends Component{
   }
 
   onSubmit = (values) => {
-    
-  setTimeout(() => {
+    setTimeout(() => {
     alert(JSON.stringify(values, null, 2));
-  }, 800);
+    }, 800);
 
-};
+  };
 
   renderForm = (props) => (
     <Form >
