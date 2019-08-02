@@ -101,7 +101,6 @@ class ProductsDisplayGrid extends Component {
 
 }
 
-
 function DisplayGrid(props) {
   console.log(props.productCount)
     return (
