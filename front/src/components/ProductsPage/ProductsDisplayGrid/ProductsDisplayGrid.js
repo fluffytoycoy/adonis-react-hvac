@@ -50,11 +50,12 @@ class ProductsDisplayGrid extends Component {
     {
       if (self.state._isMounted) {
         axios.get(`/api/v1/getProductsByType${_qs}`)
-          .then(response =>
+          .then(response =>{
             self.setState({
               products: response.data.result,
               productCount: response.data.count
-            })).catch(error => console.log(error))
+            })})
+            .catch(error => console.log(error))
       }
     }, 1500)
 
@@ -90,15 +91,10 @@ class ProductsDisplayGrid extends Component {
   render(){
     return (
       <>
-      <div className="product-grid-wrapper">
-
-
-        <DisplayGrid
-          productSelected={this.props.productSelected}
-          products={this.state.products}
-          history={this.props.history}/>
-      </div>
-      {this.state.products ? <Pagination match={this.getPageRouteInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.pageInfo.pageNum} spread={12/2} /> : <></>}
+        <div className="product-grid-wrapper">
+          <DisplayGrid  {...this.props} products={this.state.products}/>
+          {this.state.products ? <Pagination match={this.getPageRouteInfo()} totalPages={this.getTotalPages()} pageNumber={this.props.pageInfo.pageNum} spread={12/2} /> : <></>}
+        </div>
       </>
     );
   }
@@ -107,12 +103,18 @@ class ProductsDisplayGrid extends Component {
 
 
 function DisplayGrid(props) {
-  return props.products ?   <div id="product-section">
-      <div id="product-grid" >
-        <GridItem {...props} />
-      </div>
-    </div> : <Loading/>
-
+  console.log(props.productCount)
+    return (
+        props.products ?
+        props.products.length ?
+        <div id="product-section">
+          <div id="product-grid" >
+            <GridItem {...props} />
+          </div>
+        </div>
+        : 'sorry no products'
+        : <Loading/>
+      )
   }
 
 export default ProductsDisplayGrid;

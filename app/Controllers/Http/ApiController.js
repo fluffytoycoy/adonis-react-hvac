@@ -1,4 +1,9 @@
 'use strict';
+try{
+  const Products = use('App/Models/Products');
+}catch (e) {
+  console.log(e)
+}
 const Products = use('App/Models/Products');
 const Email = use('App/Util/Email');
 const axios = use('axios');
