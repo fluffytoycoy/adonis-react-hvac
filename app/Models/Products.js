@@ -47,7 +47,7 @@ const Products = [
     models: [
       {
         name: 'FDN-4-PIER',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
         width: '53-3/4\"',
         height: '50\"',
         depth:	'24\"',
@@ -55,7 +55,7 @@ const Products = [
       },
       {
         name: 'FDN-5-PIER',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
         width: '65-3/4\"',
         height: '50\"',
         depth:	'24\"',
@@ -63,7 +63,7 @@ const Products = [
       },
       {
         name: 'FDN-6-PIER',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HNG-1162U_FOUNDATION_broc.pdf',
         width: '77-3/4\"',
         height: '50\"',
         depth:	'24\"',
@@ -91,7 +91,7 @@ const Products = [
     models: [
       {
         name: 'nXt 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -99,7 +99,7 @@ const Products = [
       },
       {
         name: 'nXt 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -127,7 +127,7 @@ const Products = [
     models: [
       {
         name: ' 36 Rev B',
-        manualSrc: 'http://downloads.hearthnhome.com/installManuals/2301_974.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/installManuals/2301_974.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -135,7 +135,7 @@ const Products = [
       },
       {
         name: '48 Rev B',
-        manualSrc: 'http://downloads.hearthnhome.com/installManuals/2301_974.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/installManuals/2301_974.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -143,7 +143,7 @@ const Products = [
       },
       {
         name: '60 Rev B ',
-        manualSrc: 'http://downloads.hearthnhome.com/installManuals/2301_974.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/installManuals/2301_974.pdf',
         width: '77-3/4\"',
         height: '50\"',
         depth:	'24\"',
@@ -171,7 +171,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -179,7 +179,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -207,7 +207,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -215,7 +215,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -243,7 +243,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -251,7 +251,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -279,7 +279,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -287,7 +287,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -314,7 +314,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -322,7 +322,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -349,7 +349,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -357,7 +357,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -384,7 +384,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -392,7 +392,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -419,7 +419,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -427,7 +427,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -454,7 +454,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -462,7 +462,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -490,7 +490,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -498,7 +498,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
@@ -526,7 +526,7 @@ const Products = [
     models: [
       {
         name: 'IFT 36',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '41\"',
         height: '39-7/8\"',
         depth:	'21\"',
@@ -534,7 +534,7 @@ const Products = [
       },
       {
         name: 'IFT 36 42',
-        manualSrc: 'http://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
+        manualSrc: 'https://downloads.hearthnhome.com/brochures/HTL-1096U.pdf',
         width: '48\"',
         height: '41-7/8\"',
         depth:	'21\"',
