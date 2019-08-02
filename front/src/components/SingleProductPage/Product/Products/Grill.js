@@ -10,7 +10,6 @@ import ProductInterface from '../ProductInterface'
 class Grill extends ProductInterface {
   constructor(props) {
     super(props);
-
   };
 
   render() {

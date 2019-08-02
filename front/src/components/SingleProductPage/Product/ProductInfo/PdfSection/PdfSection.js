@@ -18,10 +18,12 @@ class PdfSection extends Component{
 
   render(){
     return (
-      <div className="downloads float card">
-        <PdfButtons iframeOpen={this.state.iframeOpen} toggleiframe={this.toggleiframe} manualSrc={this.props.manualSrc} />
-        <iframe type="application/pdf" title="product-pdf" className={`${this.state.iframeOpen ? 'open' : ''}`} src={`${this.state.iframeOpen ? this.props.manualSrc : ''}`} name="myFrame" ></iframe>
-      </div>
+      this.props.manualSrc ?
+        <div className="downloads float card">
+          <PdfButtons iframeOpen={this.state.iframeOpen} toggleiframe={this.toggleiframe} manualSrc={this.props.manualSrc} />
+          <iframe type="application/pdf" title="product-pdf" className={`${this.state.iframeOpen ? 'open' : ''}`} src={`${this.state.iframeOpen ? this.props.manualSrc : ''}`} name="myFrame" ></iframe>
+        </div>
+        : <></>
     )
   }
 }

@@ -29,7 +29,7 @@
         transition: all 1s ease-in-out;
         z-index: 0;
 
-        &.loaded {
+        &.loaded-enter-done{
           transform: translate(0%, 0%);
         }
 
@@ -62,7 +62,7 @@
         grid-gap: 30px;
         z-index: 1;
         align-items: center;
-        box-shadow: black 0 0 20px;
+        box-shadow: black 0 0 10px;
         background: #eee;
 
         h1 {
