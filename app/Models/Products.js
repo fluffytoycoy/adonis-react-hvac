@@ -553,7 +553,7 @@ const Products = [
       info: 'Enjoy grilling on this durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill. With a small footprint and foldable side shelves, this grill is perfect for the griller with limited outdoor space. It\'s built with corrosion-resistant materials and boasts a 385 sq. in. cooking area with 28,000 BTUs of fire-roasting energy.',
       bulletPoints: [
         '28,000 BTUs',
-        '2 stainless steel main burners  ',
+        '2 stainless steel main burners',
         '278.85 sq. in. primary cooking space',
         '1 year warranty'
       ]
