@@ -42,13 +42,15 @@ class Contact extends Component{
           .then(function (response) {
             self.setState({
               submitSuccess: true,
-              submitFailure: false
+              submitFailure: false,
+              isSubmitting: false,
             })
 
             console.log(response);
           })
           .catch(function (error) {
             self.setState({
+              isSubmitting: false,
               submitSuccess: false,
               submitFailure: true
             })

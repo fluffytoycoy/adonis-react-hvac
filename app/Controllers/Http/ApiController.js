@@ -1,6 +1,6 @@
 'use strict';
-
 const Products = use('App/Models/Products');
+const Email = use('App/Util/Email');
 const axios = use('axios');
 
 class ApiController {
@@ -47,8 +47,12 @@ class ApiController {
   }
 
   async submitContact({request}){
-    console.log('test')
-    console.log(request);
+    var email = new Email();
+    var mailOptions = {
+      to: request._body.values.email,
+      text: request._body.values.message
+    };
+    email.to(mailOptions).send();
   }
 }
 
