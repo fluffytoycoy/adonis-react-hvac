@@ -37,7 +37,6 @@ class GridItem extends Component {
     //push history the selected product page
     const productId = e.target.getAttribute('data-id');
     const index = e.target.getAttribute('data-index');
-    console.log(this.props.products[index])
     this.props.productSelected(this.props.products[index])
     this.props.history.push(`/Product/${this.props.products[index].category}/${productId}`)
   }
@@ -54,7 +53,7 @@ class GridItem extends Component {
         timeout={1000}
         key={product.id}>
           <div aria-label="Go To Product page for this item" onClick={this.linkToProduct} data-id={product.id} data-index={index} className={`bg-img`} style={itemStyle}>
-            <h1>{product.name}</h1>
+            <h3>{product.name}</h3>
           </div>
       </CSSTransition>)
 

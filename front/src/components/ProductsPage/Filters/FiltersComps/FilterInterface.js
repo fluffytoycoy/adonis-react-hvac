@@ -35,7 +35,6 @@ class FilterInterface extends Component {
   };
 
   componentWillMount(){
-    // filters = {power: '', sides: ''}
       const filters = queryString.parseUrl(this.props.history.location.search).query;
       this.setQueryUrl(filters);
   }
@@ -95,7 +94,6 @@ class FilterInterface extends Component {
   }
 
   setSubType(e){
-    console.log(e)
     this.setState(prevState =>({
       queries: {
         ...prevState.queries,

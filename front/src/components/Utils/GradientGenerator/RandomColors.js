@@ -9,7 +9,6 @@ class RandomColors {
 
 
   getCalculatedDeg(){
-    console.log(this.startingDeg + (this.timesCalled * 90))
     return this.startingDeg + (this.timesCalled * 90)
   }
 

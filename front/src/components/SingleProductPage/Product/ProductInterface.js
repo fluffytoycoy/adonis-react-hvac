@@ -55,7 +55,6 @@ class ProductInterface extends Component {
       }, getModelOptions())
 
       function getModelOptions(){
-        console.log(self)
         const modelOptions = self.props.selectedProduct.models.map(model =>
           {return {label: model.name, value: model.name }}
         )
