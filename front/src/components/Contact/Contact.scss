@@ -3,7 +3,7 @@
 #contact {
   display: flex;
   align-items: center;
-  background: linear-gradient(rgb(0, 193, 255), rgba(0, 0, 0, 0.49019607843137253)), url("~/img/muscatine_bg.jpg");
+  background: linear-gradient(rgb(0, 193, 255), rgba(0, 0, 0, 0.5)), url("~/img/muscatine_bg.jpg");
   position: relative;
   background-attachment: fixed;
   background-position: center;
@@ -15,7 +15,7 @@
           margin: 20px;
     }
     .form-card {
-          background: linear-gradient(45deg, #ff9900, #ffd458);
+      background: linear-gradient(45deg, #f9ac38, rgb(255, 212, 88));
       margin: 0 auto;
       border-radius: 5px;
       display: flex;
@@ -25,13 +25,45 @@
       max-width: 700px;
       flex-direction: column;
       box-shadow: #6b6b6b 0 0 6px;
+      position: relative;
+      min-height: 650px;
+      .success-text{
+        margin-top: 50px;
+        text-align: center;
+        p{
+          margin: 10px;
+          font-weight: 700;
+        }
+      }
 
+      .error{
+        border-radius: 5px;
+            position: absolute;
+            top: 0;
+            color: white;
+            font-size: 1.2rem !important;
+            background: #f96363fc;
+            padding: 10px 20px;
+            width: 100%;
+            transform: translate(0px, -200%);
+            opacity: 0;
+            transition: all .5s ease-in-out;
+            box-shadow: #6b6b6b 0 0 6px;
+              display: inherit;
+        &.show{
+          transform: translate(0px, -115%);
+          opacity: 1;
+        }
+        span{
+          margin-left: auto;
+          transform: translate(0px, -2px);
+        }
+      }
 
       h1{
         font-size: 3rem;
         letter-spacing: .5vw;
         font-weight: 700;
-        margin-bottom: 30px;
         color: white;
         text-shadow: #030303 1px 1px 0px;
       }
@@ -41,6 +73,7 @@
         text-shadow: black 0 0 1px;
         display: flex;
         flex-direction: column;
+        margin-top: 30px;
         > div {
           margin: 10px 0;
           font-weight: 100;

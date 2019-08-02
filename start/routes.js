@@ -22,6 +22,7 @@ Route.group(() => {
   Route.get('/GetProductsByType', 'ApiController.getProductsByType');
   Route.get('/getProductById/:id', 'ApiController.getProductById');
   Route.get('/getReviews', 'ApiController.getReviews')
+  Route.post('/submitContact', 'ApiController.submitContact')
 }).prefix('api/v1/');
 
 Route.any('*', ({ response }) => {

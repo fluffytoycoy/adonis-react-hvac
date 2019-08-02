@@ -45,6 +45,11 @@ class ApiController {
       return [];
     }
   }
+
+  async submitContact({request}){
+    console.log('test')
+    console.log(request);
+  }
 }
 
 module.exports = ApiController;
