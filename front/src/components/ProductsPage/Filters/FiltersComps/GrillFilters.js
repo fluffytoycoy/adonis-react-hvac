@@ -6,6 +6,16 @@ import FilterInterface from './FilterInterface'
 class GrillFilters extends FilterInterface {
   constructor(props) {
     super(props);
+    this.state={
+      ...this.state,
+      filterOptions: {
+        ...this.state.filterOptions,
+        subType:[
+          {label: 'Gas', value: 'gas', filter: 'sides'},
+          {label: 'Electric', value: 'electric', filter: 'sides'},
+        ],
+      },
+    }
     this.handleSubmit = this.handleSubmit.bind(this)
   };
 
@@ -15,6 +25,7 @@ class GrillFilters extends FilterInterface {
   }
 
   render(){
+    console.log(this.state)
       return (
             <form className={`filters ${this.props.className}`}>
               <div>

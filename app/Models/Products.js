@@ -542,6 +542,84 @@ const Products = [
       },
     ]
   },
+  {
+    id: 16,
+    name: 'Evolution Infrared Plus 2-Burner Propane Gas Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720-0864M-1_b2c4a47b-6df5-4388-98f7-0cfa563684ab.png?v=1524861513',
+    details: {
+      info: 'Enjoy grilling on this durable Nexgrill Evolution 2-Burner Stainless Steel Gas Grill. With a small footprint and foldable side shelves, this grill is perfect for the griller with limited outdoor space. It\'s built with corrosion-resistant materials and boasts a 385 sq. in. cooking area with 28,000 BTUs of fire-roasting energy.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners  ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: 'IFT 36',
+        width: '41\"',
+        height: '39-7/8\"',
+        depth:	'21\"',
+        viewingArea:	'35 x 24-1/8\"'
+      },
+    ]
+  },
+  {
+    id: 17,
+    name: 'Fortress 2-Burner Table Top Grill',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'low',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/820-0062-1_a3c7bdfa-44a8-42c6-9910-9070d25dea87.png?v=1521486234',
+    details: {
+      info: 'Two independent push-and-turn ignition burners deliver exceptional grilling results in a compact, table top grill. This grill reaches high temperatures quickly and each burner is independently adjustable. No batteries or external flame required for ignition.',
+      bulletPoints: [
+        '28,000 BTUs',
+        '2 stainless steel main burners  ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: 'IFT 36',
+        width: '41\"',
+        height: '39-7/8\"',
+        depth:	'21\"',
+        viewingArea:	'35 x 24-1/8\"'
+      },
+    ]
+  },
+  {
+    id: 18,
+    name: 'Evolution Infrared Plus',
+    category: 'grill',
+    subType: 'gas',
+    HeatingPower: 'high',
+    imgSrc: 'https://cdn.shopify.com/s/files/1/2197/2255/products/720_0882A-1_e475caf8-4db2-4e40-b3d4-731f6c01b81f.png?v=1524861551',
+    details: {
+      info: 'The Nexgrill Evolution Infrared Plus 5-Burner Stainless Steel Gas Grill gives you the flexibility of cooking with various combinations of direct heat and infrared heat. Removable stainless steel heat plates and firebox dividers provide the grill master with ideal heat control. Use the five stainless steel main burners and 486 sq. in. primary cooking area to bake, broil, sear or smoke while you warm, simmer or saute a side dish on your stainless steel side burner.',
+      bulletPoints: [
+        '58,000 BTUs',
+        '2 stainless steel main burners  ',
+        '278.85 sq. in. primary cooking space',
+        '1 year warranty'
+      ]
+    },
+    models: [
+      {
+        name: 'IFT 36',
+        width: '41\"',
+        height: '39-7/8\"',
+        depth:	'21\"',
+        viewingArea:	'35 x 24-1/8\"'
+      },
+    ]
+  },
 ]
 
 module.exports = Products
