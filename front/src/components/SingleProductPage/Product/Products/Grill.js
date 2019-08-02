@@ -1,9 +1,5 @@
-import React, {Component } from 'react';
-
-import axios from 'axios';
+import React from 'react';
 import ProductInfo from '../ProductInfo/ProductInfo';
-import Loading from '../../../Utils/Loading/Loading';
-import { Redirect } from 'react-router-dom'
 import NotFound from '../../../NotFound/NotFound'
 import ProductInterface from '../ProductInterface'
 

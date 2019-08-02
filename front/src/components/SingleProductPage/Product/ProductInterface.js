@@ -1,10 +1,6 @@
-import React, {Component } from 'react';
+import {Component } from 'react';
 import axios from 'axios';
-import ModelDetails from './ProductInfo/ModelDetails/ModelDetails';
-import PdfSection from './ProductInfo/PdfSection/PdfSection';
-import Loading from '../../Utils/Loading/Loading';
-import { Redirect } from 'react-router-dom'
-import NotFound from '../../NotFound/NotFound'
+
 
 class ProductInterface extends Component {
     constructor(props) {

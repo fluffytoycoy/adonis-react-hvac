@@ -88,7 +88,7 @@ class Contact extends Component{
         <h1>Submit Success</h1>
         <div className="success-text">
           <p>Thank you for your questions!</p>
-          <p>We will get back to you with as soon as possible</p>
+          <p>We will get back to you as soon as possible</p>
         </div>
       </>
     )
@@ -100,7 +100,7 @@ class Contact extends Component{
         <div className="container">
           <div>
             <div className={`form-card ${this.state.submitFailure ? '' : 'no-flex'}`}>
-              {this.state.isSubmitting ? (this.state.submitSuccess ? this.submitSuccess() : this.form()) : this.form()}
+              {this.state.submitSuccess ? this.submitSuccess() : this.form()}
             </div>
           </div>
         </div>
