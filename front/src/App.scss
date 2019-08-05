@@ -9,7 +9,7 @@ html, body, #root {
 #root{
   >:nth-child(2){
     margin-top: $header-height;
-    min-height: 90vh;
+    min-height: 70vh;
     min-height: calc(100vh - 94px);
   }
 }

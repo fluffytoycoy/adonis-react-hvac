@@ -7,9 +7,9 @@
       min-height: inherit;
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
       .coupon{
             margin: 0px 0 20px;
+            flex-grow: 1;
             .container > div {
               padding: 50px 0;
             }
@@ -30,7 +30,7 @@
           flex-basis: auto;
               text-align: center;
               img{
-                width: 91%;
+                width: 65%;
               }
         }
         .coupon-title {
