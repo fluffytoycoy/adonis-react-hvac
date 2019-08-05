@@ -6,12 +6,12 @@
   .hero {
     color: white;
     min-height: inherit;
-    background: linear-gradient(rgba(0, 193, 255, 1), rgba(0, 0, 0, 0.5)), url("~/img/muscatine_bg.jpg");
-    position: relative;
-    background-attachment: fixed;
-    background-position: center;
+    background: linear-gradient(rgba(0, 193, 255, .9), rgba(0, 0, 0, 0.5)), url("~/img/muscatine_bg.jpg");
+    //position: relative;
+    //background-attachment: fixed;
+    //background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+   background-size: cover;
     > div{
       display: flex;
       justify-content: center;
@@ -61,19 +61,18 @@
 
   .home-body-wrapper {
     background: white;
-
+    position: relative;
+    z-index: 1;
     &:before {
       background: inherit;
-      bottom: 0;
+      top: 0;
       content: '';
       display: block;
-      height: 10%;
-      left: 0;
+      height: 5%;
       position: absolute;
-      right: 0;
-      transform: skewY(2.5deg);
-      -webkit-transform-origin: 100%;
-      transform-origin: 0;
+      width: 100%;
+      transform: translate(0px, -50%) skew(0deg, 2.5deg);
+      z-index: -1;
     }
 
     .about-us {
